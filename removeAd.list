@@ -25,7 +25,6 @@ DOMAIN-SUFFIX,zijieapi.com
 DOMAIN,img.test.com
 IP-CIDR,47.99.219.178/32,no-resolve
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
-DOMAIN,www.rongxingvr.cc
 
 #腾讯
 DOMAIN-SUFFIX,gdt.qq.com
