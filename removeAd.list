@@ -64,17 +64,6 @@ IP-CIDR,101.227.200.28/32,no-resolve
 IP-CIDR,101.227.97.240/32,no-resolve
 IP-CIDR,124.192.153.42/32,no-resolve
 
-# Youtube
-DOMAIN-SUFFIX,azabu-u.ac.jp
-DOMAIN-SUFFIX,couchcoaster.jp
-DOMAIN-SUFFIX,delivery.dmkt-sp.jp
-DOMAIN-SUFFIX,ehg-youtube.hitbox.com
-DOMAIN-SUFFIX,nichibenren.or.jp
-DOMAIN-SUFFIX,nicorette.co.kr
-DOMAIN-SUFFIX,ssl-youtube.2cnt.net
-DOMAIN-SUFFIX,youtube.112.2o7.net
-DOMAIN-SUFFIX,youtube.2cnt.net
-
 #三方
 DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
