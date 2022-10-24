@@ -38,6 +38,7 @@ DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
 #腾讯
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,e.qq.com
+DOMAIN,wxsnsdy.wxs.qq.com
 
 # iqiyi
 DOMAIN-SUFFIX,ad.m.iqiyi.com
