@@ -1,6 +1,5 @@
 #!name=YouTube去广告(>=iOS15)
 #!desc=去瀑布流广告/贴片广告
-#自己
 
 [MITM]
 hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com
