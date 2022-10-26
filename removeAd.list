@@ -6,7 +6,6 @@ DOMAIN-SUFFIX,umengcloud.com
 DOMAIN,yh.miidii.tech
 
 #CLL
-#*.chelaileapp.cn,*.chelaile.net.cn
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
@@ -90,6 +89,5 @@ DOMAIN-SUFFIX,adkwai.com
 DOMAIN,a314.gameloft.com
 
 #xiachufang
-#*.xiachufang.com
 URL-REGEX,^(http|https):\/\/[a-zA-Z.]+xiachufang.com\/\w+\/ad\/
 
