@@ -9,8 +9,8 @@ DOMAIN,yh.miidii.tech
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
-URL-REGEX,^http:\/\/union.aoyiluoad.com\/api\/ad\/*
-URL-REGEX,^http:\/\/124.71.153.172\/adpub\/*
+URL-REGEX,^http:\/\/union.aoyiluoad.com\/api\/ad\/
+URL-REGEX,^http:\/\/124.71.153.172\/adpub\/
 URL-REGEX,^(http|https):\/\/[a-zA-Z.]+\.chelaile[a-zA-Z.]*(.cn|.com){1}\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
 #HDO
@@ -83,7 +83,11 @@ DOMAIN-SUFFIX,supersonicads.com
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN,googleads.g.doubleclick.net
 DOMAIN-SUFFIX,bjcathay.com
+DOMAIN-SUFFIX,adkwai.com
 
 #狂野
 DOMAIN,a314.gameloft.com
+
+#xiachufang
+URL-REGEX,^(http|https):\/\/[a-zA-Z.]+xiachufang.com\/\w+\/ad\/
 
