@@ -1,3 +1,16 @@
+/*
+*************************
+百度网盘 解锁在线视频倍率/清晰度
+
+[Script]
+http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/baiduPan.js
+
+[MITM]
+hostname = pan.baidu.com
+
+*************************
+*/
+
 if ($response.body) {
     $done({
         body: JSON.stringify({
