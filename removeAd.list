@@ -11,7 +11,6 @@ DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
 URL-REGEX,^http:\/\/union.aoyiluoad.com\/api\/ad\/*
 URL-REGEX,^http:\/\/124.71.153.172\/adpub\/*
-URL-REGEX,^https:\/\/(cdn.api.chelaileapp|api.chelaile.net).cn\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
 #HDO
 DOMAIN-SUFFIX,vungle.com
