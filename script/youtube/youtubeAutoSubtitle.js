@@ -2,7 +2,7 @@ let url = $request.url
 let body = $response.body
 if (!body) $done({})
 
-let tl = 'auto'
+let tl = 'zh-CN'
 let line = 'sl'
 let patt = new RegExp(`lang=${tl}`)
 if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "&lang=zh-TW&").match(patt) || url.match(/&tlang=/)){
@@ -10,6 +10,7 @@ if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "
 }
 
 let t_url = `${url}&tlang=${tl == "zh-CN" ? "zh-Hans" : tl == "zh-TW" ? "zh-Hant" : tl}`
+$notification.post("测试", "url:", t_url);
 let options = {
     url: t_url,
     headers: headers
