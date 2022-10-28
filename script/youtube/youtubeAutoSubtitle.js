@@ -1,6 +1,5 @@
 let url = $request.url
 $notification.post("测试", "url:", url);
-let url = 'https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/youtubeAutoSubtitle.js'
 let body = $response.body
 if (!body) $done({})
 
