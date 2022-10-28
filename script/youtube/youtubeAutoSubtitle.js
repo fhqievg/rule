@@ -1,5 +1,4 @@
 let url = $request.url
-$notification.post("测试1", "url:", url);
 let body = $response.body
 if (!body) $done({})
 
