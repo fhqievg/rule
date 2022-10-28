@@ -5,5 +5,6 @@
 hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,*.xiachufang.com
 
 [Rule]
+
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/domainDi.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/removeAd.list,REJECT
