@@ -1,0 +1,8 @@
+#!name=YouTube
+#!desc=跳过片头广告
+
+[Script]
+youtube_ad = type=http-request,pattern=^https?:\/\/.+?\.googlevideo\.com\/.+&(oad|ctier)=(?!A),script-path=https://choler.github.io/Surge/Script/YouTube.js,max-size=1048576,timeout=10,script-update-interval=0,enable=true
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com
