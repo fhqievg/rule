@@ -5,4 +5,4 @@
 hostname = %APPEND% mp.weixin.qq.com
 
 [Script]
-去除公众号文章底部广告 = type=http-response,script-path= https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/removeGzhArticleAd.js,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+去除公众号文章底部广告 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/removeGzhArticleAd.js,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
