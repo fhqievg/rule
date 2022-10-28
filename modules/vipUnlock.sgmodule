@@ -4,7 +4,7 @@
 #拦截100最高支持版本3.0.2
 
 [Script]
-caiyun = type=http-response,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wather/caiyun.js,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=true
+caiyun = type=http-response,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wather/caiyun.js,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=false
 拦截100 = type=http-response,pattern=^https?:\/\/tagit\.hyhuo\.com\/cypt\/block100\/get_vip_info,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/block100.js,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=true
 
 [MITM]
