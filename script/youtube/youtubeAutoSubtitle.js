@@ -1,5 +1,5 @@
 let url = $request.url
-$notification.post("测试", "url:", url);
+$notification.post("测试1", "url:", url);
 let body = $response.body
 if (!body) $done({})
 
@@ -11,7 +11,7 @@ if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "
 }
 
 let t_url = `${url}&tlang=${tl == "zh-CN" ? "zh-Hans" : tl == "zh-TW" ? "zh-Hant" : tl}`
-$notification.post("测试", "url:", t_url);
+$notification.post("测试2", "url:", t_url);
 let options = {
     url: t_url,
     headers: headers
