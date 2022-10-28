@@ -1,5 +1,5 @@
-#!name=YouTube去广告(>=iOS15)
-#!desc=去瀑布流广告/贴片广告
+#!name=YouTube去广告
+#!desc=只支持15系统（含）以上
 #来源仓库：https://github.com/Maasea/sgmodule
 
 [Script]
