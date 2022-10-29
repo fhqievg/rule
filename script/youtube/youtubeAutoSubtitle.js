@@ -7,7 +7,8 @@ let tl = 'zh-CN'
 let line = 'sl'
 let patt = new RegExp(`lang=${tl}`)
 if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "&lang=zh-TW&").match(patt) || url.match(/&tlang=/)){
-    $done({ body })
+   $notification.post("原样返回", "body:", body); 
+$done({ body })
 }
 
 let t_url = `${url}&tlang=${tl == "zh-CN" ? "zh-Hans" : (tl == "zh-TW" ? "zh-Hant" : tl)}`
@@ -15,6 +16,9 @@ let options = {
     url: t_url,
     headers: headers
 }
+
+$notification.post("请求参数", "op:", options);
+
 $httpClient.get(options, function (error, response, data) {
     if (line == "sl") $done({ body: data })
 
