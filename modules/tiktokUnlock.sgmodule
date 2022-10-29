@@ -4,7 +4,7 @@
 
 [Rule]
 
-RULE-SET,https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TikTok.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/tiktok.list,PROXY
 
 [URL Rewrite]
 
