@@ -2,7 +2,8 @@ let url = $request.url
 let headers = $request.headers
 let body = $response.body
 
-let msg = url+'€head:'+headers+'€body:'+body
+let a = JSON.stringify(headers)
+let msg = url+'€head:'+a+'€body:'+body
 $notification.post('请求信息', "url:", msg);
 
 if (!body) $done({})
