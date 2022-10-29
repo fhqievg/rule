@@ -1,6 +1,10 @@
 let url = $request.url
 let headers = $request.headers
 let body = $response.body
+
+let msg = url+'€head:'+headers+'€body:'+body
+$notification.post('请求信息', "url:", msg);
+
 if (!body) $done({})
 
 let tl = 'zh-CN'
