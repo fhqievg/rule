@@ -1,4 +1,5 @@
 let url = $request.url
+let headers = $request.headers
 let body = $response.body
 if (!body) $done({})
 
