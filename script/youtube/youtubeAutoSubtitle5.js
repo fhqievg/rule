@@ -16,8 +16,6 @@ let options = {
 }
 
 $httpClient.get(options, function (error, response, data) {
-
-$notification.post("请求参数")
     if (line == "sl") $done({ body: data })
 
     let timeline = body.match(/<p t="\d+" d="\d+">/g)
