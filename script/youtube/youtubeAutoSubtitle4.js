@@ -1,18 +1,11 @@
 let url = $request.url
 let headers = $request.headers
-let body = $response.body
-
-let a = JSON.stringify(headers)
-let msg = url+'€head:'+a+'€body:'+body
-$notification.post('请求信息', "url:", msg);
-
-if (!body) $done({})
+let body = ''
 
 let tl = 'zh-CN'
 let line = 'sl'
 let patt = new RegExp(`lang=${tl}`)
 if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "&lang=zh-TW&").match(patt) || url.match(/&tlang=/)){
-   $notification.post("原样返回", "body:", body); 
 $done({ body })
 }
 
@@ -22,9 +15,9 @@ let options = {
     headers: headers
 }
 
-$notification.post("请求参数", "op:", options);
-
 $httpClient.get(options, function (error, response, data) {
+
+$notification.post("请求参数")
     if (line == "sl") $done({ body: data })
 
     let timeline = body.match(/<p t="\d+" d="\d+">/g)
