@@ -6,11 +6,8 @@ if (!body) $done({})
 let service = "YouTube"
 let settings = {
     YouTube: {
-        type: "Enable", // Enable, Disable
-        lang: "English",
-        sl: "auto",
         tl: "zh-CN",
-        line: "sl"
+        line: "sl"  //sl:单行字幕 f：第一行 s：第二行
     }
 }
 let setting = settings[service]
