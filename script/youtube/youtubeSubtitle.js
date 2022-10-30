@@ -5,7 +5,7 @@ if (!body) $done({})
 
 let setting = {
     tl: "zh-CN",
-    line: "s"  //sl:单行字幕 f：第一行 s：第二行
+    line: "f"  //sl:单行字幕 f：第一行 s：第二行
 }
 
 let patt = new RegExp(`lang=${setting.tl}`)
