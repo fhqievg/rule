@@ -1,10 +1,11 @@
 #!name=VIP解锁
-#!desc=caiyun、拦截100(最高支持3.0.2)
-#来源仓库：Maasea、id77/QuantumultX
+#!desc=caiyun、拦截100(最高支持3.0.2)、Nicegram(<=1.0.7)
+#来源仓库：Maasea、id77/QuantumultX、I-am-R-E/Functional-Store-Hub
 
 [Script]
-caiyun = type=http-response,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/caiyun.js,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=false
-拦截100 = type=http-response,pattern=^https?:\/\/tagit\.(hyhuo|lanjie100)\.com\/cypt\/block100\/get_vip_info,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/block100.js,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=true
+caiyun = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/caiyun.js,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=false
+拦截100 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/block100.js,pattern=^https?:\/\/tagit\.(hyhuo|lanjie100)\.com\/cypt\/block100\/get_vip_info,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=true
+Nicegram = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/nicegram.js,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,max-size=0,timeout=10,script-update-interval=0,enable=true
 
 [MITM]
-hostname = %APPEND% biz.caiyunapp.com,tagit.hyhuo.com,tagit.lanjie100.com
+hostname = %APPEND% biz.caiyunapp.com,tagit.hyhuo.com,tagit.lanjie100.com,restore-access.indream.app
