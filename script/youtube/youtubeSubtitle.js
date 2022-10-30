@@ -17,10 +17,6 @@ let options = {
 }
 
 $httpClient.get(options, function (error, response, data) {
-    if (setting.line == "sl") {
-        $done({ body: data })
-    }
-    
     switch (setting.line) {
         case "f":
         case "s":
