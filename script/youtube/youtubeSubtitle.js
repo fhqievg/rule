@@ -5,17 +5,17 @@ if (!body) $done({})
 
 let setting = {
     tl: "zh-CN",
-    line: "f"  //sl:单行字幕 f：第一行 s：第二行
+    line: "f"  //sl:翻译字幕 f：第一行 s：双行（原字幕在上，翻译在下）
 }
 
 let patt = new RegExp(`lang=${setting.tl}`)
 if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "&lang=zh-TW&").match(patt) || url.match(/&tlang=/)) $done({})
-
 let t_url = `${url}&tlang=${setting.tl == "zh-CN" ? "zh-Hans" : (setting.tl == "zh-TW" ? "zh-Hant" : setting.tl)}`
 let options = {
     url: t_url,
     headers: headers
 }
+
 $httpClient.get(options, function (error, response, data) {
     if (setting.line == "sl") $done({ body: data })
     let timeline = body.match(/<p t="\d+" d="\d+">/g)
