@@ -91,7 +91,7 @@ DOMAIN,a314.gameloft.com
 #xiachufang
 URL-REGEX,^(http|https):\/\/[a-zA-Z.]+xiachufang.com\/\w+\/ad\/
 
-#网易云音乐
+#网易云音乐(来源仓库：DivineEngine)
 URL-REGEX,^https?:\/\/p\.du\.163\.com\/ad\/
 URL-REGEX,^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
 URL-REGEX,^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/
