@@ -3,8 +3,8 @@
 
 [Rule]
 
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/domainDi.list,DIRECT
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/removeAd.list,REJECT
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [MITM]
 hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,*.xiachufang.com
