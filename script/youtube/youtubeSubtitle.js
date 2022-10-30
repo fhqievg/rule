@@ -5,7 +5,7 @@ if (!body) $done({})
 
 let setting = {
     tl: "zh-CN",
-    line: "f"  //sl:翻译字幕 f：第一行 s：双行（原字幕在上，翻译在下）
+    line: "f"  //sl:单语翻译字幕 f：双语（翻译在上，原字幕在下） s：双语（原字幕在上，翻译在下）
 }
 
 let patt = new RegExp(`lang=${setting.tl}`)
@@ -18,8 +18,8 @@ let options = {
 
 $httpClient.get(options, function (error, response, data) {
     if (setting.line == "sl") $done({ body: data })
+    
     let timeline = body.match(/<p t="\d+" d="\d+">/g)
-
     if (url.match(/&kind=asr/)) {
         body = body.replace(/<\/?s[^>]*>/g, "")
         data = data.replace(/<\/?s[^>]*>/g, "")
