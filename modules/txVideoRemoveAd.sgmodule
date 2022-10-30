@@ -1,5 +1,5 @@
-#!name=腾讯视频
-#!desc=去除腾讯视频广告
+#!name=腾讯视频去广告
+#!desc=开屏、片头
 #来源仓库：chengkongyiban，需先重装app，关掉模块，打开app登录账号后关掉app，再启用模块。
 
 [Rule]
