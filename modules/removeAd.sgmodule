@@ -6,4 +6,4 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [MITM]
-hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,*.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net
+hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,*.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205
