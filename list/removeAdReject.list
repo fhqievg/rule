@@ -97,3 +97,7 @@ URL-REGEX,^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
 URL-REGEX,^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/
 URL-REGEX,^https?:\/\/appconf\.mail\.163\.com\/mmad\/
 URL-REGEX,^https?:\/\/interface3\.music\.163\.com\/eapi\/ad\/.+
+URL-REGEX,^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg
+
+# 高德地图
+DOMAIN,optimus-ads.amap.com,REJECT
