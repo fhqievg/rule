@@ -2,7 +2,6 @@
 #!desc=常规去广告
 
 [Rule]
-
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
