@@ -5,7 +5,7 @@ if (!body) $done({})
 
 let setting = {
     tl: "zh-CN",
-    line: "f"  //sl:单语翻译字幕 f：双语（翻译在上，原字幕在下） s：双语（原字幕在上，翻译在下）
+    line: "sl"  //sl:单语翻译字幕 f：双语（翻译在上，原字幕在下） s：双语（原字幕在上，翻译在下）
 }
 
 let patt = new RegExp(`lang=${setting.tl}`)
