@@ -35,10 +35,10 @@ DOMAIN-SUFFIX,zijieapi.com
 
 #影视
 DOMAIN,img.test.com
+DOMAIN,www.rongxingvr.cc
 IP-CIDR,47.99.219.178/32,no-resolve
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
-DOMAIN,www.rongxingvr.cc
-URL-REGEX,^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/[\s\S]+(top_notice)
+URL-REGEX,^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/top_notice
 
 #腾讯
 DOMAIN-SUFFIX,gdt.qq.com
@@ -70,25 +70,25 @@ IP-CIDR,101.227.97.240/32,no-resolve
 IP-CIDR,124.192.153.42/32,no-resolve
 
 #三方
-DOMAIN-SUFFIX,unity.cn
-DOMAIN-SUFFIX,unitychina.cn
-DOMAIN-SUFFIX,unity3d.com
-DOMAIN-SUFFIX,serv-ad.net
-DOMAIN-SUFFIX,appier.net
-DOMAIN-SUFFIX,newadserver.com
+DOMAIN-SUFFIX,adkwai.com
 DOMAIN-SUFFIX,adjust.com
-DOMAIN-SUFFIX,appsflyer.com
-DOMAIN-SUFFIX,smadex.com
 DOMAIN-SUFFIX,adservertq.com
-DOMAIN-SUFFIX,snapads.com
-DOMAIN-SUFFIX,supersonicads.com
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,appier.net
+DOMAIN-SUFFIX,bjcathay.com
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN,googleads.g.doubleclick.net
-DOMAIN-SUFFIX,bjcathay.com
-DOMAIN-SUFFIX,adkwai.com
 DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,moatads.com
 DOMAIN-SUFFIX,miaozhen.com
+DOMAIN-SUFFIX,newadserver.com
+DOMAIN-SUFFIX,serv-ad.net
+DOMAIN-SUFFIX,smadex.com
+DOMAIN-SUFFIX,snapads.com
+DOMAIN-SUFFIX,supersonicads.com
+DOMAIN-SUFFIX,unity.cn
+DOMAIN-SUFFIX,unitychina.cn
+DOMAIN-SUFFIX,unity3d.com
 
 #狂野
 DOMAIN,a314.gameloft.com
