@@ -6,7 +6,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [Script]
-空响应 = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/advert,max-size=0,timeout=10,script-update-interval=0,enable=true
+空响应 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/advert,max-size=0,timeout=10,script-update-interval=0,enable=true
 
 [MITM]
 hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,*.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,*.ailbaba.me,union.aoyiluoad.com
