@@ -9,7 +9,7 @@ DOMAIN,yh.miidii.tech
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
-URL-REGEX,^https?:\/\/union.aoyiluoad.com\/api\/ad\/
+URL-REGEX,^https?:\/\/union\.aoyiluoad\.com\/api\/ad\/
 URL-REGEX,^https?:\/\/124.71.153.172\/adpub\/
 URL-REGEX,^https?:\/\/[a-zA-Z.]+\.chelaile[a-zA-Z.]*(.cn|.com){1}\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
