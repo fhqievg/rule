@@ -7,7 +7,8 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 
 [Script]
 空响应 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/advert,max-size=0,timeout=10,script-update-interval=0,enable=true
-下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/\S+(account)?\/(detail|get_profile)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/\S+(account|ranking_list)?\/(detail|get_profile|\S*ranking_list\S*)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+
 
 [MITM]
 hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,*.ailbaba.me,union.aoyiluoad.com
