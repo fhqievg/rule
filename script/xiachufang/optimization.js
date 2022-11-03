@@ -33,4 +33,16 @@ if (url.match(/api/) && url.match(/ranking_list/)) {
    obj.cells = caregory
 }
 
+//数据流
+if (url.match(/paged_waterfall_recommendations/)) {
+   let data = []
+   for (var i in obj.multiplex_cells) {
+       let label = obj.multiplex_cells[i].recommendation_cell.label
+       if (label == '') {
+           data.push(obj.multiplex_cells[i])
+       }
+   }
+   obj.multiplex_cells = data
+}
+
 $done({ body:JSON.stringify(obj) });
