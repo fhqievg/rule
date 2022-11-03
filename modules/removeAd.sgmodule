@@ -7,7 +7,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 
 [Script]
 空响应 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/advert,max-size=0,timeout=10,script-update-interval=0,enable=true
-下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/\S+(account|ranking_list)?\/(detail|get_profile|\S*ranking_list\S*)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/\S+(account|ranking_list)?\/(detail|get_profile|paged_waterfall_recommendations|\S*ranking_list\S*)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
 
 
 [MITM]
