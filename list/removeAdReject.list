@@ -10,8 +10,8 @@ DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
 URL-REGEX,^https?:\/\/union\.aoyiluoad\.com\/api\/ad\/
-URL-REGEX,^https?:\/\/124.71.153.172\/adpub\/
-URL-REGEX,^https?:\/\/[a-zA-Z.]+\.chelaile[a-zA-Z.]*(.cn|.com){1}\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
+URL-REGEX,^https?:\/\/124\.71\.153\.172\/adpub\/
+URL-REGEX,^https?:\/\/\S+\.chelaile\S*\.(cn|com){1}\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
 #HDO
 DOMAIN-SUFFIX,vungle.com
@@ -38,7 +38,7 @@ DOMAIN,img.test.com
 DOMAIN,www.rongxingvr.cc
 IP-CIDR,47.99.219.178/32,no-resolve
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
-URL-REGEX,^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/(actuator_info|top_notice|(advert\?position=(?!(2)+))),REJECT
+URL-REGEX,^https?:\/\/\S+\.ailbaba\.me\/\S+\/(actuator_info|top_notice|(advert\?position=(?!(2)+))),REJECT
 
 #腾讯
 DOMAIN-SUFFIX,gdt.qq.com
@@ -89,17 +89,18 @@ DOMAIN-SUFFIX,supersonicads.com
 DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
+DOMAIN-SUFFIX,uyunad.com
 
 #狂野
 DOMAIN,a314.gameloft.com
 
 #xiachufang
-URL-REGEX,^https?:\/\/[a-zA-Z.]+xiachufang.com\/\w+\/ad\/
+URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/\S+\/ad\/
 
 #网易云音乐(来源仓库：DivineEngine)
 URL-REGEX,^https?:\/\/p\.du\.163\.com\/ad\/
 URL-REGEX,^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
-URL-REGEX,^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/
+URL-REGEX,^https?:\/\/interface(\d)?\.music\.163\.com\/eapi\/ad\/
 URL-REGEX,^https?:\/\/appconf\.mail\.163\.com\/mmad\/
 URL-REGEX,^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg
 URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
