@@ -3,7 +3,7 @@
 #地区代码 JP KR TW US
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,TIKTOK
 
 [URL Rewrite]
 (?<=_region=)CN(?=&) KR 307
