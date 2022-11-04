@@ -33,7 +33,7 @@ if (url.match(/api/) && url.match(/ranking_list/)) {
    obj.cells = caregory
 }
 
-//数据流
+//推荐数据流
 if (url.match(/paged_waterfall_recommendations/)) {
    let data = []
    for (var i in obj.multiplex_cells) {
@@ -43,6 +43,20 @@ if (url.match(/paged_waterfall_recommendations/)) {
        }
    }
    obj.multiplex_cells = data
+}
+
+if (url.match(/init_page/)) {
+   if (typeof obj.content.chustory_tab.banners != 'undefined' && obj.content.chustory_tab.banners.length > 0) {
+       let bannersObj = obj.content.chustory_tab.banners
+       let bannersData = []
+       for (var i in bannersObj) {
+           let slot_name = bannersObj[i].object.slot_name
+           if (!slot_name.match(/_ad/)) {
+               bannersData.push(bannersObj[i])
+           }
+       }
+       obj.content.chustory_tab.banners = bannersData
+   }
 }
 
 $done({ body:JSON.stringify(obj) });
