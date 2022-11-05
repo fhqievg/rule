@@ -35,7 +35,7 @@ DOMAIN,www.rongxingvr.cc
 IP-CIDR,47.99.219.178/32,no-resolve
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
 URL-REGEX,^https?:\/\/\S+\.ailbaba\.me\/\S+\/(actuator_info|top_notice)
-URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn:8083\/api\/getAdvertInfo
+URL-REGEX,^https?:\/\/\S+\.fzwdyy\.cn:\d+\/api\/getAdvertInfo
 
 #tx
 DOMAIN-SUFFIX,gdt.qq.com
