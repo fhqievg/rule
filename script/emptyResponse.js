@@ -1,1 +1,3 @@
-$done({response: {body: ""}})
+let body = $response.body
+body = ""
+$done({ body })
