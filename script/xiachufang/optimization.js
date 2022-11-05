@@ -38,7 +38,8 @@ if (url.match(/paged_waterfall_recommendations/)) {
    let data = []
    for (var i in obj.multiplex_cells) {
        let label = obj.multiplex_cells[i].recommendation_cell.label
-       if (label == '') {
+       let author = obj.multiplex_cells[i].recommendation_cell.author
+       if (label == '' && author.image != null && author.url != '') {
            data.push(obj.multiplex_cells[i])
        }
    }
