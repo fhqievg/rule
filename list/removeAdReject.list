@@ -5,9 +5,8 @@ DOMAIN,yh.miidii.tech
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
-URL-REGEX,^https?:\/\/union\.aoyiluoad\.com\/api\/ad\/
 URL-REGEX,^https?:\/\/124\.71\.153\.172\/adpub\/
-URL-REGEX,^https?:\/\/\S+\.chelaile\S*\.(cn|com){1}\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
+URL-REGEX,^https?:\/\/\S+\.chelaile\S*\.(cn|com)\/(content|adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
 #HDO
 DOMAIN-SUFFIX,vungle.com
@@ -67,6 +66,7 @@ IP-CIDR,101.227.97.240/32,no-resolve
 IP-CIDR,124.192.153.42/32,no-resolve
 
 #三方
+DOMAIN-SUFFIX,aoyiluoad.com
 DOMAIN-SUFFIX,adkwai.com
 DOMAIN-SUFFIX,adjust.com
 DOMAIN-SUFFIX,adservertq.com
