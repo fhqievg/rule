@@ -3,7 +3,6 @@
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
 
 [Script]
 下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/\S+(account|ranking_list)?\/(detail|get_profile|paged_waterfall_recommendations|\S*ranking_list\S*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
