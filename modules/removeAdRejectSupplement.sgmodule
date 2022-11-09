@@ -5,4 +5,4 @@
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejectSupplement.list,REJECT
 
 [Script]
-#空响应 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/[\s\S]+\.ailbaba\.me\/[\s\S]+\/advert,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+#空响应 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/emptyResponse.js,pattern=^https?:\/\/.+\.ailbaba\.me\/.+\/advert,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
