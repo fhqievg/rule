@@ -62,6 +62,7 @@ function videoHandle(lists) {
 try {
     let body = $response.body
     body = body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
+    $notification.post("调试", "body", body);
     let obj = JSON.parse(body);
     if(typeof obj.data != 'undefined'){
         obj.data = dataHandle(obj.data);
