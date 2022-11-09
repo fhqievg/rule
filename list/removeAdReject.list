@@ -94,7 +94,7 @@ DOMAIN-SUFFIX,uyunad.com
 DOMAIN,a314.gameloft.com
 
 #xiachufang
-URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/
+URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
 
 #网易云音乐(来源仓库：DivineEngine)
 URL-REGEX,^https?:\/\/p\.du\.163\.com\/ad\/
