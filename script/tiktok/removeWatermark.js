@@ -1,35 +1,21 @@
-var watermark = body => {
-    try {
-        body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
-        $notification.post("调试", "body", body);
-        let obj = JSON.parse(body);
-        if (obj.data) obj.data = Follow(obj.data);
-        if (obj.aweme_list) obj.aweme_list = Feed(obj.aweme_list);
-        if (obj.aweme_detail) obj.aweme_detail = Share(obj.aweme_detail);
-        if (obj.aweme_details) obj.aweme_details = Feed(obj.aweme_details);
-        $done({ body: JSON.stringify(obj) });
-} catch (err) {
-        $done({});
-    }
-}
-watermark($response.body);
+const enabled_live = false; //是否开启直播推荐
 
-function Follow(data) {
+function dataHandle(data) {
     if (data && data.length > 0) {
         for (let i in data) {
-            if (data[i].aweme.video) video_lists(data[i].aweme);
+            if (data[i].aweme.video) videoHandle(data[i].aweme);
         }
     }
     return data;
 }
 
-function Feed(aweme_list) {
+function awemeDataHandle(aweme_list) {
     if (aweme_list && aweme_list.length > 0) {
         for (let i in aweme_list) {
             if (aweme_list[i].is_ads == true) {
                 aweme_list.splice(i, 1);
             } else if (aweme_list[i].video) {
-                video_lists(aweme_list[i]);
+                videoHandle(aweme_list[i]);
             } else {
                 if (!enabled_live) aweme_list.splice(i, 1);
             }
@@ -38,12 +24,12 @@ function Feed(aweme_list) {
     return aweme_list;
 }
 
-function Share(aweme_detail) {
-    if (aweme_detail.video) video_lists(aweme_detail);
+function awemeDetailHandle(aweme_detail) {
+    if (aweme_detail.video) videoHandle(aweme_detail);
     return aweme_detail;
 }
 
-function video_lists(lists) {
+function videoHandle(lists) {
     lists.prevent_download = false;
     lists.status.reviewed = 1;
     lists.video_control.allow_download = true;
@@ -61,4 +47,28 @@ function video_lists(lists) {
         lists.aweme_acl.share_general = lists.aweme_acl.download_general;
     }
     return lists;
+}
+
+try {
+    let body = $response.body
+    body = body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
+    let obj = JSON.parse(body);
+    if(typeof obj.data != 'undefined'){
+        obj.data = dataHandle(obj.data);
+    }
+
+    if(typeof obj.aweme_list != 'undefined'){
+        obj.aweme_list = awemeDataHandle(obj.aweme_list);
+    }
+
+    if(typeof obj.aweme_detail != 'undefined'){
+        obj.aweme_detail = awemeDetailHandle(obj.aweme_detail);
+    }
+
+    if(typeof obj.aweme_details != 'undefined'){
+        obj.aweme_details = awemeDetailHandle(obj.aweme_details);
+    }
+    $done({ body: JSON.stringify(obj) });
+} catch (err) {
+    $done({});
 }
