@@ -1,19 +1,18 @@
-var watermark = body => {
-    try {
-        body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
-        let obj = JSON.parse(body);
-        if (obj.data) obj.data = Follow(obj.data);
-        if (obj.aweme_list) obj.aweme_list = Feed(obj.aweme_list);
-        if (obj.aweme_detail) obj.aweme_detail = Share(obj.aweme_detail);
-        if (obj.aweme_details) obj.aweme_details = Feed(obj.aweme_details);
-        $done({ body: JSON.stringify(obj) });
-} catch (err) {
-        $done({});
-    }
-}
-watermark($response.body);
+const enabled_live = false; // 开启直播推荐，默认关闭
 
-function Follow(data) {
+try {
+   let body = $response.body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
+   let obj = JSON.parse(body);
+   if (obj.data) obj.data = follow(obj.data);
+   if (obj.aweme_list) obj.aweme_list = feed(obj.aweme_list);
+   if (obj.aweme_detail) obj.aweme_detail = share(obj.aweme_detail);
+   if (obj.aweme_details) obj.aweme_details = feed(obj.aweme_details);
+   $done({ body: JSON.stringify(obj) });
+} catch (err) {
+   $done({});
+}
+
+function follow(data) {
     if (data && data.length > 0) {
         for (let i in data) {
             if (data[i].aweme.video) video_lists(data[i].aweme);
@@ -22,7 +21,7 @@ function Follow(data) {
     return data;
 }
 
-function Feed(aweme_list) {
+function feed(aweme_list) {
     if (aweme_list && aweme_list.length > 0) {
         for (let i in aweme_list) {
             if (aweme_list[i].is_ads == true) {
@@ -37,7 +36,7 @@ function Feed(aweme_list) {
     return aweme_list;
 }
 
-function Share(aweme_detail) {
+function share(aweme_detail) {
     if (aweme_detail.video) video_lists(aweme_detail);
     return aweme_detail;
 }
