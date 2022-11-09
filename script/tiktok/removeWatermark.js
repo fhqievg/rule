@@ -3,7 +3,9 @@ const enabled_live = false; //是否开启直播推荐
 function dataHandle(data) {
     if (data && data.length > 0) {
         for (let i in data) {
-            if (data[i].aweme.video) videoHandle(data[i].aweme);
+            if (data[i].aweme.video) {
+                data[i].aweme = videoHandle(data[i].aweme);
+            }
         }
     }
     return data;
@@ -15,7 +17,7 @@ function awemeDataHandle(aweme_list) {
             if (aweme_list[i].is_ads == true) {
                 aweme_list.splice(i, 1);
             } else if (aweme_list[i].video) {
-                videoHandle(aweme_list[i]);
+                aweme_list[i] = videoHandle(aweme_list[i]);
             } else {
                 if (!enabled_live) aweme_list.splice(i, 1);
             }
@@ -25,7 +27,15 @@ function awemeDataHandle(aweme_list) {
 }
 
 function awemeDetailHandle(aweme_detail) {
-    if (aweme_detail.video) videoHandle(aweme_detail);
+    if (typeof aweme_detail.video != 'undefined') {
+        aweme_detail = videoHandle(aweme_detail);
+    } else if (typeof aweme_detail[0] != 'undefined') {
+        for (var i in aweme_detail) {
+            if (aweme_detail[i].video) {
+                aweme_detail[i] = videoHandle(aweme_detail[i]);
+            }
+        }
+    }
     return aweme_detail;
 }
 
