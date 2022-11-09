@@ -1,6 +1,7 @@
 var watermark = body => {
     try {
         body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
+        $notification.post("调试", "body", body);
         let obj = JSON.parse(body);
         if (obj.data) obj.data = Follow(obj.data);
         if (obj.aweme_list) obj.aweme_list = Feed(obj.aweme_list);
