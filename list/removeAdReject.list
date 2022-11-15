@@ -26,6 +26,9 @@ DOMAIN-SUFFIX,partner.toutiao.com
 DOMAIN-SUFFIX,sm.toutiao.com
 DOMAIN-SUFFIX,nativeapp.toutiao.com
 DOMAIN-SUFFIX,ctobsnssdk.com
+DOMAIN,tnc3-alisc1.zijieapi.com
+DOMAIN,tnc3-aliec2.zijieapi.com
+DOMAIN,mon.zijieapi.com
 
 #影视
 DOMAIN,img.test.com
