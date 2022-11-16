@@ -2,11 +2,10 @@
 DOMAIN,yh.miidii.tech
 
 #CLL
-DOMAIN-SUFFIX,sogaha.cn
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
 URL-REGEX,^https?:\/\/124\.71\.153\.172\/adpub\/
-URL-REGEX,^https?:\/\/.+\.chelaile.*\.(cn|com)\/((.+\/)?advert|content|(.+\/)?adpub|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
+URL-REGEX,^https?:\/\/.+\.chelaile.*\.(cn|com)\/((.+\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
 #HDO
 DOMAIN-SUFFIX,vungle.com
@@ -85,6 +84,7 @@ DOMAIN-SUFFIX,serv-ad.net
 DOMAIN-SUFFIX,smadex.com
 DOMAIN-SUFFIX,snapads.com
 DOMAIN-SUFFIX,supersonicads.com
+DOMAIN-SUFFIX,sogaha.cn
 DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
 DOMAIN-SUFFIX,unity.cn
