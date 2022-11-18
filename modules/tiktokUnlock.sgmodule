@@ -3,9 +3,9 @@
 #地区代码 JP(Asia/Tokyo) KR(Asia/Seoul) TW(Asia/Taipei) US(America/Denver)
 #时区偏移量 32400 32400 28800 -25200
 #时区 9 9 8 -7
-#运营商 docomo SKT %E4%B8%AD%E8%8F%AF%E9%9B%BB%E4%BF%A1 docomo
 #MCC 440 450 466 310
-#MNC 01 05 92 370
+#MNC 10 05 92 004
+#运营商 docomo SKT Chunghwa Verizon
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,TIKTOK
@@ -17,7 +17,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,T
 (?<=tz_name=)Asia%2FShanghai(?=&) Asia%2FSeoul 307
 (?<=tz_offset=)28800(?=&) 32400 307
 (?<=timezone=)8(?=&) 9 307
-(?<=&carrier=)[%A-Z0-9]+(?=&) SKT 307
+(?<=&carrier=)[%\w]+(?=&) SKT 307
 ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
 (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 
