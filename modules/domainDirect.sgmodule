@@ -3,6 +3,3 @@
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
-
-[MITM]
-hostname = %APPEND% www.google.cn
