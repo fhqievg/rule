@@ -33,7 +33,7 @@ DOMAIN,mon.zijieapi.com
 DOMAIN,img.test.com
 DOMAIN,www.rongxingvr.cc
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
-URL-REGEX,^https?:\/\/47\.99\.219\.179(:\d+)?\/.*
+IP-CIDR,47.99.219.178/32,no-resolve
 URL-REGEX,^https?:\/\/.+\.ailbaba\.me\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
 URL-REGEX,^https?:\/\/.+\.fzwdyy\.cn(:\d+)?\/api\/getAdvertInfo
 
