@@ -60,4 +60,10 @@ if (url.includes("init_page")) {
    }
 }
 
+//详情
+if (url.includes("detail_")) {
+  if (obj.recipe.overall_rating != 'undefined')
+   obj.recipe.overall_rating.dishes = []
+}
+
 $done({ body:JSON.stringify(obj) });
