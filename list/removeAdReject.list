@@ -67,6 +67,7 @@ IP-CIDR,101.227.97.240/32,no-resolve
 IP-CIDR,124.192.153.42/32,no-resolve
 
 #三方
+DOMAIN-SUFFIX,360buyimg.com
 DOMAIN-SUFFIX,aoyiluoad.com
 DOMAIN-SUFFIX,adkwai.com
 DOMAIN-SUFFIX,adjust.com
