@@ -1,0 +1,5 @@
+#!name=常规分流
+#!desc=常规分流
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,iptvHK
