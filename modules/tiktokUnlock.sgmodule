@@ -8,7 +8,7 @@
 #运营商 docomo skt chunghwa verizon
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,TikTok
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,TIKTOK
 
 [URL Rewrite]
 (?<=_region=)CN(?=&) KR 307
