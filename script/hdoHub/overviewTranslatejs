@@ -1,0 +1,41 @@
+var obj = JSON.parse($response.body);
+if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
+    $done({})
+}
+
+if (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '') {
+    obj.overview = obj.original_title + '. ' + obj.overview
+}
+
+let options = {
+    url: "https://translate.google.com/translate_a/single?client=it&dt=qca&dt=t&dt=rmt&dt=bd&dt=rms&dt=sos&dt=md&dt=gt&dt=ld&dt=ss&dt=ex&otf=2&dj=1&hl=en&ie=UTF-8&oe=UTF-8&sl=auto&tl=zh-CN",
+    headers: {"User-Agent": "GoogleTranslate/6.29.59279 (iPhone; iOS 15.4; en; iPhone14,2)"},
+    body: `q=${encodeURIComponent(obj.overview)}`
+}
+$httpClient.post(options, function (error, response, data) {
+    if (error) $done({})
+
+    let trans = JSON.parse(data)
+    if (typeof trans.sentences != 'undefined' && trans.sentences.length > 0) {
+        let str = ''
+        for (var i in trans.sentences) {
+            if (typeof trans.sentences[i].trans != 'undefined') {
+                let gooTrans = trans.sentences[i].trans
+                if (i <= 0) {
+                    if (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '') {
+                        gooTrans = gooTrans.substr(0, gooTrans.length - 1);
+                        obj.original_title = gooTrans + '（' + obj.original_title + '）'
+                    } else {
+                        str += gooTrans
+                    }
+                } else {
+                    str += gooTrans
+                }
+            }
+        }
+        if (str !== '') {
+            obj.overview = str
+        }
+    }
+    $done({body: JSON.stringify(obj)});
+})
