@@ -13,23 +13,26 @@ let options = {
     body: `q=${encodeURIComponent(obj.overview)}`
 }
 $httpClient.post(options, function (error, response, data) {
-    if (error) $done({})
+    if (error) {
+				$notification.post("请求失败", "请求谷歌翻译接口失败", error);
+				$done({})
+		}
 
     let trans = JSON.parse(data)
     if (typeof trans.sentences != 'undefined' && trans.sentences.length > 0) {
         let str = ''
         for (var i in trans.sentences) {
             if (typeof trans.sentences[i].trans != 'undefined') {
-                let gooTrans = trans.sentences[i].trans
-                if (i <= 0) {
+                let googleTrans = trans.sentences[i].trans
+                if (i == 0) {
                     if (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '') {
-                        gooTrans = gooTrans.substr(0, gooTrans.length - 1);
-                        obj.original_title = gooTrans + '（' + obj.original_title + '）'
+                        googleTrans = googleTrans.substr(0, googleTrans.length - 1);
+                        obj.original_title = googleTrans + '（' + obj.original_title + '）'
                     } else {
-                        str += gooTrans
+                        str += googleTrans
                     }
                 } else {
-                    str += gooTrans
+                    str += googleTrans
                 }
             }
         }
