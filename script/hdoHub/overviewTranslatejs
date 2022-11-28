@@ -35,6 +35,7 @@ $httpClient.post(options, function (error, response, data) {
             if (originalTitleStatus) {
                 googleTrans = googleTrans.substr(0, googleTrans.length - 1);
                 obj.original_title = googleTrans + '（' + obj.original_title + '）';
+                str += '片名：' + obj.original_title + "\r\n";
             } else {
                 str += googleTrans;
             }
