@@ -1,10 +1,11 @@
 var obj = JSON.parse($response.body);
 if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
-    $done({})
+    $done({});
 }
 
-if (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '') {
-    obj.overview = obj.original_title + '. ' + obj.overview
+let originalTitleStatus = checkOriginalTitleStatus(obj);
+if (originalTitleStatus) {
+    obj.overview = obj.original_title + '. ' + obj.overview;
 }
 
 let options = {
@@ -14,31 +15,39 @@ let options = {
 }
 $httpClient.post(options, function (error, response, data) {
     if (error) {
-				$notification.post("请求失败", "请求翻译接口失败", error);
-				$done({})
-		}
+        $notification.post("请求失败", "请求翻译接口失败", error);
+        $done({});
+    }
 
-    let trans = JSON.parse(data)
-    if (typeof trans.sentences != 'undefined' && trans.sentences.length > 0) {
-        let str = ''
-        for (var i in trans.sentences) {
-            if (typeof trans.sentences[i].trans != 'undefined') {
-                let googleTrans = trans.sentences[i].trans
-                if (i == 0) {
-                    if (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '') {
-                        googleTrans = googleTrans.substr(0, googleTrans.length - 1);
-                        obj.original_title = googleTrans + '（' + obj.original_title + '）'
-                    } else {
-                        str += googleTrans
-                    }
-                } else {
-                    str += googleTrans
-                }
-            }
+    let trans = JSON.parse(data);
+    if (typeof trans.sentences == 'undefined' || trans.sentences.length == 0) {
+        $done({});
+    }
+
+    let str = '';
+    for (var i in trans.sentences) {
+        if (typeof trans.sentences[i].trans == 'undefined') {
+            continue;
         }
-        if (str !== '') {
-            obj.overview = str
+
+        let googleTrans = trans.sentences[i].trans;
+        if (i == 0) {
+            if (originalTitleStatus) {
+                googleTrans = googleTrans.substr(0, googleTrans.length - 1);
+                obj.original_title = googleTrans + '（' + obj.original_title + '）';
+            } else {
+                str += googleTrans;
+            }
+        } else {
+            str += googleTrans;
         }
     }
-    $done({body: JSON.stringify(obj)});
+    if (str !== '') {
+        obj.overview = str;
+    }
+    $done({ body: JSON.stringify(obj) });
 })
+
+function checkOriginalTitleStatus(obj) {
+    return (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '');
+}
