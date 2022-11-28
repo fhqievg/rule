@@ -1,4 +1,4 @@
-const TITLE = 'original_title';
+const TITLE = 'title';
 const NAME = 'name';
 
 var obj = JSON.parse($response.body);
@@ -38,18 +38,18 @@ $httpClient.post(options, function (error, response, data) {
         if (i == 0) {
             if (type !== '') {
                 googleTrans = googleTrans.substr(0, googleTrans.length - 1);
-                let newTitle = googleTrans + '（' + titleOrName + '）';
                 switch (type) {
                     case TITLE:
-                        obj.original_title = newTitle;
+                        obj.title = googleTrans;
                         break;
                     case NAME:
-                        obj.name = newTitle;
+                        obj.name = googleTrans;
                         break;
                     default:
                         break;
                 }
 
+								let newTitle = googleTrans + '（' + titleOrName + '）';
                 str += '片名：' + newTitle + "\r\n\r\n";
             } else {
                 str += googleTrans;
@@ -66,7 +66,7 @@ $httpClient.post(options, function (error, response, data) {
 
 function isTitleOrName(obj) {
     let type = '';
-    if (checkOriginalTitleStatus(obj)) {
+    if (checkTitleStatus(obj)) {
         return TITLE;
     }
 
@@ -76,8 +76,8 @@ function isTitleOrName(obj) {
     return type
 }
 
-function checkOriginalTitleStatus(obj) {
-    return (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '');
+function checkTitleStatus(obj) {
+    return (typeof obj.title != 'undefined' && obj.title != null && obj.title != '');
 }
 
 function checkNameStatus(obj) {
@@ -87,7 +87,7 @@ function checkNameStatus(obj) {
 function getTitleOrName(type, obj) {
     switch (type) {
         case TITLE:
-            return obj.original_title;
+            return obj.title;
         case NAME:
             return obj.name;
         default:
