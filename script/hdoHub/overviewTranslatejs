@@ -1,11 +1,15 @@
+const TITLE = 'original_title';
+const NAME = 'original_name';
+
 var obj = JSON.parse($response.body);
 if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
     $done({});
 }
 
-let originalTitleStatus = checkOriginalTitleStatus(obj);
-if (originalTitleStatus) {
-    obj.overview = obj.original_title + '. ' + obj.overview;
+let type = isTitleOrName(obj);
+let titleOrName = getTitleOrName(type, obj);
+if (type !== '') {
+    obj.overview = titleOrName + '. ' + obj.overview;
 }
 
 let options = {
@@ -32,10 +36,21 @@ $httpClient.post(options, function (error, response, data) {
 
         let googleTrans = trans.sentences[i].trans;
         if (i == 0) {
-            if (originalTitleStatus) {
+            if (type !== '') {
                 googleTrans = googleTrans.substr(0, googleTrans.length - 1);
-                obj.original_title = googleTrans + '（' + obj.original_title + '）';
-                str += '片名：' + obj.original_title + "\r\n\r\n";
+                let newTitle = googleTrans + '（' + titleOrName + '）';
+                switch (type) {
+                    case TITLE:
+                        obj.original_title = newTitle;
+                        break;
+                    case NAME:
+                        obj.original_name = newTitle;
+                        break;
+                    default:
+                        break;
+                }
+
+                str += '片名：' + newTitle + "\r\n\r\n";
             } else {
                 str += googleTrans;
             }
@@ -46,9 +61,36 @@ $httpClient.post(options, function (error, response, data) {
     if (str !== '') {
         obj.overview = str;
     }
-    $done({ body: JSON.stringify(obj) });
+    $done({body: JSON.stringify(obj)});
 })
+
+function isTitleOrName(obj) {
+    let type = '';
+    if (checkOriginalTitleStatus(obj)) {
+        return TITLE;
+    }
+
+    if (checkOriginalNameStatus(obj)) {
+        return NAME;
+    }
+    return type
+}
 
 function checkOriginalTitleStatus(obj) {
     return (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '');
+}
+
+function checkOriginalNameStatus(obj) {
+    return (typeof obj.original_name != 'undefined' && obj.original_name != null && obj.original_name != '');
+}
+
+function getTitleOrName(type, obj) {
+    switch (type) {
+        case TITLE:
+            return obj.original_title;
+        case NAME:
+            return obj.original_name;
+        default:
+            return '';
+    }
 }
