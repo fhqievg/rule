@@ -1,5 +1,5 @@
 const TITLE = 'original_title';
-const NAME = 'original_name';
+const NAME = 'name';
 
 var obj = JSON.parse($response.body);
 if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
@@ -44,7 +44,7 @@ $httpClient.post(options, function (error, response, data) {
                         obj.original_title = newTitle;
                         break;
                     case NAME:
-                        obj.original_name = newTitle;
+                        obj.name = newTitle;
                         break;
                     default:
                         break;
@@ -70,7 +70,7 @@ function isTitleOrName(obj) {
         return TITLE;
     }
 
-    if (checkOriginalNameStatus(obj)) {
+    if (checkNameStatus(obj)) {
         return NAME;
     }
     return type
@@ -80,8 +80,8 @@ function checkOriginalTitleStatus(obj) {
     return (typeof obj.original_title != 'undefined' && obj.original_title != null && obj.original_title != '');
 }
 
-function checkOriginalNameStatus(obj) {
-    return (typeof obj.original_name != 'undefined' && obj.original_name != null && obj.original_name != '');
+function checkNameStatus(obj) {
+    return (typeof obj.name != 'undefined' && obj.name != null && obj.name != '');
 }
 
 function getTitleOrName(type, obj) {
@@ -89,7 +89,7 @@ function getTitleOrName(type, obj) {
         case TITLE:
             return obj.original_title;
         case NAME:
-            return obj.original_name;
+            return obj.name;
         default:
             return '';
     }
