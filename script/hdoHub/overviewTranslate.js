@@ -53,6 +53,7 @@ $httpClient.post(options, function (error, response, data) {
         let googleTrans = trans.sentences[i].trans;
         if (i == 0) {
             if (type !== '') {
+                googleTrans = rtrim(googleTrans);
                 googleTrans = googleTrans.replace(/((。+)$)/g, '');
                 googleTrans += titleNumber;
                 switch (type) {
