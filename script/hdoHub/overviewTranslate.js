@@ -8,23 +8,22 @@ if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview =
 
 let type = isTitleOrName(obj);
 let titleOrName = getTitleOrName(type, obj);
+let isTranslateTitleResult = isTranslateTitle(titleOrName);
 
 let titleNumber = '';
 if (type !== '') {
-    obj.overview = titleOrName + '. ' + obj.overview;
-
-    switch (type) {
-        case TITLE:
-            titleNumber = regNumber(obj.title, true);
-            break;
-        case NAME:
-            titleNumber = regNumber(obj.name, true);
-            break;
-        default:
-            break;
-    }
-    if (titleNumber !== '') {
-        titleNumber = ' ' + titleNumber;
+    obj.overview = isTranslateTitleResult ? titleOrName + '. ' + obj.overview : obj.overview;
+    if (isTranslateTitleResult) {
+        switch (type) {
+            case TITLE:
+                titleNumber = regNumber(obj.title, true);
+                break;
+            case NAME:
+                titleNumber = regNumber(obj.name, true);
+                break;
+            default:
+                break;
+        }
     }
 }
 
@@ -51,35 +50,30 @@ $httpClient.post(options, function (error, response, data) {
         }
 
         let googleTrans = trans.sentences[i].trans;
-        if (i == 0) {
-            if (type !== '') {
-                googleTrans = rtrim(googleTrans);
-                googleTrans = googleTrans.replace(/((。+)$)/g, '');
-                googleTrans += titleNumber;
-                switch (type) {
-                    case TITLE:
-                        obj.title = googleTrans;
-                        break;
-                    case NAME:
-                        obj.name = googleTrans;
-                        break;
-                    default:
-                        break;
-                }
-
-                let newTitle = googleTrans + '（' + titleOrName + titleNumber + '）';
-                str += '片名：' + newTitle + "\r\n\r\n";
-            } else {
-                str += googleTrans;
-            }
-        } else {
+        if (i > 0 || !isTranslateTitleResult || type === '') {
             str += googleTrans;
+            continue;
         }
+
+        googleTrans = rtrim(googleTrans);
+        googleTrans = googleTrans.replace(/((。+)$)/g, '') + titleNumber;
+        switch (type) {
+            case TITLE:
+                obj.title = googleTrans;
+                break;
+            case NAME:
+                obj.name = googleTrans;
+                break;
+            default:
+                break;
+        }
+
+        let newTitle = googleTrans + '（' + titleOrName + ' ' + titleNumber + '）';
+        str += '片名：' + newTitle + "\r\n\r\n";
     }
     if (str !== '') {
         obj.overview = str;
     }
-
     $done({body: JSON.stringify(obj)});
 })
 
@@ -141,4 +135,13 @@ function strHandle(str) {
     str = rtrim(delSpot(str));
     let number = regNumber(str, false);    //匹配数字
     return rtrim(str.substr(0, str.length - number.length));
+}
+
+function isTranslateTitle(str) {
+    if (str === '') {
+        return false;
+    }
+
+    let number = regNumber(str, false);
+    return str.length !== number.length;
 }
