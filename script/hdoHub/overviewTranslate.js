@@ -68,7 +68,8 @@ $httpClient.post(options, function (error, response, data) {
                 break;
         }
 
-        let newTitle = googleTrans + '（' + titleOrName + ' ' + titleNumber + '）';
+        titleOrName = titleNumber !== '' ? titleOrName + ' ' + titleNumber : titleOrName;
+        let newTitle = googleTrans + '（' + titleOrName + '）';
         str += '片名：' + newTitle + "\r\n\r\n";
     }
     if (str !== '') {
@@ -112,27 +113,25 @@ function rtrim(str) {
     return str.replace(/(\s+)$/g, '');
 }
 
+function strTrim(str){
+    return str.replace(/(^\s+)|(\s+$)/g, '');
+}
+
 function delSpot(str) {
     return str.replace(/(\.+)$/g, '');
 }
 
 function regNumber(str, isRtrim) {
     if (isRtrim) {
-        str = rtrim(str);
-        str = rtrim(delSpot(str));
+        str = strTrimHandle(str);
     }
     let reg = /(\d+)$/g
     let result = reg.exec(str);
-    if (result) {
-        return result[1];
-    } else {
-        return '';
-    }
+    return result ? result[1] : '';
 }
 
 function strHandle(str) {
-    str = rtrim(str);
-    str = rtrim(delSpot(str));
+    str = strTrimHandle(str);
     let number = regNumber(str, false);
     return rtrim(str.substr(0, str.length - number.length));
 }
@@ -144,4 +143,9 @@ function isTranslateTitle(str) {
 
     let number = regNumber(str, false);
     return str.length !== number.length;
+}
+
+function strTrimHandle(str){
+    str = strTrim(str);
+    return rtrim(delSpot(str));
 }
