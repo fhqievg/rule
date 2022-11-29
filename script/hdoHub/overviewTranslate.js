@@ -8,8 +8,24 @@ if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview =
 
 let type = isTitleOrName(obj);
 let titleOrName = getTitleOrName(type, obj);
+
+let titleNumber = '';
 if (type !== '') {
     obj.overview = titleOrName + '. ' + obj.overview;
+
+    switch (type) {
+        case TITLE:
+            titleNumber = regNumber(obj.title, true);
+            break;
+        case NAME:
+            titleNumber = regNumber(obj.name, true);
+            break;
+        default:
+            break;
+    }
+    if (titleNumber !== '') {
+        titleNumber = ' ' + titleNumber;
+    }
 }
 
 let options = {
@@ -37,7 +53,7 @@ $httpClient.post(options, function (error, response, data) {
         let googleTrans = trans.sentences[i].trans;
         if (i == 0) {
             if (type !== '') {
-                googleTrans = googleTrans.substr(0, googleTrans.length - 1);
+                googleTrans = googleTrans.substr(0, googleTrans.length - 1) + titleNumber;
                 switch (type) {
                     case TITLE:
                         obj.title = googleTrans;
@@ -49,7 +65,7 @@ $httpClient.post(options, function (error, response, data) {
                         break;
                 }
 
-								let newTitle = googleTrans + '（' + titleOrName + '）';
+                let newTitle = googleTrans + '（' + titleOrName + titleNumber + '）';
                 str += '片名：' + newTitle + "\r\n\r\n";
             } else {
                 str += googleTrans;
@@ -61,6 +77,7 @@ $httpClient.post(options, function (error, response, data) {
     if (str !== '') {
         obj.overview = str;
     }
+
     $done({body: JSON.stringify(obj)});
 })
 
@@ -87,10 +104,39 @@ function checkNameStatus(obj) {
 function getTitleOrName(type, obj) {
     switch (type) {
         case TITLE:
-            return obj.title;
+            return strHandle(obj.title);
         case NAME:
-            return obj.name;
+            return strHandle(obj.name);
         default:
             return '';
     }
+}
+
+function rtrim(str) {
+    return str.replace(/(\s*$)/g, '');
+}
+
+function delSpot(str) {
+    return str.replace(/(\.$)/, '');
+}
+
+function regNumber(str, trimBool) {
+    if (trimBool) {
+        str = rtrim(str);
+        str = rtrim(delSpot(str));
+    }
+    let reg = /(\d+)$/g
+    let result = reg.exec(str);
+    if (result) {
+        return result[1];
+    } else {
+        return '';
+    }
+}
+
+function strHandle(str) {
+    str = rtrim(str);
+    str = rtrim(delSpot(str));
+    let number = regNumber(str, false);    //匹配数字
+    return rtrim(str.substr(0, str.length - number.length));
 }
