@@ -56,7 +56,7 @@ $httpClient.post(options, function (error, response, data) {
         }
 
         googleTrans = rtrim(googleTrans);
-        googleTrans = googleTrans.replace(/((。+)$)/g, '') + titleNumber;
+        googleTrans = googleTrans.replace(/(。+)$/g, '') + titleNumber;
         switch (type) {
             case TITLE:
                 obj.title = googleTrans;
@@ -109,15 +109,15 @@ function getTitleOrName(type, obj) {
 }
 
 function rtrim(str) {
-    return str.replace(/(\s*$)/g, '');
+    return str.replace(/(\s*)$/g, '');
 }
 
 function delSpot(str) {
     return str.replace(/(\.+)$/g, '');
 }
 
-function regNumber(str, trimBool) {
-    if (trimBool) {
+function regNumber(str, isRtrim) {
+    if (isRtrim) {
         str = rtrim(str);
         str = rtrim(delSpot(str));
     }
@@ -133,7 +133,7 @@ function regNumber(str, trimBool) {
 function strHandle(str) {
     str = rtrim(str);
     str = rtrim(delSpot(str));
-    let number = regNumber(str, false);    //匹配数字
+    let number = regNumber(str, false);
     return rtrim(str.substr(0, str.length - number.length));
 }
 
