@@ -109,7 +109,7 @@ function getTitleOrName(type, obj) {
 }
 
 function rtrim(str) {
-    return str.replace(/(\s*)$/g, '');
+    return str.replace(/(\s+)$/g, '');
 }
 
 function delSpot(str) {
