@@ -53,7 +53,8 @@ $httpClient.post(options, function (error, response, data) {
         let googleTrans = trans.sentences[i].trans;
         if (i == 0) {
             if (type !== '') {
-                googleTrans = googleTrans.substr(0, googleTrans.length - 1) + titleNumber;
+                googleTrans = googleTrans.replace(/((。+)$)/g, '');
+                googleTrans += titleNumber;
                 switch (type) {
                     case TITLE:
                         obj.title = googleTrans;
@@ -117,7 +118,7 @@ function rtrim(str) {
 }
 
 function delSpot(str) {
-    return str.replace(/(\.$)/, '');
+    return str.replace(/(\.+)$/g, '');
 }
 
 function regNumber(str, trimBool) {
