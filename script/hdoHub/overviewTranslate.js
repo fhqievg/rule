@@ -99,6 +99,10 @@ function checkNameStatus(obj) {
 }
 
 function getTitleOrName(type, obj) {
+    if (type === '') {
+        return '';
+    }
+    
     switch (type) {
         case TITLE:
             return strHandle(obj.title);
