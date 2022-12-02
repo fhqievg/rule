@@ -76,7 +76,7 @@ DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,appier.net
 DOMAIN-SUFFIX,bjcathay.com
 DOMAIN-SUFFIX,googleadservices.com
-#DOMAIN,googleads.g.doubleclick.net
+DOMAIN,googleads.g.doubleclick.net
 DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,moatads.com
 DOMAIN-SUFFIX,miaozhen.com
