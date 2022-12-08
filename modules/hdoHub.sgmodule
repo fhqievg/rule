@@ -2,7 +2,7 @@
 #!desc=简介翻译
 
 [Script]
-简介翻译 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/hdoHub/overviewTranslate.js,pattern=^https?:\/\/api\.themoviedb\.org/.+\/(movie|tv)\/\d+\?,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+简介翻译 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/hdoHub/overviewTranslate.js,pattern=^https?:\/\/api\.themoviedb\.org/.+\/(movie|tv)\/\d+\?,max-size=0,requires-body=true,timeout=30,script-update-interval=0,enable=true
 
 [MITM]
 hostname = %APPEND% api.themoviedb.org
