@@ -3,6 +3,8 @@ const NAME = 'name';
 
 var obj = JSON.parse($response.body);
 if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
+    let logMsg = $request.url + "\r\n\r\n\r\n" + $response.body;
+    $notification.post("匹配失败", "接口无overview参数", logMsg);
     $done({});
 }
 
@@ -11,19 +13,24 @@ let titleOrName = getTitleOrName(type, obj);
 let isTranslateTitleResult = isTranslateTitle(titleOrName);
 
 let titleNumber = '';
+let dataTime = '';
 if (type !== '') {
     obj.overview = isTranslateTitleResult ? titleOrName + '. ' + obj.overview : obj.overview;
-    if (isTranslateTitleResult) {
-        switch (type) {
-            case TITLE:
+    switch (type) {
+        case TITLE:
+            if (isTranslateTitleResult) {
                 titleNumber = regNumber(obj.title, true);
-                break;
-            case NAME:
+            }
+            dataTime = obj.release_date ? obj.release_date : ''
+            break;
+        case NAME:
+            if (isTranslateTitleResult) {
                 titleNumber = regNumber(obj.name, true);
-                break;
-            default:
-                break;
-        }
+            }
+            dataTime = obj.first_air_date ? obj.first_air_date : ''
+            break;
+        default:
+            break;
     }
 }
 
@@ -50,8 +57,13 @@ $httpClient.post(options, function (error, response, data) {
         }
 
         let googleTrans = trans.sentences[i].trans;
-        if (i > 0 || !isTranslateTitleResult || type === '') {
+        if (i > 0 || type === '' || (!isTranslateTitleResult && dataTime === '')) {
             str += googleTrans;
+            continue;
+        }
+
+        if (!isTranslateTitleResult && dataTime !== '') {
+            str += '上映日期：' + dataTime + "\r\n\r\n";
             continue;
         }
 
@@ -70,7 +82,9 @@ $httpClient.post(options, function (error, response, data) {
 
         titleOrName = titleNumber !== '' ? titleOrName + ' ' + titleNumber : titleOrName;
         let newTitle = googleTrans + '（' + titleOrName + '）';
-        str += '片名：' + newTitle + "\r\n\r\n";
+        str += '片名：' + newTitle + "\r\n";
+        str += dataTime !== '' ? '上映日期：' + dataTime + "\r\n" : '';
+        str += "\r\n";
     }
     if (str !== '') {
         obj.overview = str;
@@ -102,7 +116,7 @@ function getTitleOrName(type, obj) {
     if (type === '') {
         return '';
     }
-    
+
     switch (type) {
         case TITLE:
             return strHandle(obj.title);
@@ -117,7 +131,7 @@ function rtrim(str) {
     return str.replace(/(\s+)$/g, '');
 }
 
-function strTrim(str){
+function strTrim(str) {
     return str.replace(/(^\s+)|(\s+$)/g, '');
 }
 
@@ -125,8 +139,8 @@ function delSpot(str) {
     return str.replace(/(\.+)$/g, '');
 }
 
-function regNumber(str, isRtrim) {
-    if (isRtrim) {
+function regNumber(str, isTrim) {
+    if (isTrim) {
         str = strTrimHandle(str);
     }
     let reg = /(\d+)$/g
@@ -149,7 +163,7 @@ function isTranslateTitle(str) {
     return str.length !== number.length;
 }
 
-function strTrimHandle(str){
+function strTrimHandle(str) {
     str = strTrim(str);
     return rtrim(delSpot(str));
 }
