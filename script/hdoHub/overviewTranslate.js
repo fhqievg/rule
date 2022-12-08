@@ -3,8 +3,8 @@ const NAME = 'name';
 
 var obj = JSON.parse($response.body);
 if (typeof obj.overview == 'undefined' || obj.overview == null || obj.overview == '') {
-    let logMsg = $request.url + "\r\n\r\n\r\n" + $response.body;
-    $notification.post("匹配失败", "接口无overview参数", logMsg);
+    //let logMsg = $request.url + "\r\n\r\n\r\n" + $response.body;
+    //$notification.post("匹配失败", "接口无overview参数", logMsg);
     $done({});
 }
 
