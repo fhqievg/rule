@@ -1,0 +1,10 @@
+#!name=YouTube去广告
+#!desc=只支持15系统（含）以上
+#来源仓库：https://github.com/Maasea/sgmodule
+
+[Script]
+去瀑布流/播放页广告 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/removeWaterfallAd.js,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide),max-size=0,requires-body=true,binary-mode=true,timeout=10,script-update-interval=0,enable=true
+去贴片广告 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/removePlayAd.js,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad,max-size=0,timeout=10,script-update-interval=0,enable=true
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com
