@@ -7,7 +7,7 @@ DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [URL Rewrite]
-# > 肯德基
+# > KFC
 ^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome5\/apphome - REJECT-200
 
 # > iqiyi
@@ -15,15 +15,15 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 ^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo - REJECT-200
 ^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch - REJECT-IMG
 
-# > 麦当劳
+# > maiDangLao
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash - REJECT-200
 
-# > 埋堆堆
+# > maiDuiDui
 ^https?:\/\/api\.mddcloud\.com\.cn\/api\/ad\/getClassAd\.action - REJECT-IMG
 ^https?:\/\/api\.mddcloud\.com\.cn\/api\/advert\/getHomepage\.action - REJECT-IMG
 
 [Script]
-下厨房优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
+xiaChuFang优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
 
 [MITM]
 hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn:*,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn
