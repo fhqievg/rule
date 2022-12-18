@@ -2,6 +2,8 @@
 #!desc=基础
 
 [Rule]
+DOMAIN-SUFFIX,umeng.com,REJECT-200
+DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [URL Rewrite]
