@@ -35,36 +35,22 @@ DOMAIN,www.rongxingvr.cc
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com
 URL-REGEX,^https?:\/\/47\.99\.219\.178(:\d+)?\/.*
 URL-REGEX,^https?:\/\/.+\.ailbaba\.me\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
-URL-REGEX,^https?:\/\/.+\.fzwdyy\.cn(:\d+)?\/api\/getAdvertInfo
+URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert)
 
 #tx
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,e.qq.com
 
-# iqiyi
-DOMAIN-SUFFIX,ad.m.iqiyi.com
-DOMAIN-SUFFIX,afp.iqiyi.com
-DOMAIN-SUFFIX,c.uaa.iqiyi.com
-DOMAIN-SUFFIX,cloudpush.iqiyi.com
-DOMAIN-SUFFIX,cm.passport.iqiyi.com
-DOMAIN-SUFFIX,cupid.iqiyi.com
-DOMAIN-SUFFIX,emoticon.sns.iqiyi.com
-DOMAIN-SUFFIX,gamecenter.iqiyi.com
-DOMAIN-SUFFIX,ifacelog.iqiyi.com
-DOMAIN-SUFFIX,mbdlog.iqiyi.com
-DOMAIN-SUFFIX,meta.video.qiyi.com
-DOMAIN-SUFFIX,msg.71.am
-DOMAIN-SUFFIX,msg1.video.qiyi.com
-DOMAIN-SUFFIX,msg2.video.qiyi.com
-DOMAIN-SUFFIX,paopao.iqiyi.com
-DOMAIN-SUFFIX,paopaod.qiyipic.com
-DOMAIN-SUFFIX,policy.video.iqiyi.com
-DOMAIN-SUFFIX,yuedu.iqiyi.com
-IP-CIDR,101.227.200.0/24,no-resolve
-IP-CIDR,101.227.200.11/32,no-resolve
-IP-CIDR,101.227.200.28/32,no-resolve
-IP-CIDR,101.227.97.240/32,no-resolve
-IP-CIDR,124.192.153.42/32,no-resolve
+# > iqiyi
+URL-REGEX,^https?:\/\/intl\.iqiyi\.com\/(ad_external\/video\/advertise)
+URL-REGEX,^http:\/\/static-s\.iqiyi\.com\/common\/.+\/Small_video\/a2\/af\/.+\.png
+URL-REGEX,^http:\/\/msga/.cupid/.iqiyi/.com\/scp2\.gif
+URL-REGEX,^https?:\/\/ssports\.iqiyi\.com\/(app\/|json\/shop\/shopInfo)
+URL-REGEX,^https?:\/\/static\.iqiyi\.com\/js\/common\/.+\.js
+URL-REGEX,^https?:\/\/.+\.iqiyi\.com\/videos\/other\/20$
+URL-REGEX,^https?:\/\/t7z\.cupid\.iqiyi\.com\/show
+URL-REGEX,^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_
+URL-REGEX,^https?:\/\/.+\.iqiyipic\.com\/image\/(.+\/ad\/.+\.jpg|20*_100000)
 
 #三方
 DOMAIN-SUFFIX,360buyimg.com
@@ -81,6 +67,7 @@ DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,moatads.com
 DOMAIN-SUFFIX,miaozhen.com
 DOMAIN-SUFFIX,newadserver.com
+DOMAIN,open.e.kuaishou.com
 DOMAIN-SUFFIX,serv-ad.net
 DOMAIN-SUFFIX,smadex.com
 DOMAIN-SUFFIX,snapads.com
@@ -109,3 +96,19 @@ URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
 
 # 高德地图
 DOMAIN,optimus-ads.amap.com
+
+# > 百度网盘
+URL-REGEX,^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|.+\/bchannel\/list)|pmall\/order\/privilege\/info|rest\/.+\/pcs\/adx|api\/(useractivity\/activity|certuser\/get)|component\/view\/(1510|1130)\?vip)
+URL-REGEX,^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao
+URL-REGEX,^https?:\/\/update\.pan\.baidu\.com\/statistics
+URL-REGEX,^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/(js\/.+\.js|index\.html)
+URL-REGEX,^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png
+
+# > 埋堆堆
+URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
+
+# > 淘票票
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/
+
+# > 最右
+URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
