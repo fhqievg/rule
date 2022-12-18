@@ -51,6 +51,24 @@ URL-REGEX,^https?:\/\/.+\.iqiyi\.com\/videos\/other\/20$
 URL-REGEX,^https?:\/\/t7z\.cupid\.iqiyi\.com\/show
 URL-REGEX,^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_
 URL-REGEX,^https?:\/\/.+\.iqiyipic\.com\/image\/(.+\/ad\/.+\.jpg|20*_100000)
+DOMAIN-SUFFIX,ad.m.iqiyi.com
+DOMAIN-SUFFIX,afp.iqiyi.com
+DOMAIN-SUFFIX,c.uaa.iqiyi.com
+DOMAIN-SUFFIX,cloudpush.iqiyi.com
+DOMAIN-SUFFIX,cm.passport.iqiyi.com
+DOMAIN-SUFFIX,cupid.iqiyi.com
+DOMAIN-SUFFIX,emoticon.sns.iqiyi.com
+DOMAIN-SUFFIX,gamecenter.iqiyi.com
+DOMAIN-SUFFIX,ifacelog.iqiyi.com
+DOMAIN-SUFFIX,mbdlog.iqiyi.com
+DOMAIN-SUFFIX,meta.video.qiyi.com
+DOMAIN-SUFFIX,msg.71.am
+DOMAIN-SUFFIX,msg1.video.qiyi.com
+DOMAIN-SUFFIX,msg2.video.qiyi.com
+DOMAIN-SUFFIX,paopao.iqiyi.com
+DOMAIN-SUFFIX,paopaod.qiyipic.com
+DOMAIN-SUFFIX,policy.video.iqiyi.com
+DOMAIN-SUFFIX,yuedu.iqiyi.com
 
 #三方
 DOMAIN-SUFFIX,360buyimg.com
