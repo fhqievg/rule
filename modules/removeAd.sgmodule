@@ -22,6 +22,9 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 ^https?:\/\/api\.mddcloud\.com\.cn\/api\/ad\/getClassAd\.action - REJECT-IMG
 ^https?:\/\/api\.mddcloud\.com\.cn\/api\/advert\/getHomepage\.action - REJECT-IMG
 
+# > 影视
+^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json - REJECT-DICT
+
 [Script]
 xiaChuFang优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
 
