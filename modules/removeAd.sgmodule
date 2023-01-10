@@ -19,8 +19,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash - REJECT-200
 
 # > maiDuiDui
-^https?:\/\/api\.mddcloud\.com\.cn\/api\/ad\/getClassAd\.action - REJECT-IMG
-^https?:\/\/api\.mddcloud\.com\.cn\/api\/advert\/getHomepage\.action - REJECT-IMG
+^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHomepage)\.action - REJECT-IMG
 
 # > other
 ^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json - REJECT-DICT
