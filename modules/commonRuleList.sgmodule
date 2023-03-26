@@ -2,6 +2,7 @@
 #!desc=常规分流
 
 [Rule]
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,HDOHUB
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,EMBY
