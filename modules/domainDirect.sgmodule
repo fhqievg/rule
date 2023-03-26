@@ -1,5 +1,0 @@
-#!name=直连
-#!desc=直连
-
-[Rule]
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
