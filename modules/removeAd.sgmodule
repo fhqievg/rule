@@ -25,7 +25,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejec
 ^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json - REJECT-DICT
 
 # > 12306
-^https?:\/\/ad\.12306\.cn\/res\/adfiles\/\/delivery\/ - REJECT-IMG
+^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/ - REJECT-IMG
 
 [Script]
 xiaChuFang优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiachufang/optimization.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
