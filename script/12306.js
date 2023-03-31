@@ -1,5 +1,6 @@
-console.log("top5");
+console.log("top7");
 let body = '{"code":"00","message":"无广告返回"}';
+console.log($request.url);
 console.log($request.body);
 console.log("top6");
 if(!$request.body){
