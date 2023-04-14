@@ -131,3 +131,6 @@ URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.que
 
 # > zuiYou
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
+
+# > pengPaiXinWen
+URL-REGEX,^https?:\/\/adpai\.thepaper\.cn\/.+&ad=
