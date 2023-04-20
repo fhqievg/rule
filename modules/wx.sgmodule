@@ -7,11 +7,6 @@
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\? - REJECT-DICT
 
 ## > 去xcx
-# > yangChengTong
-^https?:\/\/r2\.gzyct\.com\/qrcode\/advert - REJECT-DICT
-
-# > haLuo
-^https?:\/\/api\.hellobike\.com\/api\?adx - REJECT-DICT
 
 [Script]
 去gzh文章底部广告 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/removeGzhArticleAd.js,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
