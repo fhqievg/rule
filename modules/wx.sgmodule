@@ -13,4 +13,4 @@
 解除外链限制 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/externalLinks.js,pattern=^https:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,requires-body=true,max-size=0,script-update-interval=0,enable=true
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com,weixin110.qq.com,r2.gzyct.com,api.hellobike.com
+hostname = %APPEND% mp.weixin.qq.com,weixin110.qq.com
