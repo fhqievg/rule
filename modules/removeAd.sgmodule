@@ -7,6 +7,7 @@ DOMAIN,errnewlog.umeng.com,REJECT-DROP
 DOMAIN-SUFFIX,umeng.com,REJECT
 DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
+DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [URL Rewrite]
