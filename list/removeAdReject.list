@@ -139,4 +139,5 @@ URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
 
 # > pengPaiXinWen
 URL-REGEX,^https?:\/\/adpai\.thepaper\.cn\/.+&ad=
+DOMAIN,adpai.thepaper.cn
 URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
