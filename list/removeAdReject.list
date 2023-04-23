@@ -81,8 +81,10 @@ DOMAIN-SUFFIX,appier.net
 DOMAIN-SUFFIX,bjcathay.com
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN,cnzz.mmstat.com
+DOMAIN-SUFFIX,dutils.com
 DOMAIN-SUFFIX,liandaomobi.com
 DOMAIN-SUFFIX,maplehaze.cn
+DOMAIN-SUFFIX,mob.com
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN,googleads.g.doubleclick.net
 DOMAIN-SUFFIX,getui.net
@@ -138,6 +140,5 @@ URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.que
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
 
 # > pengPaiXinWen
-URL-REGEX,^https?:\/\/adpai\.thepaper\.cn\/.+&ad=
 DOMAIN,adpai.thepaper.cn
 URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
