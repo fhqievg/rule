@@ -140,5 +140,5 @@ URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.que
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
 
 # > pengPaiXinWen
-URL-REGEX,^https?:\/\/ adpai\.thepaper\.c\/.+&ad=
+URL-REGEX,^https?:\/\/adpai\.thepaper\.cn\/.+&ad=
 URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
