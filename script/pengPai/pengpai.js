@@ -15,7 +15,7 @@ if (url.includes('channelContList') || url.includes('home_page_rcmd')) {
 //个人中心
 if (url.includes('popularize')) {
     if(typeof obj.data.pengpaiSelectPopularizeList != 'undefined'){
-        obj.data.pengpaiSelectPopularizeList = [];
+        delete obj.data.pengpaiSelectPopularizeList;
     }
 
     if(typeof obj.data.pengpaiShoppingConfig != 'undefined'){
