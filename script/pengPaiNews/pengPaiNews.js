@@ -46,10 +46,10 @@ function dataHandle(contList) {
                 //中间模块
                 contList[i].childList = contList[i].childList.filter(
                     (item) =>
-                        //item.cardMode != '107'  //24h
-                        //item.cardMode != '108'  //早晚
-                        //item.cardMode != '109'  //消费
-                        //item.cardMode != '110'  //热评
+                        //item.cardMode != '107' &&  //24h
+                        //item.cardMode != '108' &&  //早晚
+                        //item.cardMode != '109' &&  //消费
+                        //item.cardMode != '110' &&  //热评
                         item.cardMode != '133'  //填字
                 );
                 handleResult.push(contList[i]);
