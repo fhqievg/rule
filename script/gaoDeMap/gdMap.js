@@ -3,18 +3,32 @@ if (!$response.body) $done({});
 
 let obj = {};
 let agent = $request.headers["User-Agent"];
+console.log("top1");
+console.log(agent);
 let amdc = 'e30=';
 try {
     obj = JSON.parse($response.body);
 } catch (err) {
+    console.log("top2");
+console.log(agent);
     if (url.includes("/amdc/mobileDispatch") && agent.includes("AMap")) {
+        console.log("top3");
+console.log(agent);
         $done({ body: amdc });
     }
     $done({});
 }
+
+console.log("top4");
+console.log(agent);
 if (url.includes("/amdc/mobileDispatch") && agent.includes("AMap")) {
+    console.log("top5");
+console.log(agent);
     $done({ body: amdc });
 }
+
+console.log("top6");
+console.log(agent);
 
 if (url.includes("/faas/amap-navigation/main-page")) {
     // 首页底部卡片
