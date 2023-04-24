@@ -12,7 +12,6 @@ try {
     }
     $done({});
 }
-
 if (url.includes("/amdc/mobileDispatch") && agent.includes("AMap")) {
     $done({ body: amdc });
 }
