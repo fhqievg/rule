@@ -4,6 +4,7 @@ if (!$response.body) $done({});
 let obj = {};
 let agent = $request.headers["User-Agent"];
 console.log("top1");
+console.log(url);
 console.log(agent);
 let amdc = 'e30=';
 try {
