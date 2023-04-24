@@ -29,33 +29,39 @@ if (url.includes('popularize')) {
 $done({ body: JSON.stringify(obj) });
 
 function dataHandle(contList) {
-    if (contList.length <= 0) {
+    if (contList.length === 0) {
         return contList;
     }
 
-    let topHandleData = [];
+    let handleResult = [];
     for (let i in contList) {
-        if (typeof contList[i].cardMode != 'undefined') {
-            //过滤头部文章、专题(117)
-            if (contList[i].cardMode != '102' && contList[i].cardMode != '5' && contList[i].cardMode != '117') {
-                topHandleData.push(contList[i]);
-            }
+        if (typeof contList[i].cardMode == 'undefined') {
+            handleResult.push(contList[i]);
+            continue;
+        }
 
-            //中间模块
-            switch (contList[i].cardMode) {
-                case '106':
-                    //去掉填字
-                    for (let j in contList[i].childList) {
-                        if (contList[i].childList[j].cardMode == '133') {
-                            contList[i].childList.splice(j, 1);
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }
+        //头部轮播文章：103
+        switch (contList[i].cardMode) {
+            case '106':
+                //中间模块
+                contList[i].childList = contList[i].childList.filter(
+                    (item) =>
+                        //item.cardMode != '107'  //24h
+                        //item.cardMode != '108'  //早晚
+                        //item.cardMode != '109'  //消费
+                        //item.cardMode != '110'  //热评
+                        item.cardMode != '133'  //填字
+                );
+                handleResult.push(contList[i]);
+                break;
+            default:
+                //过滤头部文章(102)、ad(5)、专题(117)、官方网站(121)
+                if (contList[i].cardMode != '102' && contList[i].cardMode != '5' && contList[i].cardMode != '117' && contList[i].cardMode != '121') {
+                    handleResult.push(contList[i]);
+                }
+                break;
         }
     }
 
-    return topHandleData;
+    return handleResult;
 }
