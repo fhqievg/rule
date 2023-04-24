@@ -40,7 +40,7 @@ function dataHandle(contList) {
             continue;
         }
 
-        //头部轮播文章：103
+        //轮播文章：103
         switch (contList[i].cardMode) {
             case '106':
                 //中间模块
@@ -55,7 +55,7 @@ function dataHandle(contList) {
                 handleResult.push(contList[i]);
                 break;
             default:
-                //过滤头部文章(102)、ad(5)、专题(117)、官方网站(121)
+                //过滤头部文章(102)、ad(5)、专题(117)、宣传栏(121)
                 if (contList[i].cardMode != '102' && contList[i].cardMode != '5' && contList[i].cardMode != '117' && contList[i].cardMode != '121') {
                     handleResult.push(contList[i]);
                 }
