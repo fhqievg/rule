@@ -1,6 +1,21 @@
 const url = $request.url;
 if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
+
+let obj = {};
+let agent = $request.headers["User-Agent"];
+let amdc = 'e30=';
+try {
+    obj = JSON.parse($response.body);
+} catch (err) {
+    if (url.includes("/amdc/mobileDispatch") && agent.includes("AMap")) {
+        $done({ body: amdc });
+    }
+    $done({});
+}
+
+if (url.includes("/amdc/mobileDispatch") && agent.includes("AMap")) {
+    $done({ body: amdc });
+}
 
 if (url.includes("/faas/amap-navigation/main-page")) {
     // 首页底部卡片
