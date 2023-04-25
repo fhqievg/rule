@@ -1,5 +1,0 @@
-#!name=常规去广告
-#!desc=补充
-
-[Rule]
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdRejectSupplement.list,REJECT
