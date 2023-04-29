@@ -1,5 +1,6 @@
 let obj = JSON.parse($response.body);
 let url = $request.url;
+obj = deleteAdUrl(obj);
 
 //启动APP
 if (url.includes('loading')) {
@@ -31,20 +32,27 @@ if (url.includes('loading')) {
     }
 }
 
+//菜单栏
+if (url.includes('allNodes')) {
+    let fildArr = ['nodeList', 'pphNodeList', 'pphNodeList'];
+    for (let i in fildArr) {
+        if (typeof obj[fildArr[i]] != 'undefined' && obj[fildArr[i]].length > 0) {
+            for (let j in obj[fildArr[i]]) {
+                obj[fildArr[i]][j] = deleteAdUrl(obj[fildArr[i]][j]);
+            }
+        }
+    }
+}
+
 //头部/首页、翻页、分类
 if (url.includes('channelContList') || url.includes('home_page_rcmd') || url.includes('categoryContList') || url.includes('channelList') || url.includes('nodeList')) {
-    if (typeof obj.winAdUrl != 'undefined') {
-        obj.winAdUrl = '';
-    }
-
-    if (typeof obj.wholeTitleAdUrl != 'undefined') {
-        obj.wholeTitleAdUrl = '';
-    }
-
-    obj = deleteAdUrl(obj);
     if (typeof obj.contList != 'undefined') {
         let nodeName = (typeof obj.nodeName != 'undefined') ? obj.nodeName : '';
         obj.contList = dataHandle(obj.contList, nodeName);
+    }
+
+    if (typeof obj.nodeInfo != 'undefined' && typeof obj.nodeInfo.sponsorAdUrl != 'undefined') {
+        obj.nodeInfo.sponsorAdUrl = '';
     }
 }
 
@@ -61,27 +69,13 @@ if (url.includes('popularize')) {
     if (typeof obj.data.pengpaiShoppingPopularizeList != 'undefined') {
         delete obj.data.pengpaiShoppingPopularizeList;
     }
+
+    obj.data.selectCourseConfigDTO.iosHidden = true;
 }
 
 //详情
 if (url.includes('newDetail')) {
-    obj = deleteAdUrl(obj);
-    if (typeof obj.floatingAdUrl != 'undefined') {
-        obj.floatingAdUrl = '';
-    }
-
-    if (typeof obj.wholeTitleAdUrl != 'undefined') {
-        obj.wholeTitleAdUrl = '';
-    }
-
-    if (typeof obj.winAdUrl != 'undefined') {
-        obj.winAdUrl = '';
-    }
-
-    if (typeof obj.stickerAdUrl != 'undefined') {
-        obj.stickerAdUrl = '';
-    }
-
+    obj.supportReward = '0';    //关闭赞赏
     if (typeof obj.rewardObj.title != 'undefined') {
         obj.rewardObj.title = '';
     }
@@ -129,8 +123,8 @@ function dataHandle(contList, nodeName) {
                 handleResult.push(contList[i]);
                 break;
             default:
-                //过滤头部文章(102)、ad(5)、专题(117)、宣传栏(121)
-                let filterArr = ['102', '5', '121'];
+                //过滤头部文章(102)、ad(5)、专题(117)、宣传栏(121)、推荐关注(43)、自媒体文章横栏模块(42)、推荐专题(122)
+                let filterArr = ['102', '5', '121', '43'];
                 if (nodeName != '专题') {
                     filterArr.push('117');
                 }
@@ -145,7 +139,23 @@ function dataHandle(contList, nodeName) {
 }
 
 function deleteAdUrl(obj) {
-    for (i = 0; i < 5; i++) {
+    if (typeof obj.floatingAdUrl != 'undefined') {
+        obj.floatingAdUrl = '';
+    }
+
+    if (typeof obj.wholeTitleAdUrl != 'undefined') {
+        obj.wholeTitleAdUrl = '';
+    }
+
+    if (typeof obj.winAdUrl != 'undefined') {
+        obj.winAdUrl = '';
+    }
+
+    if (typeof obj.stickerAdUrl != 'undefined') {
+        obj.stickerAdUrl = '';
+    }
+
+    for (let i = 0; i < 5; i++) {
         if (i === 0) {
             i = '';
         }
