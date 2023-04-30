@@ -1,18 +1,6 @@
 const url = $request.url;
 if (!$response.body) $done({});
-
-let ua = $request.headers["User-Agent"];
-let amdc = 'e30=';
-if (url.includes("/amdc/mobileDispatch") && ua.includes("AMap")) {
-    $done({ body: amdc });
-}
-
-let obj = {};
-try {
-    obj = JSON.parse($response.body);
-} catch (err) {
-    $done({});
-}
+let obj = JSON.parse($response.body);
 
 if (url.includes("/faas/amap-navigation/main-page")) {
     // 首页底部卡片
@@ -437,14 +425,21 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     url.includes("/shield/search_poi/sug") ||
     url.includes("/shield/search/sug")
 ) {
-    if (obj?.tip_list && obj?.sug_general_search === "1") {
+    if (obj?.tip_list) {
         let newList = [];
         if (obj?.tip_list?.length > 0) {
             for (let item of obj.tip_list) {
-                if (item?.tip?.is_user_input === "1") {
-                    newList.push(item);
-                } else {
+                if (
+                    [
+                        "exct_query_sug_merge_theme",
+                        "query_sug_merge_theme",
+                        "sp"
+                    ].includes(item?.tip?.task_tag) ||
+                    ["toplist"].includes(item?.tip?.result_type)
+                ) {
                     continue;
+                } else {
+                    newList.push(item);
                 }
             }
             obj.tip_list = newList;
