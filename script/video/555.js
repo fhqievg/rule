@@ -15,7 +15,7 @@ if (url.includes('movie/index_recommend')) {
                 case 'index_recommend_carousel':
                     obj.data[i].list = obj.data[i].list.filter(
                         (item) =>
-                            item.type === 1
+                            item.type != 3
                     );
                     break;
                 default:
