@@ -1,8 +1,0 @@
-#!name=央视影音
-#!desc=屏蔽升级提示
-
-[Script]
-屏蔽升级提示 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/cctv/shieldVersions.js,pattern=^https?:\/\/api\.app\.cctv\.com\/api\/getVersion,requires-body=true,max-size=0,timeout=10,script-update-interval=0,enable=true
-
-[MITM]
-hostname = %APPEND% api.app.cctv.com
