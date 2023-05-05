@@ -133,7 +133,7 @@ URL-REGEX,^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png
 URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
 
 # > taoPiaoPiao
-URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query(preload)?advertise|life\.aristotle\.get\/2\.0\?)
 
 # > zuiYou
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
