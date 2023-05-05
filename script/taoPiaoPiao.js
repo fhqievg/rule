@@ -1,5 +1,6 @@
 console.log('top1');
 console.log($response.body);
+if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 let url = $request.url;
 
