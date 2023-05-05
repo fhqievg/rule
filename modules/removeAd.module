@@ -2,13 +2,19 @@
 #!desc=基础
 
 [Rule]
+# > 其它
 DOMAIN-SUFFIX,umeng.com,REJECT-DROP
 DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
 DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
+
+# > pengPaiNews
 DOMAIN,applog.thepaper.cn,REJECT-200
 DOMAIN,applogs.thepaper.cn,REJECT-200
+
+# > cheLaiLe
 IP-CIDR,124.70.194.16/32,REJECT-DROP,no-resolve
+
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [URL Rewrite]
