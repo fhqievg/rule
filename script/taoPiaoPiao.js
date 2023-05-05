@@ -1,3 +1,5 @@
+console.log('top1');
+console.log($response.body);
 let obj = JSON.parse($response.body);
 let url = $request.url;
 
@@ -32,6 +34,7 @@ if (url.includes('mtop.film.life.aristotle.get')) {
 
 //首页配置
 if (url.includes('mtop.film.mtopintegrationapi.homeconfig')) {
+    console.log('top2');
     if(typeof obj.data.returnValue.secondFloorBanner.actionUrl != 'undefined'){
         obj.data.returnValue.secondFloorBanner.actionUrl = '';
     }
@@ -45,7 +48,9 @@ if (url.includes('mtop.film.mtopintegrationapi.homeconfig')) {
         obj.data.returnValue.secondFloorBanner.smallPicUrl2 = '';
     }
 
+    console.log('top3');
     if (typeof obj.data.returnValue.topTab != 'undefined' && obj.data.returnValue.topTab.length > 0) {
+        console.log('top4');
         obj.data.returnValue.topTab = obj.data.returnValue.topTab.filter(
             (i) =>
                 i.dispatchId == '283861' || //精选
