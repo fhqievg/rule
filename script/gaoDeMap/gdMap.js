@@ -311,7 +311,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "rentsaleagencyv3",
         "rentsalehouse",
         "residentialOwners", // 小区业主
-        "reviews", // 用户评价
+        //"reviews", // 用户评价
         // "roomSelect", // 选择订房日期 悬浮菜单
         "sameIndustryRecommendModule",
         "sameIndustry2RecommendModule",
@@ -364,7 +364,10 @@ if (url.includes("/faas/amap-navigation/main-page")) {
             delete obj.modules[i];
         });
     }
-} else if (url.includes("/shield/search_poi/search/sp")) {
+} else if (
+    url.includes("/shield/search_poi/search/sp") ||
+    url.includes("/shield/search_poi/mps")
+) {
     if (obj.data?.list_data) {
         let list = obj.data.list_data.content[0];
         // 详情页 底部 房产推广
@@ -430,12 +433,13 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         if (obj?.tip_list?.length > 0) {
             for (let item of obj.tip_list) {
                 if (
+                    ["12"].includes(item?.tip?.datatype_spec) ||
+                    ["toplist"].includes(item?.tip?.result_type) ||
                     [
                         "exct_query_sug_merge_theme",
                         "query_sug_merge_theme",
                         "sp"
-                    ].includes(item?.tip?.task_tag) ||
-                    ["toplist"].includes(item?.tip?.result_type)
+                    ].includes(item?.tip?.task_tag)
                 ) {
                     continue;
                 } else {
@@ -443,6 +447,25 @@ if (url.includes("/faas/amap-navigation/main-page")) {
                 }
             }
             obj.tip_list = newList;
+        }
+    } else if (obj?.city_list) {
+        let newList = [];
+        if (obj?.city_list?.length > 0) {
+            for (let item of obj.city_list) {
+                let newTip = [];
+                if (item?.tip_list?.length > 0) {
+                    for (let ii of item.tip_list) {
+                        if (["12"].includes(ii?.tip?.datatype_spec)) {
+                            continue;
+                        } else {
+                            newTip.push(ii);
+                        }
+                    }
+                    item.tip_list = newTip;
+                }
+                newList.push(item);
+            }
+            obj.city_list = newList;
         }
     }
 } else if (url.includes("/shield/search_poi/tips_operation_location")) {
