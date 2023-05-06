@@ -2,7 +2,17 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("nbpresentation.protocol.homepage.get.cn")) {
+if (url.includes("nbpresentation.homepage.merge.get.cn")) {
+    if (obj.data) {
+        // 移除 反馈组件
+        const item = ["mtop.cainiao.nbmensa.research.researchservice.acquire.cn@2"];
+        for (let i of item) {
+            if (obj.data?.[i]) {
+                delete obj.data[i];
+            }
+        }
+    }
+} else if (url.includes("nbpresentation.protocol.homepage.get.cn")) {
     if (obj.data.result) {
         let list = obj.data.result.dataList;
         if (list) {
