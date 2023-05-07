@@ -2,9 +2,9 @@
 #!desc=去gzh文章底部广告及商品推广、解除外链限制
 #部分来源仓库：vipic/grocery(解除外链)、Rucu6(去商品推广)
 
-[URL Rewrite]
+[Rule]
 # > 去除gzh底部广告及商品推广
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle)\? - REJECT-DICT
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle)\?,REJECT-DICT
 
 [Script]
 解除外链限制 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/externalLinks.js,pattern=^https:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,requires-body=true,max-size=0,script-update-interval=0,enable=true
