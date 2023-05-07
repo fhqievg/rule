@@ -69,6 +69,10 @@ URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
 DOMAIN,adpai.thepaper.cn
 URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
 
+# >>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<<
+# > qianChengWuYou
+^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?(util\/get_version|market\/(adtrace|get_launch))
+
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
 DOMAIN-SUFFIX,1nmob.com
