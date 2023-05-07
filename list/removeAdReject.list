@@ -1,43 +1,28 @@
-# > 捷径
-DOMAIN,yh.miidii.tech
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > baiDuPan
+URL-REGEX,^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|.+\/bchannel\/list)|pmall\/order\/privilege\/info|rest\/.+\/pcs\/adx|api\/(useractivity\/activity|certuser\/get)|component\/view\/(1510|1130)\?vip)
+URL-REGEX,^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao
+URL-REGEX,^https?:\/\/update\.pan\.baidu\.com\/statistics
+URL-REGEX,^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/(js\/.+\.js|index\.html)
+URL-REGEX,^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png
 
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
 # > cheLaiLe
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
 URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.(cn|com))\/((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
 
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# > gaoDeMap
+DOMAIN,optimus-ads.amap.com
+
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
 # > HDO
 DOMAIN-SUFFIX,vungle.com
 DOMAIN-SUFFIX,applvn.com
 DOMAIN-SUFFIX,applovin.com
 
-# > zhiJie
-DOMAIN-SUFFIX,ad.toutiao.com
-DOMAIN-SUFFIX,log.snssdk.com
-DOMAIN-SUFFIX,pglstatp-toutiao.com
-DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
-DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
-DOMAIN-SUFFIX,pangolin.snssdk.com
-DOMAIN-SUFFIX,dsp.toutiao.com
-DOMAIN-SUFFIX,ic.snssdk.com
-DOMAIN-SUFFIX,partner.toutiao.com
-DOMAIN-SUFFIX,sm.toutiao.com
-DOMAIN-SUFFIX,nativeapp.toutiao.com
-DOMAIN-SUFFIX,ctobsnssdk.com
-DOMAIN,tnc3-alisc1.zijieapi.com
-DOMAIN,tnc3-aliec2.zijieapi.com
-DOMAIN,mon.zijieapi.com
-
-# > 影视
-URL-REGEX,^https?:\/\/47\.99\.219\.178(:\d+)?\/.*
-URL-REGEX,^https?:\/\/(.+\.ailbaba\.me|27\.151\.29\.56:\d+)\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
-URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert)
-URL-REGEX,^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v1\/advert
-
-# > tx
-DOMAIN-SUFFIX,gdt.qq.com
-DOMAIN-SUFFIX,e.qq.com
-
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
 # > iqiyi
 URL-REGEX,^https?:\/\/intl\.iqiyi\.com\/(ad_external\/video\/advertise)
 URL-REGEX,^http:\/\/static-s\.iqiyi\.com\/common\/.+\/Small_video\/a2\/af\/.+\.png
@@ -67,6 +52,24 @@ DOMAIN-SUFFIX,paopaod.qiyipic.com
 DOMAIN-SUFFIX,policy.video.iqiyi.com
 DOMAIN-SUFFIX,yuedu.iqiyi.com
 
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 捷径
+DOMAIN,yh.miidii.tech
+
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 狂野
+DOMAIN,a314.gameloft.com
+
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > maiDuiDui
+URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
+
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > pengPaiNews
+DOMAIN,adpai.thepaper.cn
+URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
+
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
 # > 三方
 DOMAIN-SUFFIX,1nmob.com
 DOMAIN-SUFFIX,aoyiluoad.com
@@ -104,13 +107,16 @@ DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
 DOMAIN-SUFFIX,uyunad.com
 
-# > 狂野
-DOMAIN,a314.gameloft.com
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > tx
+DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN-SUFFIX,e.qq.com
 
-# > xiaChuFang
-URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
+# > taoPiaoPiao
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query(preload)?advertise|life\.aristotle\.get\/2\.0\?)
 
-# > 163 music(来源仓库：DivineEngine)
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > wangYiYunMusic(来源仓库：DivineEngine)
 URL-REGEX,^https?:\/\/p\.du\.163\.com\/ad\/
 URL-REGEX,^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
 URL-REGEX,^https?:\/\/interface(\d+)?\.music\.163\.com\/eapi\/ad\/
@@ -118,25 +124,34 @@ URL-REGEX,^https?:\/\/appconf\.mail\.163\.com\/mmad\/
 URL-REGEX,^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg
 URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
 
-# > gaoDeMap
-DOMAIN,optimus-ads.amap.com
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > xiaChuFang
+URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
 
-# > baiDuPan
-URL-REGEX,^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|.+\/bchannel\/list)|pmall\/order\/privilege\/info|rest\/.+\/pcs\/adx|api\/(useractivity\/activity|certuser\/get)|component\/view\/(1510|1130)\?vip)
-URL-REGEX,^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao
-URL-REGEX,^https?:\/\/update\.pan\.baidu\.com\/statistics
-URL-REGEX,^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/(js\/.+\.js|index\.html)
-URL-REGEX,^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 影视
+URL-REGEX,^https?:\/\/47\.99\.219\.178(:\d+)?\/
+URL-REGEX,^https?:\/\/(.+\.ailbaba\.me|27\.151\.29\.56:\d+)\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
+URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert)
+URL-REGEX,^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v1\/advert
 
-# > maiDuiDui
-URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
-
-# > taoPiaoPiao
-URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query(preload)?advertise|life\.aristotle\.get\/2\.0\?)
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > zhiJie
+DOMAIN-SUFFIX,ad.toutiao.com
+DOMAIN-SUFFIX,log.snssdk.com
+DOMAIN-SUFFIX,pglstatp-toutiao.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+DOMAIN-SUFFIX,pangolin.snssdk.com
+DOMAIN-SUFFIX,dsp.toutiao.com
+DOMAIN-SUFFIX,ic.snssdk.com
+DOMAIN-SUFFIX,partner.toutiao.com
+DOMAIN-SUFFIX,sm.toutiao.com
+DOMAIN-SUFFIX,nativeapp.toutiao.com
+DOMAIN-SUFFIX,ctobsnssdk.com
+DOMAIN,tnc3-alisc1.zijieapi.com
+DOMAIN,tnc3-aliec2.zijieapi.com
+DOMAIN,mon.zijieapi.com
 
 # > zuiYou
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
-
-# > pengPaiNews
-DOMAIN,adpai.thepaper.cn
-URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
