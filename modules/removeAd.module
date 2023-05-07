@@ -11,6 +11,11 @@ URL-REGEX,^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/,REJECT-IMG
 # > amdc（gaoDeMap、caiNiaoGuoGuo、taoPiaoPiao）
 URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,REJECT-DICT
 
+# > aiQiYi
+URL-REGEX,^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/(v2\/show|show\.do),REJECT-200
+URL-REGEX,^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo,REJECT-200
+URL-REGEX,^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch,REJECT-IMG
+
 # >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
 # > cheLaiLe
 IP-CIDR,124.70.194.16/32,REJECT-DROP,no-resolve
@@ -19,12 +24,6 @@ URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.(cn|com))\/led-weather\
 
 # > caiNiaoGuoGuo
 URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.index|nbmensa\.research\.researchservice\.(acquire|event|close))\.cn\/1\.0\?,REJECT-DICT
-
-# >>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<<
-# > iqiyi
-URL-REGEX,^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/(v2\/show|show\.do),REJECT-200
-URL-REGEX,^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo,REJECT-200
-URL-REGEX,^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch,REJECT-IMG
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > KFC
