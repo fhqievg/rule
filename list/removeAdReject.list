@@ -1,4 +1,4 @@
-# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+#>>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 # > baiDuPan
 URL-REGEX,^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|.+\/bchannel\/list)|pmall\/order\/privilege\/info|rest\/.+\/pcs\/adx|api\/(useractivity\/activity|certuser\/get)|component\/view\/(1510|1130)\?vip)
 URL-REGEX,^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao
