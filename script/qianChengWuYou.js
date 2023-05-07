@@ -1,10 +1,17 @@
 if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
 let url = $request.url;
+let obj = {};
 
-if(url.includes('user/get_person_center')){
+if (url.includes('market/get_advertise')) {
+    obj = '{"result":"1","status":"1","resultbody":{"banner":{"items":[],"totalCount":"0"},"hotCompany":{"items":[]},"personalization":"1"}}';
+    $done({body: obj});
+} else {
+    obj = JSON.parse($response.body);
+}
+
+if (url.includes('user/get_person_center')) {
     obj.bootTaskList = [];
-    if(typeof obj.jobservice.items != 'undefined' && obj.jobservice.items.length > 0){
+    if (typeof obj.jobservice.items != 'undefined' && obj.jobservice.items.length > 0) {
         obj.jobservice.items = obj.jobservice.items.filter(
             (i) =>
                 i.adid != 'my_icon1_optimize' && //优化简历
@@ -15,14 +22,4 @@ if(url.includes('user/get_person_center')){
     obj.tips = {}
 }
 
-if(url.includes('market/get_advertise')){
-    if(obj.resultbody?.banner?.items){
-        obj.resultbody.banner.items = [];
-        obj.resultbody.banner.totalCount = '0';
-    }
-
-    if(obj.resultbody?.hotCompany?.items){
-        obj.resultbody.hotCompany.items = [];
-    }
-}
 $done({ body: JSON.stringify(obj) });
