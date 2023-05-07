@@ -1,0 +1,14 @@
+#!name=YouTube合集
+#!desc=去广告(iOS>=15)、字幕(默认单语简体中文)
+#来源仓库：Maasea/sgmodule(去广告)
+
+[URL Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - REJECT-IMG
+
+[Script]
+去瀑布流/播放页广告 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/removeWaterfallAd.js,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide),max-size=0,requires-body=true,binary-mode=true,timeout=10,script-update-interval=0,enable=true
+设置 = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js,pattern=^https:\/\/setting\.youtube\.com\/\?action=shortcutsSet,max-size=0,requires-body=true,timeout=30,script-update-interval=0,enable=true
+简体中文 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js,pattern=^https:\/\/www\.youtube\.com\/api\/timedtext.+,max-size=0,requires-body=true,timeout=30,script-update-interval=0,enable=true
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,setting.youtube.com,www.youtube.com
