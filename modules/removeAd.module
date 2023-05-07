@@ -3,78 +3,69 @@
 #tencentVideo来源仓库：chengkongyiban，需先重装app，关掉模块，打开app登录账号后关掉app，再启用模块。
 
 [Rule]
-# > 其它
+# >>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<<
+# > 12306
+URL-REGEX,^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/,REJECT-IMG
+
+# >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
+# > amdc（gaoDeMap、caiNiaoGuoGuo、taoPiaoPiao）
+URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,REJECT-DICT
+
+# >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
+# > cheLaiLe
+IP-CIDR,124.70.194.16/32,REJECT-DROP,no-resolve
+URL-REGEX,^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog,REJECT-DROP
+URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.(cn|com))\/led-weather\/v\d\/condition_brief\?,REJECT-200
+
+# > caiNiaoGuoGuo
+URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.index|nbmensa\.research\.researchservice\.(acquire|event|close))\.cn\/1\.0\?,REJECT-DICT
+
+# >>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<<
+# > iqiyi
+URL-REGEX,^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/(v2\/show|show\.do),REJECT-200
+URL-REGEX,^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo,REJECT-200
+URL-REGEX,^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch,REJECT-IMG
+
+# >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
+# > KFC
+URL-REGEX,^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome(5|6)\/apphome,REJECT-200
+
+# >>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<<
+# > maiDangLao
+URL-REGEX,^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash,REJECT-200
+
+# > maiDuiDui
+URL-REGEX,^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHomepage)\.action,REJECT-IMG
+
+# >>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<<
+# > other
+URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json,REJECT-DICT
 DOMAIN-SUFFIX,umeng.com,REJECT-DROP
 DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
 DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
 
+# >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
 # > pengPaiNews
 DOMAIN,applog.thepaper.cn,REJECT-200
 DOMAIN,applogs.thepaper.cn,REJECT-200
-
-# > cheLaiLe
-IP-CIDR,124.70.194.16/32,REJECT-DROP,no-resolve
-
-# > tencentVideo
-AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
-
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
-
-[URL Rewrite]
-# >>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<<
-# > 12306
-^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/ - REJECT-IMG
-
-# >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
-# > amdc（gaoDeMap、caiNiaoGuoGuo、taoPiaoPiao）
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ - REJECT-DICT
-
-# >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
-# > cheLaiLe
-^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog - REJECT-DROP
-^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.(cn|com))\/led-weather\/v\d\/condition_brief\? - REJECT-200
-
-# > caiNiaoGuoGuo
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.index|nbmensa\.research\.researchservice\.(acquire|event|close))\.cn\/1\.0\? - REJECT-DICT
-
-# >>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<<
-# > iqiyi
-^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/(v2\/show|show\.do) - REJECT-200
-^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo - REJECT-200
-^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch - REJECT-IMG
-
-# >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
-# > KFC
-^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome(5|6)\/apphome - REJECT-200
-
-# >>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<<
-# > maiDangLao
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash - REJECT-200
-
-# > maiDuiDui
-^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHomepage)\.action - REJECT-IMG
-
-# >>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<<
-# > other
-^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json - REJECT-DICT
-
-# >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
-# > pengPaiNews
-^https:\/\/app\.thepaper\.cn\/clt\/jsp\/v6\/lastReadRecommend - REJECT-DICT
+URL-REGEX,^https:\/\/app\.thepaper\.cn\/clt\/jsp\/v6\/lastReadRecommend,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<<
 # > qianChengWuYou
-^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\? - REJECT-DICT
+URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\?,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tencentVideo
-^http:\/\/pgdt\.gtimg\.cn - REJECT-DICT
-^http:\/\/.+\/vmind\.qqvideo\.tc\.qq\.com\/.+mp4 - REJECT-DICT
+AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
+URL-REGEX,^http:\/\/pgdt\.gtimg\.cn,REJECT-DICT
+URL-REGEX,^http:\/\/.+\/vmind\.qqvideo\.tc\.qq\.com\/.+mp4,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > yangShiYingYin
-^https?:\/\/api\.app\.cctv\.com\/api\/getVersion - REJECT-DICT
+URL-REGEX,^https?:\/\/api\.app\.cctv\.com\/api\/getVersion,REJECT-DICT
+
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/removeAdReject.list,REJECT
 
 [Script]
 xiaChuFang优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/xiaChuFang.js,pattern=^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
