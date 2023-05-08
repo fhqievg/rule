@@ -16,7 +16,7 @@ if (url.includes("nbpresentation.homepage.merge.get.cn")) {
     if (obj.data.result) {
         let list = obj.data.result.dataList;
         if (list) {
-            list = list.filter((i) => {
+            obj.data.result.dataList = list.filter((i) => {
                 // 顶部图标
                 if (i.type.includes("icons_scroll_unable")) {
                     if (i.bizData.items) {
