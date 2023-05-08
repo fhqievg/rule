@@ -1,9 +1,0 @@
-#!name=YouTube字幕
-#!desc=默认单语简体中文
-
-[Script]
-设置 = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js,pattern=^https:\/\/setting\.youtube\.com\/\?action=shortcutsSet,max-size=0,requires-body=true,timeout=30,script-update-interval=0,enable=true
-简体中文 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js,pattern=^https:\/\/www\.youtube\.com\/api\/timedtext.+,max-size=0,requires-body=true,timeout=30,script-update-interval=0,enable=true
-
-[MITM]
-hostname = %APPEND% setting.youtube.com,www.youtube.com
