@@ -64,6 +64,10 @@ DOMAIN,a314.gameloft.com
 # > maiDuiDui
 URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
 
+# >>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<<
+# > ntPlayer
+URL-REGEX,^https:\/\/blog\.nilbt\.com\/static\/api\/update\.json
+
 # >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
 # > pengPaiNews
 DOMAIN,adpai.thepaper.cn
