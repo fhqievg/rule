@@ -2,9 +2,6 @@ if (!$response.body) $done({});
 let url = $request.url;
 let obj = JSON.parse($response.body);
 
-console.log('top1');
-console.log(url);
-
 if (url.includes('Aios/config')) {
     if (typeof obj.update != 'undefined') {
         //obj.update.open = 'false';  //更新提醒
@@ -33,7 +30,4 @@ if (url.includes('adver/data/insert')) {
         obj.data = null;
     }
 }
-
-console.log('top2');
-console.log(JSON.stringify(obj));
 $done({ body: JSON.stringify(obj) });
