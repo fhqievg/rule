@@ -43,6 +43,7 @@ DOMAIN-SUFFIX,umeng.com,REJECT-DROP
 DOMAIN-SUFFIX,umengcloud.com,REJECT-200
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
 DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
+DOMAIN-SUFFIX,sigmob.cn,REJECT-DROP
 
 # >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
 # > pengPaiNews
