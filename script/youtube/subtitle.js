@@ -9,7 +9,6 @@ let defaultSetting = {
 let storeSetting = $persistentStore.read(storeKey)
 let setting = (!storeSetting || storeSetting === '') ? defaultSetting : JSON.parse(storeSetting)
 if (url.match(/action=shortcutsSet/)) {
-    $notification.post("调试", "log",$request.body);
     let params = JSON.parse($request.body)
     switch (params.type) {
         case 'disable':
