@@ -76,7 +76,7 @@ caiNiaoGuoGuo优化 = type=http-response,script-path=https://raw.githubuserconte
 555去AD = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/video/555.js,pattern=^https?:\/\/run\.api\.qyfxgd\.cn(:\d+)?\/api\/v1\/movie\/index_recommend,max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 taoPiaoPiao优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/taoPiaoPiao.js,pattern=^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(life\.aristotle\.get|mtopintegrationapi\.homeconfig)\/1\.0\?,max-size=0,timeout=10,script-update-interval=86400,enable=true
 tencentVideo去AD = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/tx/removeVideoAd.js,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,max-size=0,timeout=10,script-update-interval=86400,enable=true
-keEr去AD = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/keEr.js,pattern=^http:\/\/(kekeoo|ereroo)\.com\/Aios\/config\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
+keEr去AD = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/keEr.js,pattern=^http:\/\/(kekeoo|ereroo)\.com\/(Aios\/config|banner)\.json,max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 keEr1 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/keEr.js,pattern=^http:\/\/api\.juliangcili\.com\/(\/)?api\/adver\/(data\/insert|space\/all\/list),max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
