@@ -4,11 +4,12 @@ let storeKey = 'youTubeShortcutsSubtitleSetting'
 let defaultSetting = {
     type: "enable",
     tl: "zh-CN",
-    line: "sl"  //sl:单语翻译字幕 f：双语（翻译在上，原字幕在下） s：双语（原字幕在上，翻译在下）
+    line: "sl"  //sl:单语翻译字幕 f：双语（翻译字幕在上） s：双语（翻译字幕在下）
 }
 let storeSetting = $persistentStore.read(storeKey)
 let setting = (!storeSetting || storeSetting === '') ? defaultSetting : JSON.parse(storeSetting)
 if (url.match(/action=shortcutsSet/)) {
+    $notification.post("调试", "log",$request.body);
     let params = JSON.parse($request.body)
     switch (params.type) {
         case 'disable':
