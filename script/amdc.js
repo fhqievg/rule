@@ -1,5 +1,5 @@
 let ua = $request.headers["User-Agent"];
-if (ua.includes("AMap") || ua.includes("Cainiao") || ua.includes("MovieApp")) {
+if (ua.includes("AMap") || ua.includes("Cainiao")) {
     try {
         let obj = JSON.parse($response.body);
         obj = {}
