@@ -30,4 +30,13 @@ if (url.includes('adver/data/insert')) {
         obj.data = null;
     }
 }
+
+if (url.includes('banner.json')) {
+    if (typeof obj.banner != 'undefined' && obj.banner.length > 0) {
+        obj.banner = obj.banner.filter(
+            (i) =>
+                i.vod_url.includes('iosapp')
+        );
+    }
+}
 $done({ body: JSON.stringify(obj) });
