@@ -43,7 +43,7 @@ if (url.includes('banner.json')) {
                 "vod_url": "",
                 "vod_title": "",
                 "vod_type": 0,
-                "vod_pic": "'https://t7.baidu.com/it/u=2722048286,215476551&fm=193&f=JPG&w=900&h=383'"
+                "vod_pic": "https://t7.baidu.com/it/u=2722048286,215476551&fm=193&f=JPG&w=900&h=383"
             };
             obj.banner.push(newData);
         }
