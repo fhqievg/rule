@@ -2,7 +2,7 @@
 # > aiQiYi
 URL-REGEX,^https?:\/\/intl\.iqiyi\.com\/(ad_external\/video\/advertise)
 URL-REGEX,^http:\/\/static-s\.iqiyi\.com\/common\/.+\/Small_video\/a2\/af\/.+\.png
-URL-REGEX,^http:\/\/msga/.cupid/.iqiyi/.com\/scp2\.gif
+URL-REGEX,^http:\/\/msga\.cupid\.iqiyi\.com\/scp2\.gif
 URL-REGEX,^https?:\/\/ssports\.iqiyi\.com\/(app\/|json\/shop\/shopInfo)
 URL-REGEX,^https?:\/\/static\.iqiyi\.com\/js\/common\/.+\.js
 URL-REGEX,^https?:\/\/.+\.iqiyi\.com\/videos\/other\/20$
@@ -139,9 +139,9 @@ URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
 URL-REGEX,^https?:\/\/47\.99\.219\.178(:\d+)?\/
-URL-REGEX,^https?:\/\/(.+\.ailbaba\.me|27\.151\.29\.56:\d+)\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
+URL-REGEX,^https?:\/\/(.+\.ailbaba\.me|27\.151\.29\.56(:\d+)?)\/.+\/(actuator_info|top_notice|version|advert\?position=(?!(2)(?=&)))
 URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert)
-URL-REGEX,^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v1\/advert
+URL-REGEX,^https?:\/\/run\.api\.qyfxgd\.cn(:\d+)?\/api\/v1\/advert
 
 # >>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<<
 # > zhiJie
