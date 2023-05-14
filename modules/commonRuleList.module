@@ -1,8 +1,18 @@
 #!name=常规分流
-#!desc=常规分流
+#!desc=分组、分流
+
+[Proxy Group]
+#组-不测速
+#AA = select,Edn,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+#选择单个节点
+#CC = select,韩国1,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+IPTVHK = url-test,Ednovas - 香港#3,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HDOHUB = url-test,Ednovas - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+EMBY = url-test,Ednovas - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,HDOHUB
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,EMBY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,PROXY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
