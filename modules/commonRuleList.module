@@ -2,15 +2,13 @@
 #!desc=分组、分流
 
 [Proxy Group]
-#组-不测速
-#AA = select,Edn,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-TIKTOK = select,KR,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-EMBY = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HDOHUB = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HK = url-test,EDNOVAS - 香港#3,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-KR = select,1.0X 🇰🇷 韩国6,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-SG = url-test,EDNOVAS - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HDOHUB = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+EMBY = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+TIKTOK = select,KR,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HK = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?!(3.0X|4.0X|5.0X|8.0X|Tunnel|LoadBalance)).*(香港)
+KR = select,EDNOVAS - 韩国#3,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+SG = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
