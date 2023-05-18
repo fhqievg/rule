@@ -4,10 +4,13 @@
 [Proxy Group]
 #组-不测速
 #AA = select,Edn,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-TIKTOK = select,1.0X 🇰🇷 韩国6,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-IPTVHK = url-test,Ednovas - 香港#3,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HDOHUB = url-test,Ednovas - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-EMBY = url-test,Ednovas - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+TIKTOK = select,KR,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+EMBY = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HDOHUB = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HK = url-test,EDNOVAS - 香港#3,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+KR = select,1.0X 🇰🇷 韩国6,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+SG = url-test,EDNOVAS - 新加坡#2,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
