@@ -3,16 +3,16 @@
 
 [Proxy Group]
 IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HDOHUB = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-EMBY = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+VIDEO = select,SG,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 TIKTOK = select,KR,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 HK = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?!(3.0X|4.0X|5.0X|6.0X|7.0X|8.0X|9.0X|Tunnel|LoadBalance)).*(香港)
-KR = select,EDNOVAS - 韩国#3,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 SG = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
+KR = select,EDNOVAS - 韩国#3,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,HDOHUB
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,EMBY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,VIDEO
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,VIDEO
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,SG
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,PROXY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
