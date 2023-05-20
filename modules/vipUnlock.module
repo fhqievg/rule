@@ -1,6 +1,6 @@
 #!name=VIP解锁
-#!desc=caiyun、拦截100(<=3.0.2，版本ID:847028887)、Nicegram(<=1.0.7)、xmind思维导图(解锁订阅到2030年)、baiDuPan解锁倍率播放
-#来源仓库：Maasea、id77/QuantumultX、I-am-R-E/Functional-Store-Hub
+#!desc=caiyun、拦截100(<=3.0.2，版本ID:847028887)、Nicegram(<=1.0.7)、xmind思维导图(解锁订阅到2030年)、baiDuPan解锁倍率播放、aliDrive
+#来源仓库：Maasea、id77/QuantumultX、I-am-R-E/Functional-Store-Hub、RuCu6
 
 [Script]
 caiYun = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/caiYun.js,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=false
@@ -8,6 +8,9 @@ caiYun = type=http-response,script-path=https://raw.githubusercontent.com/fhqiev
 nicegram = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/nicegram.js,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,max-size=0,timeout=10,script-update-interval=86400,enable=true
 xmind = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/xmind.js,pattern=^https?:\/\/www\.xmind\.(cn|net|app)\/\_res\/devices,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
 baiDuPan = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/baiDuPan.js,pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
+aliDrive_1 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/aliDrive.js,pattern=^https:\/\/api\.aliyundrive\.com\/apps\/v1\/users\/home\/widgets$,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
+aliDrive_2 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/aliDrive.js,pattern=^https:\/\/api\.aliyundrive\.com\/business\/v1(\.0)?\/users\/(feature\/list|(me\/)?vip\/info)$,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
+aliDrive_3 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/aliDrive.js,pattern=^https:\/\/member\.aliyundrive\.com\/v1\/users\/me$,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
-hostname = %APPEND% biz.caiyunapp.com,tagit.hyhuo.com,restore-access.indream.app,www.xmind.cn,www.xmind.net,www.xmind.app,pan.baidu.com
+hostname = %APPEND% biz.caiyunapp.com,tagit.hyhuo.com,restore-access.indream.app,www.xmind.cn,www.xmind.net,www.xmind.app,pan.baidu.com,api.aliyundrive.com,member.aliyundrive.com
