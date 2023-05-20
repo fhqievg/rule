@@ -9,7 +9,22 @@ if (url.includes("/business/v1.0/users/feature/list")) {
     $done({ body });
 } else {
     let obj = JSON.parse(body);
-    if (url.includes("/apps/v1/users/home/widgets")) {
+    if (url.includes("/apps/v1/users/apps/widgets")) {
+        if (typeof obj.result != 'undefined' && obj.result.length > 0) {
+            obj.result = obj.result.filter(
+                (i) =>
+                    //i.code != "silentUserBack" && //回归礼
+                    i.code != "vip" && //限时领vip
+                    //i.code != "recent_share_save" && //最近转存
+                    //i.code != "recent_video" && //放映室
+                    i.code != "subscriptionRecommend" && //订阅推荐
+                    //i.code != "album_backup_task" && //福利社
+                    //i.code != "imageToText" && //传图识字
+                    //i.code != "search" && //全网搜索
+                    i.code != "auto_addressbook_backup" //通讯录
+            );
+        }
+    } else if (url.includes("/apps/v1/users/home/widgets")) {
         const item = [
             "recentUsed", // 最近在看
             "coreFeatures", // 顶部图标
