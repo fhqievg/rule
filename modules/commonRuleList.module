@@ -5,7 +5,7 @@
 IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 VIDEO = url-test,HK,SG,欧洲节点,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 TIKTOK = select,KR,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-STAM = select,PROXY,SG,HK,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
+STEAM = select,PROXY,SG,HK,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
 TELEGRAM = select,US,欧洲节点,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 HK = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?!(3.0X|4.0X|5.0X|6.0X|7.0X|8.0X|9.0X|Tunnel|LoadBalance)).*(香港)
 SG = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
@@ -17,7 +17,7 @@ US = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,VIDEO
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,VIDEO
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STAM
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STEAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/telegram.list,TELEGRAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,PROXY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
