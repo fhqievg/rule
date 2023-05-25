@@ -12,8 +12,8 @@ STEAM = select,PROXY,SG,HK,interval=3600,timeout=5,select=1,url=http://www.gstat
 TELEGRAM = select,PROXY,US,欧洲节点,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
 HK = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9]\.0X|Tunnel|LoadBalance)).*(香港)
 SG = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
-KR = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国6
-US = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国17
+KR = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国.*6
+US = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国.*17
 欧洲节点 = fallback,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
 
 [Rule]
