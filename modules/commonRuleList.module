@@ -10,12 +10,12 @@ VIDEO = select,JP,SG,HK,KR,欧洲节点,interval=1200,timeout=5,select=0,url=htt
 TIKTOK = select,KR,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 STEAM = select,PROXY,SG,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
 TELEGRAM = select,PROXY,US,欧洲节点,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
-HK = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9]\.0X|Tunnel|LoadBalance)).*(香港)
-SG = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
-KR = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国[^\d]*6[^\d]*$
-US = select,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国[^\d]*17[^\d]*$
-JP = url-test,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.0)?X)).*(日本)
-欧洲节点 = fallback,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
+HK = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9]\.0X|Tunnel|LoadBalance)).*(香港)
+SG = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(新加坡|🇸🇬)
+KR = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国[^\d]*6[^\d]*$
+US = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国[^\d]*17[^\d]*$
+JP = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.0)?X)).*(日本)
+欧洲节点 = fallback,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
