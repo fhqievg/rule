@@ -4,11 +4,12 @@
 
 [Rule]
 # >>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<<
+AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
 # > 12306
 URL-REGEX,^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/,REJECT-IMG
 
 # >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
-# > amdc（gaoDeMap、caiNiaoGuoGuo、taoPiaoPiao）
+# > amdc（gaoDeMap、caiNiaoGuoGuo）
 URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,REJECT-DICT
 
 # > aiQiYi
