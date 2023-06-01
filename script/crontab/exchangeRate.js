@@ -20,7 +20,7 @@ $httpClient.get(options, function (error, response, data) {
 
     let obj = JSON.parse(data);
     if (typeof obj.result != 'undefined' && obj.result === "error") {
-        $notification.post("汇率接口返回错误", "", obj.error - type);
+        $notification.post("汇率接口返回错误", "", obj["error-type"]);
         $done();
     }
 
