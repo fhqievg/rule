@@ -69,30 +69,30 @@ if (url.includes("nbpresentation.homepage.merge.get.cn")) {
             });
         }
     }
-}else if (url.includes("guoguo.nbnetflow.ads.show.cn")) {
-  // 我的页面
-  if (obj.data.result) {
-    obj.data.result = obj.data.result.filter(
-      (i) =>
-        ![
-          "29524", // 开屏广告
-          "29766",
-          "30656", // 30656-30659 休闲娱乐
-          "30657",
-          "30658",
-          "30659",
-          "31491",
-          "31627",
-          "31769", // 帮同学取
-          "31788", // 签到领红包
-          "32103", // 攻略
-          "32926", // 出库码推广
-          "33114",
-          "33116",
-          "33122"
-        ].includes(i?.id)
-    );
-  }
+} else if (url.includes("guoguo.nbnetflow.ads.show.cn")) {
+    // 我的页面
+    if (obj.data.result) {
+        obj.data.result = obj.data.result.filter(
+            (i) =>
+                ![
+                    "29524", // 开屏广告
+                    "29766",
+                    "30656", // 30656-30659 休闲娱乐
+                    "30657",
+                    "30658",
+                    "30659",
+                    "31491",
+                    "31627",
+                    "31769", // 帮同学取
+                    "31788", // 签到领红包
+                    "32103", // 攻略
+                    "32926", // 出库码推广
+                    "33114",
+                    "33116",
+                    "33122"
+                ].includes(i?.id)
+        );
+    }
 }
 
 $done({ body: JSON.stringify(obj) });
