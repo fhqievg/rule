@@ -1,3 +1,4 @@
+//个人页面绑定banner
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -91,7 +92,8 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                         i?.materialContentMapper?.advRecGmtModifiedTime) ||
                     i?.materialContentMapper?.group_id?.includes("entertainment") ||
                     i?.materialContentMapper?.group_id?.includes("kuaishou_banner") ||
-                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && (i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner") || i?.materialContentMapper?.ut_event_name?.includes("event_qingyoubanner")))
+                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && (i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner") || i?.materialContentMapper?.ut_event_name?.includes("event_qingyoubanner"))) ||
+                    (i?.materialContentMapper?.group_id?.includes("interests") && (i?.materialContentMapper?.ut_event_name?.includes("event_jijianhuiyuan") || i?.materialContentMapper?.ut_event_name?.includes("event_guojiangjifeng")))
                 )
         );
     }
