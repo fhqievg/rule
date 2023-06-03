@@ -91,7 +91,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                         i?.materialContentMapper?.advRecGmtModifiedTime) ||
                     i?.materialContentMapper?.group_id?.includes("entertainment") ||
                     i?.materialContentMapper?.group_id?.includes("kuaishou_banner") ||
-                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner"))
+                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && (i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner") || i?.materialContentMapper?.ut_event_name?.includes("event_qingyoubanner")))
                 )
         );
     }
