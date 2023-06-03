@@ -31,7 +31,7 @@ $httpClient.get(options, function (error, response, data) {
             }
 
             if (typeof obj.rates.USD === 'undefined'){
-                $notification.post('汇率接口错误', '', '接口未返回人民币');
+                $notification.post('汇率接口错误', '', '接口未返回美元汇率');
                 $done();
             }
 
@@ -59,7 +59,7 @@ $httpClient.get(options, function (error, response, data) {
 
     let title = timestampToTime(lastTime, "t") + "[" + apiInterface + "]";
     let lastTimeStr = "最后更新时间：" + timestampToTime(lastTime, "h");
-    let msg = "🇺🇸1美元  \t人民币:" + getCurrency(apiInterface, rates);
+    let msg = "🇺🇸1美元  \t人民币:" + getCurrency(apiInterface, rates)+"("+rates+")";
 
     $notification.post(title, lastTimeStr, msg);
     $done();
