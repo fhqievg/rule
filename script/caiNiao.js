@@ -81,7 +81,6 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
         }
     }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
-    $notification.post("show", "", $response.body);
     // 我的页面
     if (obj.data.result) {
         obj.data.result = obj.data.result.filter(
@@ -90,7 +89,9 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                     i?.materialContentMapper?.adItemDetail ||
                     (i?.materialContentMapper?.bgImg &&
                         i?.materialContentMapper?.advRecGmtModifiedTime) ||
-                    i?.materialContentMapper?.group_id?.includes("entertainment")
+                    i?.materialContentMapper?.group_id?.includes("entertainment") ||
+                    i?.materialContentMapper?.group_id?.includes("kuaishou_banner") ||
+                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner"))
                 )
         );
     }
