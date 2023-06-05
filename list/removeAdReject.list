@@ -123,7 +123,7 @@ DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,e.qq.com
 
 # > taoPiaoPiao
-URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query(preload)?advertise|life\.aristotle\.get\/2\.0\?)
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query((preload)?advertise|loadingbanner)|life\.aristotle\.get\/2\.0\?)
 
 # >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
 # > wangYiYunMusic(来源仓库：DivineEngine)
