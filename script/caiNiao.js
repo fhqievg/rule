@@ -88,12 +88,11 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
             (i) =>
                 !(
                     i?.materialContentMapper?.adItemDetail ||
-                    (i?.materialContentMapper?.bgImg &&
-                        i?.materialContentMapper?.advRecGmtModifiedTime) ||
-                    i?.materialContentMapper?.group_id?.includes("entertainment") ||
-                    i?.materialContentMapper?.group_id?.includes("kuaishou_banner") ||
-                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && (i?.materialContentMapper?.ut_event_name?.includes("event_kuaishoubanner") || i?.materialContentMapper?.ut_event_name?.includes("event_qingyoubanner"))) ||
-                    (i?.materialContentMapper?.group_id?.includes("interests") && (i?.materialContentMapper?.ut_event_name?.includes("event_jijianhuiyuan") || i?.materialContentMapper?.ut_event_name?.includes("event_guojiangjifeng")))
+                    (i?.materialContentMapper?.bgImg && i?.materialContentMapper?.advRecGmtModifiedTime) ||
+                    ["entertainment", "kuaishou_banner"].includes(i?.materialContentMapper?.group_id) ||
+                    ["32103"].includes(i.id) ||
+                    (i?.materialContentMapper?.group_id?.includes("common_header_banner") && ["event_kuaishoubanner", "event_qingyoubanner"].includes(i?.materialContentMapper?.ut_event_name)) ||
+                    (i?.materialContentMapper?.group_id?.includes("interests") && ["event_jijianhuiyuan", "event_guojiangjifeng"].includes(i?.materialContentMapper?.ut_event_name))
                 )
         );
     }
