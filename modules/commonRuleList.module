@@ -15,7 +15,7 @@ SG = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=h
 JP = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.0)?X)).*(日本)
 KR = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国[^\d]*6[^\d]*$
 US = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国[^\d]*17[^\d]*$
-澳大利亚节点 = fallback,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=澳大利亚|🇦🇺
+澳大利亚节点 = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=澳大利亚|🇦🇺
 欧洲节点 = fallback,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
 
 [Rule]
