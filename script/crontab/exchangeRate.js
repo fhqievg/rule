@@ -90,7 +90,7 @@ $httpClient.get(options, function (error, response, data) {
     let lastTimeStr = "最后更新时间：" + timestampToTime(lastTime, "h");
     let msg = "🇺🇸1美元  \t人民币:" + amountFixed(amount);
     if (ENABLE_RATES_SHOW) {
-        msg += "(" + amount + ")";
+        msg += "（" + amount + "）";
     }
 
     $notification.post(title, lastTimeStr, msg);
