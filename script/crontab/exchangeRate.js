@@ -6,6 +6,7 @@ const ENABLE_RATES_SHOW = true;
 //1xx：轮流切换，2xx：指定接口
 //100：每4小时；  101：每天；   102：每半个月
 //200：指定第一个；  201：指定第二个；....以此类推
+const TACTIC_HANDOFF = [100, 101, 102];
 const API_CONFIG = {
     "A": {
         "tactic": 201,
@@ -15,7 +16,7 @@ const API_CONFIG = {
         ]
     },
     "B": {
-        "tactic": 100,
+        "tactic": TACTIC_HANDOFF[0],
         "information": [
             //&currencies=CNY
             {
@@ -28,6 +29,13 @@ const API_CONFIG = {
             },
         ]
     }
+}
+
+let resultResponse = {
+    "success": true, //接口状态，true:成功   false:失败
+    "errMsg": "",    //失败原因，false时返回
+    "lastTime": "",  //最后更新时间
+    "amount": 0, //汇率转换后的金额，不用处理处理小数
 }
 
 if (typeof $argument === 'undefined' || $argument === null || $argument === '') {
@@ -50,47 +58,18 @@ $httpClient.get(options, function (error, response, data) {
     }
 
     let obj = JSON.parse(data);
-    let lastTime = '';
-    let amount = '';
-    let configKeys = Object.keys(API_CONFIG);
-    switch (apiInformation.group) {
-        case configKeys[0]:
-            if (typeof obj.result != 'undefined' && obj.result === "error") {
-                $notification.post("接口错误", "", obj["error-type"]);
-                $done();
-            }
-
-            if (typeof obj.rates.USD === 'undefined') {
-                $notification.post('接口错误', '', '未返回美元汇率');
-                $done();
-            }
-
-            lastTime = (apiInformation.apiInterface === "v4") ? obj.time_last_updated : obj.time_last_update_unix;
-            amount = rateConversion(obj.rates.USD);
-            break;
-        case configKeys[1]:
-            if (typeof obj.success != 'undefined' && !obj.success) {
-                $notification.post("接口错误", "", obj.error.info);
-                $done();
-            }
-
-            if (typeof obj.quotes.USDCNY === 'undefined') {
-                $notification.post("接口错误", "", "未返回人民币");
-                $done();
-            }
-
-            lastTime = obj.timestamp;
-            amount = obj.quotes.USDCNY;
-            break;
-        default:
-            break;
+    let functionName = "getResultBy" + apiInformation.group;
+    let result = eval(functionName)(obj, apiInformation);
+    if (result.success === false) {
+        $notification.post("接口错误", "", result.errMsg);
+        $done();
     }
 
-    let title = timestampToTime(lastTime, "t") + "[" + apiInformation.apiInterface + "]";
-    let lastTimeStr = "最后更新时间：" + timestampToTime(lastTime, "h");
-    let msg = "🇺🇸1美元  \t人民币:" + amountFixed(amount);
+    let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "]";
+    let lastTimeStr = "最后更新时间：" + timestampToTime(result.lastTime, "h");
+    let msg = "🇺🇸1美元  \t人民币:" + amountFixed(result.amount);
     if (ENABLE_RATES_SHOW) {
-        msg += "（" + amount + "）";
+        msg += "（" + result.amount + "）";
     }
 
     $notification.post(title, lastTimeStr, msg);
@@ -153,7 +132,7 @@ function checkTactic(group, tactic) {
         switch (first) {
             case "1":
                 tactic = Number(tactic);
-                if (tactic !== 100 && tactic !== 101 && tactic !== 102) {
+                if (TACTIC_HANDOFF.indexOf(tactic) === -1) {
                     return false;
                 }
                 result = {"informationIndex": getIndexByTactic(tactic)};
@@ -193,13 +172,13 @@ function getInformationByConfig(group) {
 
 function getIndexByTactic(tactic, group) {
     switch (tactic) {
-        case 100:
-            let hours = getData("h");   //获取当前小时
+        case TACTIC_HANDOFF[0]:
+            let hours = getDateInfo("h");   //获取当前小时
             return (hours % 4 === 0) ? 0 : 1;
-        case 101:
-        case 102:
-            let day = getData("d");   //获取当前日期
-            if (tactic === 101) {
+        case TACTIC_HANDOFF[1]:
+        case TACTIC_HANDOFF[2]:
+            let day = getDateInfo("d");   //获取当前日期
+            if (tactic === TACTIC_HANDOFF[1]) {
                 return (day % 2 === 0) ? 0 : 1;
             } else {
                 return (day <= 15) ? 0 : 1;
@@ -211,7 +190,7 @@ function getIndexByTactic(tactic, group) {
     }
 }
 
-function getData(designate) {
+function getDateInfo(designate) {
     let currDate = new Date();
     switch (designate) {
         case "d":
@@ -232,10 +211,17 @@ function amountFixed(amount) {
 }
 
 function timestampToTime(timestamp, type) {
-    let date = new Date(timestamp * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    let date = '';
+    let len = timestamp.toString().length;
+    //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    if (len === 10) {
+        date = new Date(timestamp * 1000);
+    } else {
+        date = new Date(timestamp);
+    }
 
     switch (type) {
-        case "t":
+        case "y":
             let Y = date.getFullYear() + '-';
             let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
             let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
@@ -247,6 +233,42 @@ function timestampToTime(timestamp, type) {
             let s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
             return h + m + s;
         default:
-            break;
+            return '';
     }
+}
+
+function getResultByA(obj, apiInformation) {
+    if (typeof obj.result != 'undefined' && obj.result === "error") {
+        resultResponse.success = false;
+        resultResponse.errMsg = obj["error-type"];
+        return resultResponse;
+    }
+
+    if (typeof obj.rates.USD === 'undefined') {
+        resultResponse.success = false;
+        resultResponse.errMsg = "未返回美元汇率";
+        return resultResponse;
+    }
+
+    resultResponse.lastTime = (apiInformation.apiInterface === "v4") ? obj.time_last_updated : obj.time_last_update_unix;
+    resultResponse.amount = rateConversion(obj.rates.USD);
+    return resultResponse;
+}
+
+function getResultByB(obj, apiInformation) {
+    if (typeof obj.success != 'undefined' && !obj.success) {
+        resultResponse.success = false;
+        resultResponse.errMsg = obj.error.info;
+        return resultResponse;
+    }
+
+    if (typeof obj.quotes.USDCNY === 'undefined') {
+        resultResponse.success = false;
+        resultResponse.errMsg = "未返回人民币";
+        return resultResponse;
+    }
+
+    resultResponse.lastTime = obj.timestamp;
+    resultResponse.amount = obj.quotes.USDCNY;
+    return resultResponse;
 }
