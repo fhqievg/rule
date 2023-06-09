@@ -21,7 +21,7 @@ URL-REGEX,^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch,REJECT-IMG
 # > cheLaiLe
 IP-CIDR,124.70.194.16/32,REJECT-DROP,no-resolve
 URL-REGEX,^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog,REJECT-DROP
-URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.(cn|com))\/led-weather\/v\d+\/condition_brief\?,REJECT-200
+URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/led-weather\/v\d+\/condition_brief\?,REJECT-200
 
 # > caiNiao
 URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.index|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close))\.cn,REJECT-DICT
