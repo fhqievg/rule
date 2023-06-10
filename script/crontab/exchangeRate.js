@@ -144,7 +144,7 @@ function checkTactic(group, tactic) {
                 if (TACTIC_HANDOFF.indexOf(tactic) === -1) {
                     return false;
                 }
-                result = {"informationIndex": getIndexByTactic(tactic)};
+                result = {"informationIndex": getIndexByTactic(tactic, group)};
                 break;
             case "2":
                 let index = Number(tactic.substring(1));
