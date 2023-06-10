@@ -17,13 +17,14 @@ if (url.includes("/business/v1.0/users/feature/list")) {
                     //vip 限时领vip
                     //recent_share_save 最近转存
                     //recent_video 放映室
+                    //recent_document 最近文档
                     //subscriptionRecommend 订阅推荐
                     //album_backup_task 福利社
                     //imageToText 传图识字
                     //search 全网搜索
                     //auto_addressbook_backup 通讯录
                     !(
-                        ["vip", "subscriptionRecommend", "imageToText", "search", "auto_addressbook_backup"].includes(i.code)
+                        ["vip", "subscriptionRecommend", "imageToText", "search", "auto_addressbook_backup", "recent_document"].includes(i.code)
                     )
             );
         }
