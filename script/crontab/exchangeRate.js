@@ -4,8 +4,9 @@ const ENABLE_RATES_SHOW = true;
 
 //策略规则
 //1xx：轮流切换，2xx：指定接口
-//100：每4小时；  101：每天；   102：每半个月
-//200：指定第一个；  201：指定第二个；....以此类推
+//100：每4小时； 101：每天； 102：每半个月
+//200：指定第一个； 201：指定第二个；....以此类推
+//eg:A-101，A-v6
 const TACTIC_HANDOFF = [100, 101, 102];
 const API_CONFIG = {
     "A": {
@@ -13,7 +14,7 @@ const API_CONFIG = {
         "tactic": 201,
         "information": [
             {"apiInterface": "v4", "apiUrl": "aHR0cHM6Ly9hcGkuZXhjaGFuZ2VyYXRlLWFwaS5jb20vdjQvbGF0ZXN0L0NOWQ=="},
-            {"apiInterface": "v6", "apiUrl": "aHR0cHM6Ly9vcGVuLmVyLWFwaS5jb20vdjYvbGF0ZXN0L0NOWQ=="},
+            {"apiInterface": "v6", "apiUrl": "aHR0cHM6Ly9vcGVuLmVyLWFwaS5jb20vdjYvbGF0ZXN0L0NOWQ=="}
         ]
     },
     "B": {
@@ -27,7 +28,7 @@ const API_CONFIG = {
             {
                 "apiInterface": "vc",
                 "apiUrl": "aHR0cDovL2FwaS5jdXJyZW5jeWxheWVyLmNvbS9saXZlP2FjY2Vzc19rZXk9MTdkNmZkMTIyZjlmZDI0NTIxMmQ4MmE2N2ExMzBjY2Mmc291cmNlPVVTRCZmb3JtYXQ9MQ=="
-            },
+            }
         ]
     }
 }
@@ -50,13 +51,12 @@ if (apiInformation === false) {
 }
 
 let apiUrl = "";
-if(API_CONFIG[apiInformation.group].isCode){
+if (API_CONFIG[apiInformation.group].isCode) {
     let code = new strCode();
     apiUrl = code.decode(apiInformation.apiUrl);
-}else {
+} else {
     apiUrl = apiInformation.apiUrl;
 }
-
 let options = {
     url: apiUrl
 }
@@ -180,17 +180,18 @@ function getInformationByConfig(group) {
 }
 
 function getIndexByTactic(tactic, group) {
+    let number = API_CONFIG[group].information.length;
     switch (tactic) {
         case TACTIC_HANDOFF[0]:
             let hours = getDateInfo("h");   //获取当前小时
-            return (hours % 4 === 0) ? 0 : 1;
+            return (hours % 4 === 0) ? 0 : (number > 1 ? 1 : 0);
         case TACTIC_HANDOFF[1]:
         case TACTIC_HANDOFF[2]:
             let day = getDateInfo("d");   //获取当前日期
             if (tactic === TACTIC_HANDOFF[1]) {
-                return (day % 2 === 0) ? 0 : 1;
+                return (day % 2 === 0) ? 0 : (number > 1 ? 1 : 0);
             } else {
-                return (day <= 15) ? 0 : 1;
+                return (day <= 15) ? 0 : (number > 1 ? 1 : 0);
             }
         default:
             //指定接口
