@@ -9,7 +9,7 @@ const ENABLE_RATES_SHOW = true;
 const TACTIC_HANDOFF = [100, 101, 102];
 const API_CONFIG = {
     "A": {
-        "isCode": true
+        "isCode": true,
         "tactic": 201,
         "information": [
             {"apiInterface": "v4", "apiUrl": "aHR0cHM6Ly9hcGkuZXhjaGFuZ2VyYXRlLWFwaS5jb20vdjQvbGF0ZXN0L0NOWQ=="},
@@ -17,7 +17,7 @@ const API_CONFIG = {
         ]
     },
     "B": {
-        "isCode": true
+        "isCode": true,
         "tactic": TACTIC_HANDOFF[0],
         "information": [
             {
