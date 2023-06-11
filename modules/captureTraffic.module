@@ -5,4 +5,4 @@
 logs = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/logs.js,pattern=^https?:\/\/.+\/,max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
-hostname = %APPEND% -*.apple.com,-*.icloud.com,-*.icloud.com.cn,-*.icloud-content.com,-*.itunes.com,-*.mzstatic.com,-*.crashlytics.com,-*.facebook.com,-*.instagram.com,-api.twitter.com,*:*
+hostname = %APPEND% -*.apple.com,-*.icloud.com,-*.icloud.com.cn,-*.icloud-content.com,-*.itunes.com,-*.mzstatic.com,-*.crashlytics.com,-*.facebook.com,-*.instagram.com,-api.twitter.com,-raw.githubusercontent.com,*:*
