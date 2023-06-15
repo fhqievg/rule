@@ -6,13 +6,13 @@ let obj = JSON.parse($response.body);
 if (url.includes("nbpresentation.homepage.merge.get")) {
     // 反馈组件
     if (obj.data) {
-    const item = [
-      "adkeyword", // 底部信息流
-      "nbmensa.research.researchservice.acquire", // 调查问卷
-      "nbpresentation.protocol.homepage" // 顶部图标
-    ];
-    obj.data = Object.entries(obj.data).filter(([key]) => !item.includes(key));
-  }
+        const item = [
+            "adkeyword", // 底部信息流
+            "nbmensa.research.researchservice.acquire", // 调查问卷
+            "nbpresentation.protocol.homepage" // 顶部图标
+        ];
+        obj.data = Object.entries(obj.data).filter(([key]) => !item.includes(key));
+    }
 } else if (url.includes("nbpresentation.pickup.empty.page.get")) {
     // 取件页面
     if (obj.data.result) {
