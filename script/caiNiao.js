@@ -7,10 +7,16 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
     // 反馈组件
     if (obj.data) {
         const item = [
-            "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@0",
-            "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@1",
-            "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@2",
-            "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@3"
+              "mtop.cainiao.adkeyword.get.cn@0",
+              "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@0",
+              "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@1",
+              "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@2",
+              "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@3",
+              "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@7",
+              "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@2",
+              "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@10",
+              "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@11",
+              "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@13"
         ];
         for (let i of item) {
             if (obj.data?.[i]) {
