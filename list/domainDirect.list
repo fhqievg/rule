@@ -1,9 +1,9 @@
+DOMAIN,cdn.jsdelivr.net
 DOMAIN-SUFFIX,fileball.app
 DOMAIN-SUFFIX,qiyoujiage.com
 DOMAIN-SUFFIX,pansearch.me
 DOMAIN,emby.ednovas.org
 DOMAIN-SUFFIX,dandanplay.net
-DOMAIN,cdn.jsdelivr.net
 DOMAIN,dsxys.pro
 DOMAIN,dsxtv.pro
 DOMAIN-SUFFIX,ailbaba.me
@@ -11,6 +11,7 @@ DOMAIN,kekeoo.com
 DOMAIN,ereroo.com
 DOMAIN,www.aliyuncss.top
 DOMAIN,www.6080dy3.com
+DOMAIN-SUFFIX,9day.cc
 DOMAIN-SUFFIX,liangzipic.com
 DOMAIN-SUFFIX,ffzypic.com
 DOMAIN-SUFFIX,ffzyread.com
@@ -23,5 +24,7 @@ DOMAIN-SUFFIX,bdzybf7.com
 DOMAIN-SUFFIX,bdzyimg.com
 DOMAIN-KEYWORD,ffzy-play
 DOMAIN-KEYWORD,ffzy-online
+DOMAIN-KEYWORD,vip.ffzyread
 DOMAIN-KEYWORD,kuaikan-cdn
 DOMAIN-KEYWORD,hd.lz-cdn
+DOMAIN-KEYWORD,vip.lz-cdn
