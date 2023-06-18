@@ -1,7 +1,7 @@
 const API_SPLIT = '-';
 const FIXED = 2;  //保留小数位数
 const ENABLE_RATES_SHOW = true; //是否显示转换后的原始金额(未处理小数)
-const MAX_FIXED = 6;  //原始金额最长小数位数
+const MAX_FIXED = 5;  //原始金额最长小数位数
 //订阅转换
 const CONVERSION_TO = "->";   //转配置的基准货币
 const CONVERSION_FROM = "<-";   //从配置的基准货币转
@@ -102,10 +102,10 @@ $httpClient.get(options, function (error, response, data) {
     for (let i in result.erObj) {
         switch (result.erObj[i].type) {
             case CONVERSION_TO:
-                msg += `${result.erObj[i].country}1${result.erObj[i].name}   \t${CONVERSION_BASE.name}:${result.erObj[i].amount}`;
+                msg += `${result.erObj[i].country}1${result.erObj[i].name}  \t${CONVERSION_BASE.name}:${result.erObj[i].amount}`;
                 break;
             case CONVERSION_FROM:
-                msg += `${result.erObj[i].country}1${CONVERSION_BASE.name}   \t${result.erObj[i].name}:${result.erObj[i].amount}`;
+                msg += `${result.erObj[i].country}1${CONVERSION_BASE.name}  \t${result.erObj[i].name}:${result.erObj[i].amount}`;
                 break;
         }
         if (Number(i) !== num) {
@@ -328,7 +328,7 @@ function getEr(rates, base, apiConfig) {
                             pendingAmount = cny;
                             break;
                         case CONVERSION_FROM:
-                            pendingAmount = rates[key] / cny;
+                            pendingAmount = (cny === 0) ? 0 : rates[key] / cny;
                             break;
                         default:
                             break;
