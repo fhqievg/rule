@@ -4,6 +4,7 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("nbpresentation.homepage.merge.get")) {
+    $notification.post("反馈组件", "", $response.body);
     // 反馈组件
     if (obj.data) {
         const item = [
@@ -29,6 +30,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
         }
     }
 } else if (url.includes("nbpresentation.protocol.homepage.get")) {
+    $notification.post("首页", "", $response.body);
     // 首页
     if (obj.data.result) {
         let res = obj.data.result;
@@ -93,6 +95,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
         );
     }
 } else if (url.includes("guoguo.nbnetflow.ads.mshow")) {
+    $notification.post("mshow", "", $response.body);
     // 首页
     if (obj.data) {
         const item = [
