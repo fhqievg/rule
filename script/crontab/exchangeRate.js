@@ -1,25 +1,39 @@
 const API_SPLIT = '-';
-const FIXED = 2;  //保留小数
-const ENABLE_RATES_SHOW = true;
+const FIXED = 2;  //保留小数位数
+const ENABLE_RATES_SHOW = true; //是否显示转换后的原始金额(未处理小数)
+const MAX_FIXED = 6;  //原始金额最长小数位数
+//订阅转换
+const CONVERSION_TO = "->";   //转配置的基准货币
+const CONVERSION_FROM = "<-";   //从配置的基准货币转
+const SUBSCRIBE_CONVERSION = [
+    ["🇺🇸", "美元", "USD", CONVERSION_TO],    //USD -> CNY
+    ["🇯🇵", "日元", "JPY", CONVERSION_FROM],  //CNY <- JPY =====> CNY -> JPY
+    ["🇹🇷", "土耳其里拉", "TRY", CONVERSION_FROM]  //CNY <- TRY =====> CNY -> TRY
+]
 
 //策略规则
 //1xx：轮流切换，2xx：指定接口
 //100：每4小时； 101：每天； 102：每半个月
 //200：指定第一个； 201：指定第二个；....以此类推
+//apiInterface不能是纯数字，推荐以v开头
 //eg:A-101，A-v6
 const TACTIC_HANDOFF = [100, 101, 102];
 const API_CONFIG = {
     "A": {
-        "isCode": true,
         "tactic": 201,
+        "isCode": true,
+        "isRateConversion": true,    //是否返回的是汇率，需要进行转换
+        "isBaseConnect": false,  //返回的汇率数据字段是否有连接基准货币，eg：USDCNY\CNY
         "information": [
             {"apiInterface": "v4", "apiUrl": "aHR0cHM6Ly9hcGkuZXhjaGFuZ2VyYXRlLWFwaS5jb20vdjQvbGF0ZXN0L0NOWQ=="},
             {"apiInterface": "v6", "apiUrl": "aHR0cHM6Ly9vcGVuLmVyLWFwaS5jb20vdjYvbGF0ZXN0L0NOWQ=="}
         ]
     },
     "B": {
-        "isCode": true,
         "tactic": TACTIC_HANDOFF[0],
+        "isCode": true,
+        "isRateConversion": false,   //返回的是金额
+        "isBaseConnect": true,
         "information": [
             {
                 "apiInterface": "vu",
@@ -33,11 +47,18 @@ const API_CONFIG = {
     }
 }
 
+//结果基准货币
+const CONVERSION_BASE = {
+    "currency": "CNY",
+    "name": "人民币"
+}
+
 let resultResponse = {
     "success": true, //接口状态，true:成功   false:失败
     "errMsg": "",    //失败原因，false时返回
     "lastTime": "",  //最后更新时间
-    "amount": 0, //汇率转换后的金额，不用处理处理小数
+    "base": "",  //接口返回的基准货币
+    "erObj": [] //订阅汇率对象，金额需转换处理，eg：[{"curreny":"USD","country":"🇺🇸","name":"美元","amount":"222.77（222.76599）","type":"->"}],
 }
 
 if (typeof $argument === 'undefined' || $argument === null || $argument === '') {
@@ -52,7 +73,7 @@ if (apiInformation === false) {
 
 let apiUrl = "";
 if (API_CONFIG[apiInformation.group].isCode) {
-    let code = new strCode();
+    let code = new StrCode();
     apiUrl = code.decode(apiInformation.apiUrl);
 } else {
     apiUrl = apiInformation.apiUrl;
@@ -68,17 +89,28 @@ $httpClient.get(options, function (error, response, data) {
 
     let obj = JSON.parse(data);
     let functionName = "getResultBy" + apiInformation.group;
-    let result = eval(functionName)(obj, apiInformation);
+    let result = eval(functionName)(obj, apiInformation, API_CONFIG[apiInformation.group]);
     if (result.success === false) {
         $notification.post("接口错误", "", result.errMsg);
         $done();
     }
 
-    let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "]";
+    let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "][" + result.base + "]";
     let lastTimeStr = "最后更新时间：" + timestampToTime(result.lastTime, "h");
-    let msg = "🇺🇸1美元  \t人民币:" + amountFixed(result.amount);
-    if (ENABLE_RATES_SHOW) {
-        msg += "（" + result.amount + "）";
+    let msg = "";
+    let num = result.erObj.length - 1;
+    for (let i in result.erObj) {
+        switch (result.erObj[i].type) {
+            case CONVERSION_TO:
+                msg += `${result.erObj[i].country}1${result.erObj[i].name}  \t${CONVERSION_BASE.name}:${result.erObj[i].amount}`;
+                break;
+            case CONVERSION_FROM:
+                msg += `${result.erObj[i].country}1${CONVERSION_BASE.name}  \t${result.erObj[i].name}:${result.erObj[i].amount}`;
+                break;
+        }
+        if (Number(i) !== num) {
+            msg += "\r\n";
+        }
     }
 
     $notification.post(title, lastTimeStr, msg);
@@ -220,6 +252,17 @@ function amountFixed(amount) {
     return amount.toFixed(FIXED);
 }
 
+function amountHandle(amount) {
+    let newAmount = amountFixed(amount);
+    if (amount.toString().includes(".")) {
+        let split = amount.toString().split(".");
+        if (typeof split[1] != 'undefined' && split[1].length > MAX_FIXED) {
+            amount = amount.toFixed(MAX_FIXED);
+        }
+    }
+    return ENABLE_RATES_SHOW ? newAmount + "（" + amount + "）" : newAmount;
+}
+
 function timestampToTime(timestamp, type) {
     let date = '';
     let len = timestamp.toString().length;
@@ -247,7 +290,61 @@ function timestampToTime(timestamp, type) {
     }
 }
 
-function getResultByA(obj, apiInformation) {
+function getEr(rates, base, apiConfig) {
+    let erObj = [];
+    for (let i in SUBSCRIBE_CONVERSION) {
+        let subscribeConfigObj = SUBSCRIBE_CONVERSION[i];
+        let key = apiConfig.isBaseConnect ? (base === subscribeConfigObj[2] ? subscribeConfigObj[2] : base + subscribeConfigObj[2]) : subscribeConfigObj[2];
+        if (typeof rates[base] === 'undefined') {
+            rates[base] = 1;
+        }
+        if (typeof rates[key] != 'undefined') {
+            let er = {
+                "curreny": subscribeConfigObj[2],
+                "country": subscribeConfigObj[0],
+                "name": subscribeConfigObj[1],
+                "type": subscribeConfigObj[3]
+            }
+
+            //处理金额
+            let pendingAmount = 0;
+            switch (base) {
+                case CONVERSION_BASE.currency:
+                    switch (er.type) {
+                        case CONVERSION_TO:
+                            pendingAmount = apiConfig.isRateConversion ? rateConversion(rates[key]) : rates[key];
+                            break;
+                        case CONVERSION_FROM:
+                            pendingAmount = rates[key];
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "USD":
+                    let cny = (typeof rates[base + CONVERSION_BASE.currency] != 'undefined') ? rates[base + CONVERSION_BASE.currency] : ((typeof rates[CONVERSION_BASE.currency] != 'undefined') ? rates[CONVERSION_BASE.currency] : 0);
+                    switch (er.type) {
+                        case CONVERSION_TO:
+                            pendingAmount = cny;
+                            break;
+                        case CONVERSION_FROM:
+                            pendingAmount = rates[key] / cny;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            er.amount = amountHandle(pendingAmount);
+            erObj.push(er);
+        }
+    }
+    return erObj;
+}
+
+function getResultByA(obj, apiInformation, apiConfig) {
     if (typeof obj.result != 'undefined' && obj.result === "error") {
         resultResponse.success = false;
         resultResponse.errMsg = obj["error-type"];
@@ -261,11 +358,12 @@ function getResultByA(obj, apiInformation) {
     }
 
     resultResponse.lastTime = (apiInformation.apiInterface === "v4") ? obj.time_last_updated : obj.time_last_update_unix;
-    resultResponse.amount = rateConversion(obj.rates.USD);
+    resultResponse.base = (apiInformation.apiInterface === "v4") ? obj.base : obj.base_code;
+    resultResponse.erObj = getEr(obj.rates, resultResponse.base, apiConfig);
     return resultResponse;
 }
 
-function getResultByB(obj, apiInformation) {
+function getResultByB(obj, apiInformation, apiConfig) {
     if (typeof obj.success != 'undefined' && !obj.success) {
         resultResponse.success = false;
         resultResponse.errMsg = obj.error.info;
@@ -279,7 +377,8 @@ function getResultByB(obj, apiInformation) {
     }
 
     resultResponse.lastTime = obj.timestamp;
-    resultResponse.amount = obj.quotes.USDCNY;
+    resultResponse.base = obj.source;
+    resultResponse.erObj = getEr(obj.quotes, resultResponse.base, apiConfig);
     return resultResponse;
 }
 
