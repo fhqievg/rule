@@ -95,17 +95,17 @@ $httpClient.get(options, function (error, response, data) {
         $done();
     }
 
-    let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "][" + result.base + "]";
+    let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "] [" + result.base + "]";
     let lastTimeStr = "最后更新时间：" + timestampToTime(result.lastTime, "h");
     let msg = "";
     let num = result.erObj.length - 1;
     for (let i in result.erObj) {
         switch (result.erObj[i].type) {
             case CONVERSION_TO:
-                msg += `${result.erObj[i].country}1${result.erObj[i].name}  \t${CONVERSION_BASE.name}:${result.erObj[i].amount}`;
+                msg += `${result.erObj[i].country}1${result.erObj[i].name}   \t${CONVERSION_BASE.name}:${result.erObj[i].amount}`;
                 break;
             case CONVERSION_FROM:
-                msg += `${result.erObj[i].country}1${CONVERSION_BASE.name}  \t${result.erObj[i].name}:${result.erObj[i].amount}`;
+                msg += `${result.erObj[i].country}1${CONVERSION_BASE.name}   \t${result.erObj[i].name}:${result.erObj[i].amount}`;
                 break;
         }
         if (Number(i) !== num) {
