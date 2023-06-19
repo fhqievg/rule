@@ -3,12 +3,12 @@ const FIXED = 2;  //保留小数位数
 const ENABLE_RATES_SHOW = true; //是否显示转换后的原始金额(未处理小数)
 const MAX_FIXED = 5;  //原始金额最长小数位数
 //订阅转换
-const CONVERSION_TO = "->";   //转配置的基准货币
-const CONVERSION_FROM = "<-";   //从配置的基准货币转
+const CONVERSION_TO = "->";   //订阅 兑 转换基准货币
+const CONVERSION_FROM = "<-";   //转换基准货币 兑 订阅
 const SUBSCRIBE_CONVERSION = [
-    ["🇺🇸", "美元", "USD", CONVERSION_TO],    //USD -> CNY
-    ["🇯🇵", "日元", "JPY", CONVERSION_FROM],  //CNY <- JPY =====> CNY -> JPY
-    ["🇹🇷", "土耳其里拉", "TRY", CONVERSION_FROM]  //CNY <- TRY =====> CNY -> TRY
+    ["🇺🇸", "美元", "USD", CONVERSION_TO],    //USD -> 转换基准货币 ===> USD 兑 转换基准货币
+    ["🇯🇵", "日元", "JPY", CONVERSION_FROM],  //JPY <- 转换基准货币 ===> 转换基准货币 兑 JPY
+    ["🇹🇷", "土耳其里拉", "TRY", CONVERSION_FROM]  //TRY <- 转换基准货币 ===> 转换基准货币 兑 TRY
 ]
 
 //策略规则
@@ -18,12 +18,13 @@ const SUBSCRIBE_CONVERSION = [
 //apiInterface不能是纯数字，推荐以v开头
 //eg:A-101，A-v6
 const TACTIC_HANDOFF = [100, 101, 102];
+//重要参数说明
+//isBaseConnect：返回的汇率数据字段是否有连接基准货币，eg：USDCNY/CNY
 const API_CONFIG = {
     "A": {
         "tactic": 201,
         "isCode": true,
-        "isRateConversion": true,    //是否返回的是汇率，需要进行转换
-        "isBaseConnect": false,  //返回的汇率数据字段是否有连接基准货币，eg：USDCNY\CNY
+        "isBaseConnect": false,
         "information": [
             {"apiInterface": "v4", "apiUrl": "aHR0cHM6Ly9hcGkuZXhjaGFuZ2VyYXRlLWFwaS5jb20vdjQvbGF0ZXN0L0NOWQ=="},
             {"apiInterface": "v6", "apiUrl": "aHR0cHM6Ly9vcGVuLmVyLWFwaS5jb20vdjYvbGF0ZXN0L0NOWQ=="}
@@ -32,7 +33,6 @@ const API_CONFIG = {
     "B": {
         "tactic": TACTIC_HANDOFF[0],
         "isCode": true,
-        "isRateConversion": false,   //返回的是金额
         "isBaseConnect": true,
         "information": [
             {
@@ -47,7 +47,7 @@ const API_CONFIG = {
     }
 }
 
-//结果基准货币
+//转换基准货币
 const CONVERSION_BASE = {
     "currency": "CNY",
     "name": "人民币"
@@ -58,7 +58,7 @@ let resultResponse = {
     "errMsg": "",    //失败原因，false时返回
     "lastTime": "",  //最后更新时间
     "base": "",  //接口返回的基准货币
-    "erObj": [] //订阅汇率对象，金额需转换处理，eg：[{"curreny":"USD","country":"🇺🇸","name":"美元","amount":"222.77（222.76599）","type":"->"}],
+    "erObj": [] //订阅汇率对象，金额需转换处理，格式：[{"curreny":"USD","country":"🇺🇸","name":"美元","amount":"222.77（222.76599）","type":"->"}],
 }
 
 if (typeof $argument === 'undefined' || $argument === null || $argument === '') {
@@ -291,13 +291,13 @@ function timestampToTime(timestamp, type) {
 }
 
 function getEr(rates, base, apiConfig) {
+    if (typeof rates[base] === 'undefined') {
+        rates[base] = 1;
+    }
     let erObj = [];
     for (let i in SUBSCRIBE_CONVERSION) {
         let subscribeConfigObj = SUBSCRIBE_CONVERSION[i];
         let key = apiConfig.isBaseConnect ? (base === subscribeConfigObj[2] ? subscribeConfigObj[2] : base + subscribeConfigObj[2]) : subscribeConfigObj[2];
-        if (typeof rates[base] === 'undefined') {
-            rates[base] = 1;
-        }
         if (typeof rates[key] != 'undefined') {
             let er = {
                 "curreny": subscribeConfigObj[2],
@@ -312,7 +312,7 @@ function getEr(rates, base, apiConfig) {
                 case CONVERSION_BASE.currency:
                     switch (er.type) {
                         case CONVERSION_TO:
-                            pendingAmount = apiConfig.isRateConversion ? rateConversion(rates[key]) : rates[key];
+                            pendingAmount = rateConversion(rates[key]);
                             break;
                         case CONVERSION_FROM:
                             pendingAmount = rates[key];
@@ -321,20 +321,18 @@ function getEr(rates, base, apiConfig) {
                             break;
                     }
                     break;
-                case "USD":
-                    let cny = (typeof rates[base + CONVERSION_BASE.currency] != 'undefined') ? rates[base + CONVERSION_BASE.currency] : ((typeof rates[CONVERSION_BASE.currency] != 'undefined') ? rates[CONVERSION_BASE.currency] : 0);
+                default:
+                    let conBaseAmount = (typeof rates[base + CONVERSION_BASE.currency] != 'undefined') ? rates[base + CONVERSION_BASE.currency] : ((typeof rates[CONVERSION_BASE.currency] != 'undefined') ? rates[CONVERSION_BASE.currency] : 0);
                     switch (er.type) {
                         case CONVERSION_TO:
-                            pendingAmount = cny;
+                            pendingAmount = conBaseAmount;
                             break;
                         case CONVERSION_FROM:
-                            pendingAmount = (cny === 0) ? 0 : rates[key] / cny;
+                            pendingAmount = (conBaseAmount === 0) ? 0 : rates[key] / conBaseAmount;
                             break;
                         default:
                             break;
                     }
-                    break;
-                default:
                     break;
             }
             er.amount = amountHandle(pendingAmount);
@@ -351,12 +349,6 @@ function getResultByA(obj, apiInformation, apiConfig) {
         return resultResponse;
     }
 
-    if (typeof obj.rates.USD === 'undefined') {
-        resultResponse.success = false;
-        resultResponse.errMsg = "未返回美元汇率";
-        return resultResponse;
-    }
-
     resultResponse.lastTime = (apiInformation.apiInterface === "v4") ? obj.time_last_updated : obj.time_last_update_unix;
     resultResponse.base = (apiInformation.apiInterface === "v4") ? obj.base : obj.base_code;
     resultResponse.erObj = getEr(obj.rates, resultResponse.base, apiConfig);
@@ -367,12 +359,6 @@ function getResultByB(obj, apiInformation, apiConfig) {
     if (typeof obj.success != 'undefined' && !obj.success) {
         resultResponse.success = false;
         resultResponse.errMsg = obj.error.info;
-        return resultResponse;
-    }
-
-    if (typeof obj.quotes.USDCNY === 'undefined') {
-        resultResponse.success = false;
-        resultResponse.errMsg = "未返回人民币";
         return resultResponse;
     }
 
