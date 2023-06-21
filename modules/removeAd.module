@@ -44,7 +44,7 @@ URL-REGEX,^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHo
 # > other
 URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json,REJECT-DICT
 DOMAIN-SUFFIX,umeng.com,REJECT-DROP
-DOMAIN-SUFFIX,umengcloud.com,REJECT-200
+DOMAIN-SUFFIX,umengcloud.com,REJECT-DROP
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
 DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
 DOMAIN-SUFFIX,sigmob.cn,REJECT-DROP
