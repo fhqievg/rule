@@ -78,7 +78,6 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
         }
     }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
-    $notification.post("mshow", "log", $response.body);
     // 我的页面
     if (obj.data.result) {
         obj.data.result = obj.data.result.filter(
@@ -89,7 +88,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                     ["entertainment", "kuaishou_banner"].includes(i?.materialContentMapper?.group_id) ||
                     ["32103"].includes(i.id) ||
                     (i?.materialContentMapper?.group_id?.includes("common_header_banner") && ["event_kuaishoubanner", "event_qingyoubanner"].includes(i?.materialContentMapper?.ut_event_name)) ||
-                    (i?.materialContentMapper?.group_id?.includes("interests") && ["event_jijianhuiyuan", "event_guojiangjifeng", "event_lvsenengliang"].includes(i?.materialContentMapper?.ut_event_name))
+                    (i?.materialContentMapper?.group_id?.includes("interests") && ["event_jijianhuiyuan", "event_guojiangjifeng", "event_greenhome"].includes(i?.materialContentMapper?.ut_event_name))
                 )
         );
     }
