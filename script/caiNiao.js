@@ -78,6 +78,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
         }
     }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
+    $notification.post("mshow", "log", $response.body);
     // 我的页面
     if (obj.data.result) {
         obj.data.result = obj.data.result.filter(
