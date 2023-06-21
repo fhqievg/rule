@@ -144,9 +144,6 @@ URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json
 # > xiaoXiongYouHao
 URL-REGEX,^https:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
 
-# > xiaoMi
-DOMAIN,api.xmpush.xiaomi.com
-
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
 IP-CIDR,47.99.219.178/32,no-resolve
