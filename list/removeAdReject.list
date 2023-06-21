@@ -36,6 +36,9 @@ URL-REGEX,^https?:\/\/update\.pan\.baidu\.com\/statistics
 URL-REGEX,^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/(js\/.+\.js|index\.html)
 URL-REGEX,^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png
 
+# > baiDu
+DOMAIN,mobads.baidu.com
+
 # >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
 # > cheLaiLe
 DOMAIN,atrace.chelaile.net.cn
@@ -137,6 +140,12 @@ URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
 URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
+
+# > xiaoXiongYouHao
+URL-REGEX,^https:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
+
+# > xiaoMi
+DOMAIN,api.xmpush.xiaomi.com
 
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
