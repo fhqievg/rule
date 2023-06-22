@@ -62,6 +62,10 @@ URL-REGEX,^https:\/\/www\.pansearch\.me\/api\/adsite,REJECT-DICT
 # > qianChengWuYou
 URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\?,REJECT-DICT
 
+# > qq
+DOMAIN-SUFFIX,trace.qq.com,REJECT-DROP
+DOMAIN-SUFFIX,btrace.qq.com,REJECT-DROP
+
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tencentVideo
 AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
