@@ -2,8 +2,6 @@ DOMAIN,cdn.jsdelivr.net
 DOMAIN-SUFFIX,fileball.app
 DOMAIN-SUFFIX,qiyoujiage.com
 DOMAIN-SUFFIX,pansearch.me
-DOMAIN,emby.ednovas.org
-DOMAIN-SUFFIX,dandanplay.net
 DOMAIN,dsxys.pro
 DOMAIN,dsxtv.pro
 DOMAIN-SUFFIX,ailbaba.me
@@ -22,9 +20,11 @@ DOMAIN,image.maimn.com
 DOMAIN-SUFFIX,bgm.tv
 DOMAIN-SUFFIX,bdzybf7.com
 DOMAIN-SUFFIX,bdzyimg.com
-DOMAIN-KEYWORD,ffzy-play
+IP-CIDR,162.209.190.70/32,no-resolve
+DOMAIN-KEYWORD,vip.ffzy-play
 DOMAIN-KEYWORD,ffzy-online
 DOMAIN-KEYWORD,vip.ffzyread
 DOMAIN-KEYWORD,kuaikan-cdn
 DOMAIN-KEYWORD,hd.lz-cdn
 DOMAIN-KEYWORD,vip.lz-cdn
+DOMAIN-KEYWORD,vod2.bdzybf
