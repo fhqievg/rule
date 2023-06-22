@@ -69,7 +69,7 @@ URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
 
 # >>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<<
 # > ntPlayer
-URL-REGEX,^https:\/\/blog\.nilbt\.com\/static\/api\/update\.json
+URL-REGEX,^https?:\/\/blog\.nilbt\.com\/static\/api\/update\.json
 
 # >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
 # > pengPaiNews
@@ -142,7 +142,7 @@ URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
 URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
 
 # > xiaoXiongYouHao
-URL-REGEX,^https:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
+URL-REGEX,^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
 
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
