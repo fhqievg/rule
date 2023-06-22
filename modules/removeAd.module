@@ -63,6 +63,7 @@ URL-REGEX,^https:\/\/www\.pansearch\.me\/api\/adsite,REJECT-DICT
 URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\?,REJECT-DICT
 
 # > qq
+DOMAIN-SUFFIX,bugly.qq.com,REJECT-DROP
 DOMAIN-SUFFIX,trace.qq.com,REJECT-DROP
 DOMAIN-SUFFIX,btrace.qq.com,REJECT-DROP
 
