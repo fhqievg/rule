@@ -80,9 +80,6 @@ URL-REGEX,^https?:\/\/app\.thepaper\.cn\/.+\/getWeather
 # > qianChengWuYou
 URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?(util\/get_version|market\/(adtrace|get_launch))
 
-# > qq
-DOMAIN-SUFFIX,bugly.qq.com
-
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
 DOMAIN-SUFFIX,1nmob.com
