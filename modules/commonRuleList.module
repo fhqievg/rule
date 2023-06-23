@@ -5,7 +5,7 @@
 dns-server = https://223.5.5.5/dns-query,223.5.5.5,119.29.29.29
 
 [Proxy Group]
-手动选择 = select,DIRECT,PROXY,SG,JP,HK,澳大利亚节点,US,欧洲节点,interval=1200,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+EMBY = select,DIRECT,PROXY,SG,JP,HK,US,澳大利亚节点,欧洲节点,interval=1200,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 VIDEO = select,JP,SG,HK,KR,欧洲节点,interval=1200,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 TIKTOK = select,KR,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
@@ -23,7 +23,7 @@ US = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstat
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,VIDEO
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/edEmby.list,手动选择
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/edEmby.list,EMBY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,VIDEO
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STEAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/telegram.list,TELEGRAM
