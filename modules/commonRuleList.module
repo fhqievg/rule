@@ -11,7 +11,7 @@ VIDEO = select,JP,SG,HK,KR,欧洲节点,interval=1200,timeout=5,select=0,url=htt
 TIKTOK = select,KR,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 STEAM = select,PROXY,SG,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
 TELEGRAM = select,PROXY,澳大利亚节点,US,欧洲节点,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
-故障转移 = fallback,PROXY,SG,JP,HK,澳大利亚节点,US,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+故障转移 = fallback,PROXY,SG,JP,HK,澳大利亚节点,US,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 HK = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.\d)?X|Tunnel|LoadBalance)).*(香港)
 SG = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=新加坡|🇸🇬
 JP = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.\d)?X)).*(日本)
