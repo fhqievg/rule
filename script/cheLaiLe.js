@@ -21,24 +21,12 @@ if (url.includes("goocity/city!localCity.action") || url.includes("goocity/city!
         cityData.bcPointList = [];
         //顶部icon
         if (typeof cityData.homePointList != 'undefined') {
-            cityData.homePointList = cityData.homePointList.filter(
-                (i) =>
-                    !(
-                        i.id === 613 || //免广告
-                        i.id === 280 || //今日热点
-                        i.id === 299    //小视频
-                    )
-            );
+            cityData.homePointList = pointListHandle(cityData.homePointList);
         }
 
         //底部tab
         if (typeof cityData.tabbar != 'undefined') {
-            cityData.tabbar = cityData.tabbar.filter(
-                (i) =>
-                    !(
-                        i === 5 //发现
-                    )
-            );
+            cityData.tabbar = tabHandle(cityData.tabbar);
         }
 
         if (url.includes("goocity/city!localCity.action")) {
@@ -60,6 +48,24 @@ if (url.includes("goocity/config/notices")) {
                     i.id === 5  //本地热点
                 )
         );
+    }
+}
+
+if (url.includes("goocity/city!morecities.action")) {
+    //切换城市
+    if (obj.jsonr?.data?.cities) {
+        for (let i of obj.jsonr.data.cities) {
+            i.bcPointList = []
+            //顶部icon
+            if (typeof i.homePointList != 'undefined') {
+                i.homePointList = pointListHandle(i.homePointList);
+            }
+
+            //底部tab
+            if (typeof i.tabbar != 'undefined') {
+                i.tabbar = tabHandle(i.tabbar);
+            }
+        }
     }
 }
 
@@ -86,4 +92,48 @@ function getDataObj(body) {
         dataObj.content = dataObj.content.substring(0, endNum);
     }
     return dataObj;
+}
+
+function pointListHandle(pointList) {
+    pointList = pointList.filter(
+        (i) =>
+            !(
+                //i.id === 1 || //地铁
+                //i.id === 106 || //站点地图
+                i.id === 280 || //今日热点
+                i.id === 299 ||  //小视频
+                //i.id === 320 ||  //扫码乘车
+                //i.id === 332 ||  //定制公交
+                //i.id === 441 ||  //辅助公交
+                //i.id === 452 ||  //定制公交
+                i.id === 493 ||  //现金签到
+                i.id === 494 ||  //打车
+                //i.id === 516 ||  //九水巴士
+                i.id === 543 ||  //失物招领
+                //i.id === 565 ||  //网约巴士
+                //i.id === 567 ||  //琴岛通
+                i.id === 593 ||  //本地景点
+                //i.id === 597 ||  //网约巴士
+                //i.id === 598 ||  //站点地图
+                i.id === 599 ||  //免广告
+                i.id === 600 ||  //小视频
+                i.id === 613 || //免广告
+                i.id === 614 || //充电站
+                i.id === 615 || //烧烤导航
+                //i.id === 617 || //定制巴士
+                //i.id === 619 || //机场快线
+                i.id === 620    //绿色出行
+            )
+    );
+    return pointList;
+}
+
+function tabHandle(tab) {
+    tab = tab.filter(
+        (i) =>
+            !(
+                i === 5 //发现
+            )
+    );
+    return tab;
 }
