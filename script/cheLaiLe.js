@@ -4,14 +4,24 @@ let url = $request.url;
 
 let dataObj = getDataObj(body);
 let obj = JSON.parse(dataObj.content);
-if (url.includes("goocity/city!localCity.action")) {
+if (url.includes("goocity/city!localCity.action") || url.includes("goocity/city!cityInfo.action")) {
     //首页
-    if (obj.jsonr?.data?.localCity) {
-        obj.jsonr.data.localCity.bcPointList = [];
+    let cityData = {};
+    if (url.includes("goocity/city!localCity.action")) {
+        if (obj.jsonr?.data?.localCity) {
+            cityData = obj.jsonr.data.localCity;
+        }
+    } else {
+        if (obj.jsonr?.data?.city) {
+            cityData = obj.jsonr.data.city;
+        }
+    }
 
+    if (cityData) {
+        cityData.bcPointList = [];
         //顶部icon
-        if (typeof obj.jsonr.data.localCity.homePointList != 'undefined') {
-            obj.jsonr.data.localCity.homePointList = obj.jsonr.data.localCity.homePointList.filter(
+        if (typeof cityData.homePointList != 'undefined') {
+            cityData.homePointList = cityData.homePointList.filter(
                 (i) =>
                     !(
                         i.id === 613 || //免广告
@@ -22,13 +32,19 @@ if (url.includes("goocity/city!localCity.action")) {
         }
 
         //底部tab
-        if (typeof obj.jsonr.data.localCity.tabbar != 'undefined') {
-            obj.jsonr.data.localCity.tabbar = obj.jsonr.data.localCity.tabbar.filter(
+        if (typeof cityData.tabbar != 'undefined') {
+            cityData.tabbar = cityData.tabbar.filter(
                 (i) =>
                     !(
                         i === 5 //发现
                     )
             );
+        }
+
+        if (url.includes("goocity/city!localCity.action")) {
+            obj.jsonr.data.localCity = cityData;
+        } else {
+            obj.jsonr.data.city = cityData;
         }
     }
 }
