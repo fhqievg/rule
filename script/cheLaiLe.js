@@ -79,18 +79,13 @@ function getDataObj(body) {
         "endStr": ""
     }
     let start = body.indexOf("{");
-    if (start > -1) {
-        dataObj.startStr = body.substring(0, start);
-        dataObj.content = body.substring(start);
-    }
+    dataObj.startStr = body.substring(0, start);
 
     let end = body.lastIndexOf("}");
-    if (end > -1) {
-        dataObj.endStr = body.substring(end + 1);
-
-        let endNum = (end + 1) - dataObj.startStr.length;
-        dataObj.content = dataObj.content.substring(0, endNum);
-    }
+    end++;
+    dataObj.endStr = body.substring(end);
+    
+    dataObj.content = body.substring(start, end);
     return dataObj;
 }
 
