@@ -2,6 +2,11 @@ DOMAIN,cdn.jsdelivr.net
 DOMAIN-SUFFIX,fileball.app
 DOMAIN-SUFFIX,qiyoujiage.com
 DOMAIN-SUFFIX,pansearch.me
+DOMAIN,epg.112114.xyz
+DOMAIN-SUFFIX,aptvapp.com
+DOMAIN-SUFFIX,cooltv.top
+DOMAIN-SUFFIX,goodiptv.club
+DOMAIN,dwz.mk
 DOMAIN,dsxys.pro
 DOMAIN,dsxtv.pro
 DOMAIN-SUFFIX,ailbaba.me
@@ -34,3 +39,4 @@ DOMAIN-KEYWORD,vip.kuaikan-cdn
 DOMAIN-KEYWORD,hd.lz-cdn
 DOMAIN-KEYWORD,vip.lz-cdn
 DOMAIN-KEYWORD,vod2.bdzybf
+USER-AGENT,AptvPlayer*
