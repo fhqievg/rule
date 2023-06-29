@@ -4,7 +4,7 @@
 
 [Rule]
 # > 去除gzh底部广告及商品推广
-URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle)\?,REJECT-DICT
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle|masonryfeed)\?,REJECT-DICT
 
 [Script]
 解除外链限制 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/externalLinks.js,pattern=^https:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,requires-body=true,max-size=0,script-update-interval=86400,enable=true
