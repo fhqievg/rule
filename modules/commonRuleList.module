@@ -20,7 +20,7 @@ US = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstat
 澳大利亚节点 = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=澳大利亚|🇦🇺
 加拿大节点 = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=加拿大|🇨🇦
 欧洲节点 = fallback,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
-PRONEMBY = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(?i)pornemby).*$
+PRONEMBY = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*)(?i)(pornemby).*$
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
