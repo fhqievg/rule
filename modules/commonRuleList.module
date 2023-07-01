@@ -10,21 +10,23 @@ IPTVHK = select,HK,interval=600,timeout=5,select=0,url=http://www.gstatic.com/ge
 VIDEO = select,JP,SG,HK,KR,欧洲节点,interval=1200,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 TIKTOK = select,KR,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 STEAM = select,PROXY,SG,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
-TELEGRAM = select,PROXY,澳大利亚节点,US,欧洲节点,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
-故障转移 = fallback,PROXY,SG,JP,HK,澳大利亚节点,US,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+TELEGRAM = select,PROXY,澳大利亚节点,加拿大节点,US,欧洲节点,interval=3600,timeout=5,select=1,url=http://www.gstatic.com/generate_204
+故障转移 = fallback,PROXY,SG,JP,HK,澳大利亚节点,加拿大节点,US,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 HK = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.\d)?X|Tunnel|LoadBalance)).*(香港)
 SG = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=新加坡|🇸🇬
 JP = url-test,ED云,use=true,interval=600,tolerance=100,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=^(?i)(?!([3-9](\.\d)?X)).*(日本)
 KR = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国\s*6\s*$
 US = select,ED云,use=true,interval=3600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国\s*17\s*$
 澳大利亚节点 = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=澳大利亚|🇦🇺
+加拿大节点 = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=加拿大|🇨🇦
 欧洲节点 = fallback,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=德国|荷兰|俄罗斯|乌克兰
+PRONEMBY = select,ED云,use=true,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(?i)pornemby).*$
 
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,VIDEO
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/edEmby.list,EMBY
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,VIDEO
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,PRONEMBY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STEAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/telegram.list,TELEGRAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,PROXY
