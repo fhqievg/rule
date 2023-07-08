@@ -4,10 +4,10 @@ let url = $request.url;
 
 let dataObj = getDataObj(body);
 let obj = JSON.parse(dataObj.content);
-if (url.includes("goocity/city!localCity.action") || url.includes("goocity/city!cityInfo.action")) {
-    //首页
+if (url.includes("goocity/city/localCity") || url.includes("goocity/city/cityInfo")) {
+    //首页城市
     let cityData = {};
-    if (url.includes("goocity/city!localCity.action")) {
+    if (url.includes("goocity/city/localCity")) {
         if (obj.jsonr?.data?.localCity) {
             cityData = obj.jsonr.data.localCity;
         }
@@ -18,18 +18,12 @@ if (url.includes("goocity/city!localCity.action") || url.includes("goocity/city!
     }
 
     if (cityData) {
-        cityData.bcPointList = [];
-        //顶部icon
-        if (typeof cityData.homePointList != 'undefined') {
-            cityData.homePointList = pointListHandle(cityData.homePointList);
-        }
-
         //底部tab
         if (typeof cityData.tabbar != 'undefined') {
             cityData.tabbar = tabHandle(cityData.tabbar);
         }
 
-        if (url.includes("goocity/city!localCity.action")) {
+        if (url.includes("goocity/city/localCity")) {
             obj.jsonr.data.localCity = cityData;
         } else {
             obj.jsonr.data.city = cityData;
@@ -51,21 +45,22 @@ if (url.includes("goocity/config/notices")) {
     }
 }
 
-if (url.includes("goocity/city!morecities.action")) {
+if (url.includes("goocity/city/moreCities")) {
     //切换城市
     if (obj.jsonr?.data?.cities) {
         for (let i of obj.jsonr.data.cities) {
-            i.bcPointList = []
-            //顶部icon
-            if (typeof i.homePointList != 'undefined') {
-                i.homePointList = pointListHandle(i.homePointList);
-            }
-
             //底部tab
             if (typeof i.tabbar != 'undefined') {
                 i.tabbar = tabHandle(i.tabbar);
             }
         }
+    }
+}
+
+if (url.includes("goocity/flowPos/home")) {
+    //首页顶部icon
+    if (obj.jsonr?.data?.advertList) {
+        obj.jsonr.data.advertList = pointListHandle(obj.jsonr.data.advertList);
     }
 }
 
@@ -84,7 +79,7 @@ function getDataObj(body) {
     let end = body.lastIndexOf("}");
     end++;
     dataObj.endStr = body.substring(end);
-    
+
     dataObj.content = body.substring(start, end);
     return dataObj;
 }
