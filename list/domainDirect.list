@@ -1,9 +1,12 @@
 DOMAIN,cdn.jsdelivr.net
 DOMAIN-SUFFIX,fileball.app
+DOMAIN-SUFFIX,dandanplay.net
 DOMAIN-SUFFIX,foreca.com
 DOMAIN-SUFFIX,foreca.net
 DOMAIN-SUFFIX,qiyoujiage.com
 DOMAIN-SUFFIX,pansearch.me
+DOMAIN-SUFFIX,tophub.app
+DOMAIN-SUFFIX,tophub.today
 DOMAIN,epg.112114.xyz
 DOMAIN-SUFFIX,aptvapp.com
 DOMAIN-SUFFIX,cooltv.top
@@ -25,11 +28,12 @@ DOMAIN-SUFFIX,ffzypic.com
 DOMAIN-SUFFIX,ffzyread.com
 DOMAIN-SUFFIX,ffzyapi.com
 DOMAIN-SUFFIX,zykpic.com
-DOMAIN-SUFFIX,bfzypic.com
 DOMAIN-SUFFIX,kuaikanzy.net
 DOMAIN-SUFFIX,kuaikan-api.com
 DOMAIN,image.maimn.com
 DOMAIN-SUFFIX,bgm.tv
+DOMAIN-SUFFIX,bfzypic.com
+DOMAIN-SUFFIX,bfzycdn.com
 DOMAIN-SUFFIX,bdzybf7.com
 DOMAIN-SUFFIX,bdzyimg.com
 DOMAIN-SUFFIX,wujinpp.com
