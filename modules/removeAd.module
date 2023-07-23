@@ -49,6 +49,7 @@ DOMAIN-SUFFIX,umengcloud.com,REJECT-DROP
 DOMAIN,googleads.g.doubleclick-cn.net,REJECT-DROP
 DOMAIN-SUFFIX,nx-perf.cn,REJECT-DROP
 DOMAIN-SUFFIX,sigmob.cn,REJECT-DROP
+DOMAIN,p3-feedback.byteimg.com,REJECT-IMG
 
 # >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
 # > pengPaiNews
