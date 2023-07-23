@@ -8,5 +8,5 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/overseasVideo
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,PRONEMBY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STEAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/telegram.list,TELEGRAM
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,故障转移
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainDirect.list,DIRECT
