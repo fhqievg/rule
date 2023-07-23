@@ -103,6 +103,9 @@ DOMAIN-SUFFIX,dutils.com
 DOMAIN-SUFFIX,dcloud.io
 DOMAIN-SUFFIX,dcloud.net.cn
 DOMAIN-SUFFIX,dcloud.cn
+DOMAIN-SUFFIX,drapro1.com
+DOMAIN-SUFFIX,drapro2.com
+DOMAIN-KEYWORD,irc.drapro
 DOMAIN,firebaselogging-pa.googleapis.com
 DOMAIN-SUFFIX,g.doubleclick.net
 DOMAIN-SUFFIX,googleadservices.com
