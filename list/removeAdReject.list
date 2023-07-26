@@ -97,6 +97,7 @@ DOMAIN,app-measurement.com
 DOMAIN,ad.doubleclick.net
 DOMAIN,adservice.google.com
 DOMAIN-SUFFIX,bjcathay.com
+DOMAIN-SUFFIX,czwe.cn
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN,cnzz.mmstat.com
 DOMAIN-SUFFIX,dutils.com
@@ -115,6 +116,7 @@ DOMAIN-SUFFIX,getui.com
 DOMAIN-SUFFIX,gepush.com
 DOMAIN-SUFFIX,igexin.com
 DOMAIN,ironsource.mobi
+DOMAIN-SUFFIX,jpush.cn
 DOMAIN-SUFFIX,liandaomobi.com
 DOMAIN-SUFFIX,maplehaze.cn
 DOMAIN-SUFFIX,mob.com
@@ -123,12 +125,14 @@ DOMAIN-SUFFIX,miaozhen.com
 DOMAIN-SUFFIX,newadserver.com
 DOMAIN,open.e.kuaishou.com
 DOMAIN-SUFFIX,qubiankeji.com
+DOMAIN-SUFFIX,rayjump.com
 DOMAIN-SUFFIX,serv-ad.net
 DOMAIN-SUFFIX,smadex.com
 DOMAIN-SUFFIX,snapads.com
 DOMAIN-SUFFIX,supersonicads.com
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,tingyun.com
 DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
@@ -169,6 +173,9 @@ URL-REGEX,^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliv
 DOMAIN-SUFFIX,iyes.youku.com
 DOMAIN-SUFFIX,c.yes.youku.com
 
+# > yangShiYingYin
+URL-REGEX,^https?:\/\/api\.app\.cctv\.com\/api\/getVersion
+
 # >>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<<
 # > zhiJie
 DOMAIN-SUFFIX,ad.toutiao.com
@@ -180,6 +187,8 @@ DOMAIN-SUFFIX,pangolin.snssdk.com
 DOMAIN-SUFFIX,dsp.toutiao.com
 DOMAIN,is.snssdk.com
 DOMAIN-SUFFIX,ic.snssdk.com
+DOMAIN,tnc3-aliec2.snssdk.com
+DOMAIN,tnc3-alisc1.snssdk.com
 DOMAIN-SUFFIX,partner.toutiao.com
 DOMAIN-SUFFIX,sm.toutiao.com
 DOMAIN-SUFFIX,nativeapp.toutiao.com
