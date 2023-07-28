@@ -31,6 +31,11 @@ DOMAIN-SUFFIX,yuedu.iqiyi.com
 # > aptv
 URL-REGEX,^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/
 
+# > aLi
+DOMAIN,h-adashx4bc.ut.taobao.com
+DOMAIN,h-adashx.ut.cainiao.com
+DOMAIN,adashx.ut.cainiao.com
+
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDuPan
 URL-REGEX,^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|.+\/bchannel\/list)|pmall\/order\/privilege\/info|rest\/.+\/pcs\/adx|api\/(useractivity\/activity|certuser\/get)|component\/view\/(1510|1130)\?vip)
@@ -114,6 +119,7 @@ DOMAIN-SUFFIX,googleadservices.com
 DOMAIN-SUFFIX,getui.net
 DOMAIN-SUFFIX,getui.com
 DOMAIN-SUFFIX,gepush.com
+DOMAIN-SUFFIX,huangjinyan.vip.com
 DOMAIN-SUFFIX,igexin.com
 DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,jpush.cn
@@ -142,6 +148,7 @@ DOMAIN-SUFFIX,uyunad.com
 # > tx
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,e.qq.com
+DOMAIN,qzs.qq.com
 
 # > taoPiaoPiao
 URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query((preload)?advertise|loadingbanner)|life\.aristotle\.get\/2\.0\?)
@@ -180,6 +187,7 @@ URL-REGEX,^https?:\/\/api\.app\.cctv\.com\/api\/getVersion
 # > zhiJie
 DOMAIN-SUFFIX,ad.toutiao.com
 DOMAIN-SUFFIX,log.snssdk.com
+DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,pglstatp-toutiao.com
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
 DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
