@@ -3,7 +3,7 @@
 #来源仓库：Maasea、id77/QuantumultX、I-am-R-E/Functional-Store-Hub、RuCu6
 
 [Script]
-caiYun = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/caiYun.js,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=false
+caiYun = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/caiYun.js,pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user),requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=false
 拦截100 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/block100.js,pattern=^https?:\/\/tagit\.hyhuo\.com\/cypt\/block100\/get_vip_info,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
 nicegram = type=http-request,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/nicegram.js,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,max-size=0,timeout=10,script-update-interval=86400,enable=true
 xmind = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/xmind.js,pattern=^https?:\/\/www\.xmind\.(cn|net|app)\/\_res\/devices,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
@@ -13,4 +13,4 @@ aliDrive_2 = type=http-response,script-path=https://raw.githubusercontent.com/fh
 xiaoXiongYouHao = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/vipUnlock/xiaoXiongYouHao.js,pattern=^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/(account_sync\.php|vip\/index\.php\?a=query_membership),max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
-hostname = %APPEND% biz.caiyunapp.com,tagit.hyhuo.com,restore-access.indream.app,www.xmind.cn,www.xmind.net,www.xmind.app,pan.baidu.com,api.aliyundrive.com,member.aliyundrive.com,www.xiaoxiongyouhao.com
+hostname = %APPEND% biz.cyapi.cn,tagit.hyhuo.com,restore-access.indream.app,www.xmind.cn,www.xmind.net,www.xmind.app,pan.baidu.com,api.aliyundrive.com,member.aliyundrive.com,www.xiaoxiongyouhao.com
