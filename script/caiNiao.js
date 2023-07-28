@@ -3,7 +3,13 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("nbpresentation.homepage.merge.get")) {
+if (url.includes("nbfriend.message.conversation.list")) {
+  if (obj.data.data) {
+    obj.data.data = obj.data.data.filter((i) =>
+      i?.conversationId?.includes("logistic_message")
+    );
+  }
+} else if (url.includes("nbpresentation.homepage.merge.get")) {
     // 反馈组件
     if (obj.data) {
         const item = [
@@ -54,7 +60,8 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                             "gjjf", // 裹酱积分
                             "jkymd", // 集卡赢免单
                             "ljjq", // 领寄件券
-                            "ttlhb" // 天天领红包
+                            "ttlhb", // 天天领红包
+                            "xybg" // 幸运包裹
                         ];
                         i.bizData.items = i.bizData.items.filter(
                             (ii) => !item.includes(ii.key)
@@ -89,6 +96,9 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
   }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
     // 我的页面
+    // 29338 寄件会员
+    // 29339 裹酱积分
+    // 33927 绿色能量
     if (obj.data.result) {
         obj.data.result = obj.data.result.filter(
             (i) =>
@@ -96,7 +106,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
                     i?.materialContentMapper?.adItemDetail ||
                     (i?.materialContentMapper?.bgImg && i?.materialContentMapper?.advRecGmtModifiedTime) ||
                     ["entertainment", "kuaishou_banner"].includes(i?.materialContentMapper?.group_id) ||
-                    ["32103"].includes(i.id) ||
+                    ["29338", "29339", "32103", "33927"].includes(i.id) ||
                     (i?.materialContentMapper?.group_id?.includes("common_header_banner") && ["event_kuaishoubanner", "event_qingyoubanner"].includes(i?.materialContentMapper?.ut_event_name)) ||
                     (i?.materialContentMapper?.group_id?.includes("interests") && ["event_jijianhuiyuan", "event_guojiangjifeng", "event_greenhome"].includes(i?.materialContentMapper?.ut_event_name))
                 )
@@ -120,7 +130,9 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
             "1316", // 头部 banner
             "1332", // 我的页面 横图
             "1340", // 查快递 小妙招
-            "1391" // 支付宝 小程序 寄包裹
+            "1391", // 支付宝 小程序 寄包裹
+            "1428", // 幸运号
+            "1525" // 幸运包裹
         ];
         for (let i of item) {
             if (obj.data?.[i]) {
