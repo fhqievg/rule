@@ -72,8 +72,8 @@ if (url.includes("nbfriend.message.conversation.list")) {
                         }
                         return true;
                     }
-                } else if (i.type.includes("big_banner_area")) {
-                    // 新人福利
+                } else if (i.type.includes("banner_area")) {
+                    // 新人福利 幸运抽奖
                     return false;
                 } else if (i.type.includes("promotion")) {
                     // 促销活动
