@@ -5,7 +5,8 @@
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/iptv/hk.list,IPTVHK
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/hdoHub.list,VIDEO
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/overseasVideo.list,低倍率观影
-RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,PRONEMBY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/emby.list,EMBY
+RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/pronEmby.list,PRONEMBY
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/steam.list,STEAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/telegram.list,TELEGRAM
 RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/domainProxy.list,故障转移
