@@ -132,6 +132,7 @@ if (url.includes("nbfriend.message.conversation.list")) {
             "1340", // 查快递 小妙招
             "1391", // 支付宝 小程序 寄包裹
             "1428", // 幸运号
+            "1524", // 抽现金
             "1525" // 幸运包裹
         ];
         for (let i of item) {
