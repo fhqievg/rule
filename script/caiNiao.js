@@ -9,16 +9,6 @@ if (url.includes("nbfriend.message.conversation.list")) {
       i?.conversationId?.includes("logistic_message")
     );
   }
-} else if (url.includes("nbpresentation.homepage.merge.get")) {
-    // 反馈组件
-    if (obj.data) {
-        const item = [
-            "adkeyword", // 底部信息流
-            "nbmensa.research.researchservice.acquire", // 调查问卷
-            "nbpresentation.protocol.homepage" // 顶部图标
-        ];
-        obj.data = Object.entries(obj.data).filter(([key]) => !item.includes(key));
-    }
 } else if (url.includes("nbpresentation.pickup.empty.page.get")) {
     // 取件页面
     if (obj.data.result) {
@@ -92,7 +82,9 @@ if (url.includes("nbfriend.message.conversation.list")) {
       "1425", // 攻略
       "1332" // 横图
     ];
-    obj.data = Object.entries(obj.data).filter(([key]) => !item.includes(key));
+    obj.data = Object.fromEntries(
+      Object.entries(obj.data).filter(([key]) => !item.includes(key))
+    );
   }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
     // 我的页面
@@ -131,6 +123,7 @@ if (url.includes("nbfriend.message.conversation.list")) {
             "1332", // 我的页面 横图
             "1340", // 查快递 小妙招
             "1391", // 支付宝 小程序 寄包裹
+            "1410", // 导入拼多多、抖音快递
             "1428", // 幸运号
             "1524", // 抽现金
             "1525" // 幸运包裹
