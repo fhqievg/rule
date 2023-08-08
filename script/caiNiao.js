@@ -74,18 +74,6 @@ if (url.includes("nbfriend.message.conversation.list")) {
             });
         }
     }
-} else if (url.includes("guoguo.nbnetflow.ads.batch.show")) {
-  // 我的页面底部横图
-  if (obj.data) {
-    const item = [
-      "1412", // 同学包裹
-      "1425", // 攻略
-      "1332" // 横图
-    ];
-    obj.data = Object.fromEntries(
-      Object.entries(obj.data).filter(([key]) => !item.includes(key))
-    );
-  }
 } else if (url.includes("guoguo.nbnetflow.ads.show")) {
     // 我的页面
     // 29338 寄件会员
