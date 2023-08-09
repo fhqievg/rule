@@ -26,7 +26,7 @@ URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/led-weather\/v\d+\
 
 # > caiNiao
 URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.(index|batch\.show\.v2)|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close)|cncommunity\.my\.station\.query|nbpresentation\.homepage\.merge\.get)\.cn,REJECT-DICT
-URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.(longquan\.place\.getpageresourcecontent|cnactivitycenter\.getavailabletaskcredit)\.cn,REJECT-DICT
+URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.(longquan\.place\.getpageresourcecontent|cnactivitycenter|cncreditmarket\.hit\.getactivityhit)\.cn,REJECT-DICT
 #aliPay 小程序
 URL-REGEX,^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad,REJECT-DICT
 
