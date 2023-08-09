@@ -51,21 +51,19 @@ DOMAIN,mobads.baidu.com
 # > cheLaiLe
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
-URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo)
+URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/getTagTitle|bus\/stop!encryptedRecommLine\.action)
 
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
 DOMAIN,optimus-ads.amap.com
 
-# >>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<<
-# > HDO
-DOMAIN-SUFFIX,vungle.com
-DOMAIN-SUFFIX,applvn.com
-DOMAIN-SUFFIX,applovin.com
-
 # >>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<<
 # > 捷径
 DOMAIN,yh.miidii.tech
+
+# > jd
+DOMAIN,kepler.jd.com
+DOMAIN,mapi.m.jd.com
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > 狂野
@@ -98,6 +96,8 @@ DOMAIN-SUFFIX,adservertq.com
 DOMAIN-SUFFIX,adtianmai.com
 DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,appier.net
+DOMAIN-SUFFIX,applvn.com
+DOMAIN-SUFFIX,applovin.com
 DOMAIN,app-measurement.com
 DOMAIN,ad.doubleclick.net
 DOMAIN,adservice.google.com
@@ -128,6 +128,7 @@ DOMAIN-SUFFIX,maplehaze.cn
 DOMAIN-SUFFIX,mob.com
 DOMAIN-SUFFIX,moatads.com
 DOMAIN-SUFFIX,miaozhen.com
+DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,newadserver.com
 DOMAIN,open.e.kuaishou.com
 DOMAIN-SUFFIX,qubiankeji.com
@@ -143,12 +144,15 @@ DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
 DOMAIN-SUFFIX,uyunad.com
+DOMAIN-SUFFIX,vungle.com
+DOMAIN,zxid-m.mobileservice.cn
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tx
-DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,e.qq.com
+DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN,qzs.qq.com
+DOMAIN,tpns.qq.com
 
 # > taoPiaoPiao
 URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query((preload)?advertise|loadingbanner)|life\.aristotle\.get\/2\.0\?)
