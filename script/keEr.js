@@ -28,7 +28,7 @@ if (url.includes('adver/space/all/list')) {
         delete obj.data.bindAppIds;
         
         if (typeof obj.data.newAPPAids != 'undefined') {
-            obj.data.newAPPAids = [];
+            //obj.data.newAPPAids = [];
         }
     }
 }
