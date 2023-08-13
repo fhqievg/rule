@@ -2,7 +2,11 @@ if (!$response.body) $done({});
 let url = $request.url;
 let obj = JSON.parse($response.body);
 
-if (url.includes('Aios/config')) {
+if (url.includes('Aios/config') || url.includes('Aios/clothes')) {
+    if (typeof obj.gonggao != 'undefined') {
+        obj.gonggao.open = false;
+    }
+    
     if (typeof obj.update != 'undefined') {
         //obj.update.open = 'false';  //更新提醒
     }
@@ -22,6 +26,10 @@ if (url.includes('adver/space/all/list')) {
     if (typeof obj.data != 'undefined') {
         obj.data.bindAdvertIds = [];
         delete obj.data.bindAppIds;
+        
+        if (typeof obj.data.newAPPAids != 'undefined') {
+            obj.data.newAPPAids = [];
+        }
     }
 }
 
@@ -47,6 +55,10 @@ if (url.includes('banner.json')) {
             };
             obj.banner.push(newData);
         }
+    }
+    
+    if (typeof obj.homeicon != 'undefined') {
+        obj.homeicon = [];
     }
 }
 $done({ body: JSON.stringify(obj) });
