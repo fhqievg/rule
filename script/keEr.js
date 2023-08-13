@@ -58,7 +58,7 @@ if (url.includes('banner.json')) {
     }
     
     if (typeof obj.homeicon != 'undefined') {
-        obj.homeicon = [];
+        //obj.homeicon = [];
     }
 }
 $done({ body: JSON.stringify(obj) });
