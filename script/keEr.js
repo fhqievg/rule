@@ -27,8 +27,11 @@ if (url.includes('adver/space/all/list')) {
         obj.data.bindAdvertIds = [];
         delete obj.data.bindAppIds;
         
-        if (typeof obj.data.newAPPAids != 'undefined') {
-            //obj.data.newAPPAids = [];
+        if (typeof obj.data.newAPPAids != 'undefined' && obj.data.newAPPAids.length > 0) {
+            obj.data.newAPPAids = obj.data.newAPPAids.filter(
+                (i) =>
+                    i.type === "1"
+            );
         }
     }
 }
