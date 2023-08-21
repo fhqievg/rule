@@ -315,6 +315,10 @@ if (url.includes("/faas/amap-navigation/main-page")) {
             delete obj.data.modules[i];
         });
     }
+} else if (url.includes("/shield/search_poi/homepage")) {
+  if (obj?.history_tags) {
+    delete obj.history_tags;
+  }
 } else if (
     url.includes("/shield/search_poi/search/sp") ||
     url.includes("/shield/search_poi/mps")
@@ -362,6 +366,10 @@ if (url.includes("/faas/amap-navigation/main-page")) {
             list?.item_type === "ImageBanner"
         ) {
             delete list.card;
+        }
+        let map = obj.data.list_data.content[0].map;
+        if (map?.main_point) {
+          delete map.main_point;
         }
     } else if (obj.data?.district?.poi_list) {
         // 搜索列表详情页
