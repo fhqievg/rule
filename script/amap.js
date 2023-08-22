@@ -257,7 +257,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         // "opentime", // 营业时间
         "operation_banner", // 横版图片推广
         "operator_card",
-        // "packageShelf",
+        "packageShelf", // 附近酒景推荐
         "parentBizRec",
         "parentPoiRecEntrance", // 所在商圈
         "poster_banner",
@@ -346,6 +346,10 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
             delete list.poi.item_info.tips_bottombar_button.hotel;
         }
+        // 地图优惠推广
+        if (list?.map?.main_point) {
+            delete list.map.main_point;
+        }
         if (list?.tips_operation_info) {
             delete list.tips_operation_info;
         }
@@ -371,10 +375,6 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         ) {
             delete list.card;
         }
-        let map = obj.data.list_data.content[0].map;
-        if (map?.main_point) {
-          delete map.main_point;
-        }
     } else if (obj?.data?.district?.poi_list) {
         // 搜索列表详情页
         let poi = obj.data.district.poi_list[0];
@@ -385,6 +385,36 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         // 景点门票 酒店特惠 特色美食 休闲玩乐
         if (poi?.feed_rec_tab) {
             delete poi.feed_rec_tab;
+        }
+    } else if (obj?.data?.modules) {
+        let list = obj.data.modules.not_parse_result.data.list_data.content[0];
+        // 详情页 底部 房产推广
+        if (list?.hookInfo) {
+            let hookData = list.hookInfo.data;
+            if (hookData?.header) {
+                delete hookData.header;
+            }
+            if (hookData?.house_info) {
+                delete hookData.house_info;
+            }
+        }
+        // 详情页 底部 订酒店
+        if (list?.map_bottom_bar?.hotel) {
+            delete list.map_bottom_bar.hotel;
+        }
+        if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
+            delete list.poi.item_info.tips_bottombar_button.hotel;
+        }
+        // 地图优惠推广
+        if (list?.map?.main_point) {
+            delete list.map.main_point;
+        }
+        // 左上角动图推广
+        if (list?.tips_operation_info) {
+            delete list.tips_operation_info;
+        }
+        if (list?.bottom?.bottombar_button?.hotel) {
+            delete list.bottom.bottombar_button.hotel;
         }
     }
 } else if (url.includes("/shield/search_poi/sug")) {
