@@ -6,8 +6,9 @@
 # > 其它
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?,REJECT-DICT
 
-# > 导航详情页,路线规划,地点详情页,搜索详情页 - optimize1
+# > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页 - optimize1
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv))\?,REJECT-DICT
+URL-REGEX,^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?,REJECT-DICT
 
 # > 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅 - optimize2
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/main-page-(assets|location)|mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword|valueadded\/weather\/v2)\?,REJECT-DICT
@@ -31,4 +32,4 @@ optimize5 = type=http-response,script-path=https://raw.githubusercontent.com/fhq
 optimize6 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/(promotion-web\/resource(\/home)?|sharedtrip\/taxi\/order_detail_car_tips)\?,max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
-hostname = %APPEND% m5.amap.com,m5-zb.amap.com,sns.amap.com
+hostname = %APPEND% m5.amap.com,m5-zb.amap.com,oss.amap.com,sns.amap.com
