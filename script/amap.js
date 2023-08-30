@@ -19,12 +19,12 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         );
     }
 } else if (url.includes("/perception/drive/routePlan")) {
-  if (obj?.data?.front_end) {
-    const item = ["global_guide_data", "route_search"];
-    item.forEach((i) => {
-      delete obj.data.front_end[i];
-    });
-  }
+    if (obj?.data?.front_end) {
+        const item = ["global_guide_data", "route_search"];
+        item.forEach((i) => {
+            delete obj.data.front_end[i];
+        });
+    }
 } else if (url.includes("/promotion-web/resource")) {
     // 打车页面
     let item = [
@@ -183,6 +183,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "co_branded_card",
         "collector_guide", // 游玩的图文指南
         "common_coupon_bar", // 领券条幅 新客专享 省钱卡
+        "common_coupon_card", // 优惠券卡片
         // "companyInfo", // 简介
         "comprehensiveEditEntrance", // 编辑地点信息
         // "consultancy",
@@ -233,6 +234,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "legal_document", // 房源法律信息
         "listBizRec_1",
         "listBizRec_2", // 周边餐饮
+        "matrix_banner", // 高德车服
         "merchantSettlement", // 商家店铺管理
         "membership", // 高德菲住卡 会员项目
         "movie_info", // 优惠购票 景点宣传片
@@ -320,9 +322,9 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         });
     }
 } else if (url.includes("/shield/search_poi/homepage")) {
-  if (obj?.history_tags) {
-    delete obj.history_tags;
-  }
+    if (obj?.history_tags) {
+        delete obj.history_tags;
+    }
 } else if (
     url.includes("/shield/search_poi/search/sp") ||
     url.includes("/shield/search_poi/mps")
@@ -387,34 +389,36 @@ if (url.includes("/faas/amap-navigation/main-page")) {
             delete poi.feed_rec_tab;
         }
     } else if (obj?.data?.modules) {
-        let list = obj.data.modules.not_parse_result.data.list_data.content[0];
-        // 详情页 底部 房产推广
-        if (list?.hookInfo) {
-            let hookData = list.hookInfo.data;
-            if (hookData?.header) {
-                delete hookData.header;
+        if (obj?.data?.modules?.not_parse_result?.data?.list_data) {
+            let list = obj.data.modules.not_parse_result.data.list_data.content[0];
+            // 详情页 底部 房产推广
+            if (list?.hookInfo) {
+                let hookData = list.hookInfo.data;
+                if (hookData?.header) {
+                    delete hookData.header;
+                }
+                if (hookData?.house_info) {
+                    delete hookData.house_info;
+                }
             }
-            if (hookData?.house_info) {
-                delete hookData.house_info;
+            // 详情页 底部 订酒店
+            if (list?.map_bottom_bar?.hotel) {
+                delete list.map_bottom_bar.hotel;
             }
-        }
-        // 详情页 底部 订酒店
-        if (list?.map_bottom_bar?.hotel) {
-            delete list.map_bottom_bar.hotel;
-        }
-        if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
-            delete list.poi.item_info.tips_bottombar_button.hotel;
-        }
-        // 地图优惠推广
-        if (list?.map?.main_point) {
-            delete list.map.main_point;
-        }
-        // 左上角动图推广
-        if (list?.tips_operation_info) {
-            delete list.tips_operation_info;
-        }
-        if (list?.bottom?.bottombar_button?.hotel) {
-            delete list.bottom.bottombar_button.hotel;
+            if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
+                delete list.poi.item_info.tips_bottombar_button.hotel;
+            }
+            // 地图优惠推广
+            if (list?.map?.main_point) {
+                delete list.map.main_point;
+            }
+            // 左上角动图推广
+            if (list?.tips_operation_info) {
+                delete list.tips_operation_info;
+            }
+            if (list?.bottom?.bottombar_button?.hotel) {
+                delete list.bottom.bottombar_button.hotel;
+            }
         }
     }
 } else if (url.includes("/shield/search_poi/sug")) {
