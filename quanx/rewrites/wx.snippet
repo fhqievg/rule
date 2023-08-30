@@ -1,0 +1,11 @@
+#!name=微信合集
+#!desc=去gzh文章底部广告及商品推广、解除外链限制
+#部分来源仓库：vipic/grocery(解除外链)、Rucu6(去商品推广)
+
+# > 去除gzh底部广告及商品推广
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle|masonryfeed)\? url reject-dict
+
+# > 解除外链限制
+#^https:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/externalLinks.js
+
+hostname = mp.weixin.qq.com,weixin110.qq.com
