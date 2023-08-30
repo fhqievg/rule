@@ -20,9 +20,8 @@ HOST-SUFFIX,policy.video.iqiyi.com,REJECT
 HOST-SUFFIX,yuedu.iqiyi.com,REJECT
 
 # > aLi
+HOST,adashx.m.taobao.com,REJECT
 HOST,h-adashx4bc.ut.taobao.com,REJECT
-HOST,h-adashx.ut.cainiao.com,REJECT
-HOST,adashx.ut.cainiao.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDu
@@ -34,8 +33,17 @@ IP-CIDR,124.70.194.16/32,REJECT
 HOST,atrace.chelaile.net.cn,REJECT
 HOST,logs.chelaile.net.cn,REJECT
 
+# > caiNiao
+HOST,adashx.ut.cainiao.com,REJECT
+HOST,h-adashx.ut.cainiao.com,REJECT
+HOST,vali.cp31.ott.cibntv.net,REJECT
+IP-CIDR,117.161.156.227/32,REJECT
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
+HOST,adashx.ut.amap.com,REJECT
+HOST,awaken.amap.com,REJECT
+HOST,amap-aos-info-nogw.amap.com,REJECT
 HOST,optimus-ads.amap.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<<
@@ -45,6 +53,7 @@ HOST,yh.miidii.tech,REJECT
 # > jd
 HOST,kepler.jd.com,REJECT
 HOST,mapi.m.jd.com,REJECT
+HOST,orbit.jd.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > 狂野
@@ -59,6 +68,7 @@ HOST,adpai.thepaper.cn,REJECT
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
 HOST-SUFFIX,1nmob.com,REJECT
+HOST-SUFFIX,51.la,REJECT
 HOST-SUFFIX,alenable.com,REJECT-DICT
 HOST-SUFFIX,aoyiluoad.com,REJECT
 HOST-SUFFIX,adkwai.com,REJECT
@@ -92,6 +102,7 @@ HOST-SUFFIX,getui.net,REJECT
 HOST-SUFFIX,getui.com,REJECT
 HOST-SUFFIX,gepush.com,REJECT
 HOST-SUFFIX,huangjinyan.vip.com,REJECT
+HOST-SUFFIX,hguduo.com,REJECT
 HOST-SUFFIX,igexin.com,REJECT
 HOST,ironsource.mobi,REJECT
 HOST-SUFFIX,jpush.cn,REJECT
