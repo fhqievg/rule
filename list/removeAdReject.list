@@ -33,8 +33,7 @@ URL-REGEX,^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/
 
 # > aLi
 DOMAIN,h-adashx4bc.ut.taobao.com
-DOMAIN,h-adashx.ut.cainiao.com
-DOMAIN,adashx.ut.cainiao.com
+DOMAIN,adashx.m.taobao.com
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDuPan
@@ -53,8 +52,17 @@ DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
 URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/getTagTitle|bus\/stop!encryptedRecommLine\.action)
 
+# > caiNiao
+DOMAIN,adashx.ut.cainiao.com
+DOMAIN,h-adashx.ut.cainiao.com
+DOMAIN,vali.cp31.ott.cibntv.net
+IP-CIDR,117.161.156.227/32,no-resolve
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
+DOMAIN,adashx.ut.amap.com
+DOMAIN,awaken.amap.com
+DOMAIN,amap-aos-info-nogw.amap.com
 DOMAIN,optimus-ads.amap.com
 
 # >>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<<
@@ -64,6 +72,7 @@ DOMAIN,yh.miidii.tech
 # > jd
 DOMAIN,kepler.jd.com
 DOMAIN,mapi.m.jd.com
+DOMAIN,orbit.jd.com
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > 狂野
@@ -88,6 +97,7 @@ URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?(util\/get_version|market
 
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
+DOMAIN-SUFFIX,51.la
 DOMAIN-SUFFIX,1nmob.com
 DOMAIN-SUFFIX,aoyiluoad.com
 DOMAIN-SUFFIX,adkwai.com
@@ -120,6 +130,7 @@ DOMAIN-SUFFIX,getui.net
 DOMAIN-SUFFIX,getui.com
 DOMAIN-SUFFIX,gepush.com
 DOMAIN-SUFFIX,huangjinyan.vip.com
+DOMAIN-SUFFIX,hguduo.com
 DOMAIN-SUFFIX,igexin.com
 DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,jpush.cn
