@@ -1,0 +1,172 @@
+# >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
+# > aiQiYi
+HOST-SUFFIX,ad.m.iqiyi.com,REJECT
+HOST-SUFFIX,afp.iqiyi.com,REJECT
+HOST-SUFFIX,c.uaa.iqiyi.com,REJECT
+HOST-SUFFIX,cloudpush.iqiyi.com,REJECT
+HOST-SUFFIX,cm.passport.iqiyi.com,REJECT
+HOST-SUFFIX,cupid.iqiyi.com,REJECT
+HOST-SUFFIX,emoticon.sns.iqiyi.com,REJECT
+HOST-SUFFIX,gamecenter.iqiyi.com,REJECT
+HOST-SUFFIX,ifacelog.iqiyi.com,REJECT
+HOST-SUFFIX,mbdlog.iqiyi.com,REJECT
+HOST-SUFFIX,meta.video.qiyi.com,REJECT
+HOST-SUFFIX,msg.71.am,REJECT
+HOST-SUFFIX,msg1.video.qiyi.com,REJECT
+HOST-SUFFIX,msg2.video.qiyi.com,REJECT
+HOST-SUFFIX,paopao.iqiyi.com,REJECT
+HOST-SUFFIX,paopaod.qiyipic.com,REJECT
+HOST-SUFFIX,policy.video.iqiyi.com,REJECT
+HOST-SUFFIX,yuedu.iqiyi.com,REJECT
+
+# > aLi
+HOST,h-adashx4bc.ut.taobao.com,REJECT
+HOST,h-adashx.ut.cainiao.com,REJECT
+HOST,adashx.ut.cainiao.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
+# > baiDu
+HOST,mobads.baidu.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
+# > cheLaiLe
+IP-CIDR,124.70.194.16/32,REJECT
+HOST,atrace.chelaile.net.cn,REJECT
+HOST,logs.chelaile.net.cn,REJECT
+
+# >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
+# > gaoDeMap
+HOST,optimus-ads.amap.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<<
+# > 捷径
+HOST,yh.miidii.tech,REJECT
+
+# > jd
+HOST,kepler.jd.com,REJECT
+HOST,mapi.m.jd.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
+# > 狂野
+HOST,a314.gameloft.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<<
+# > pengPaiNews
+HOST,applog.thepaper.cn,REJECT-200
+HOST,applogs.thepaper.cn,REJECT-200
+HOST,adpai.thepaper.cn,REJECT
+
+# >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
+# > 三方
+HOST-SUFFIX,1nmob.com,REJECT
+HOST-SUFFIX,alenable.com,REJECT-DICT
+HOST-SUFFIX,aoyiluoad.com,REJECT
+HOST-SUFFIX,adkwai.com,REJECT
+HOST-SUFFIX,adjust.com,REJECT
+HOST-SUFFIX,adservertq.com,REJECT
+HOST-SUFFIX,adtianmai.com,REJECT
+HOST-SUFFIX,appsflyer.com,REJECT
+HOST-SUFFIX,appier.net,REJECT
+HOST-SUFFIX,applvn.com,REJECT
+HOST-SUFFIX,applovin.com,REJECT
+HOST,app-measurement.com,REJECT
+HOST,ad.doubleclick.net,REJECT
+HOST,adservice.google.com,REJECT
+HOST-SUFFIX,bjcathay.com,REJECT
+HOST-SUFFIX,czwe.cn,REJECT
+HOST-SUFFIX,cnzz.com,REJECT
+HOST,cnzz.mmstat.com,REJECT
+HOST-SUFFIX,dutils.com,REJECT
+HOST-SUFFIX,dcloud.io,REJECT
+HOST-SUFFIX,dcloud.net.cn,REJECT
+HOST-SUFFIX,dcloud.cn,REJECT
+HOST-SUFFIX,drapro1.com,REJECT
+HOST-SUFFIX,drapro2.com,REJECT
+HOST-KEYWORD,irc.drapro,REJECT
+HOST,firebaselogging-pa.googleapis.com,REJECT
+HOST-SUFFIX,g.doubleclick.net,REJECT
+HOST-SUFFIX,googleadservices.com,REJECT
+#HOST,googleads.g.doubleclick.net,REJECT
+HOST,googleads.g.doubleclick-cn.net,REJECT
+HOST-SUFFIX,getui.net,REJECT
+HOST-SUFFIX,getui.com,REJECT
+HOST-SUFFIX,gepush.com,REJECT
+HOST-SUFFIX,huangjinyan.vip.com,REJECT
+HOST-SUFFIX,igexin.com,REJECT
+HOST,ironsource.mobi,REJECT
+HOST-SUFFIX,jpush.cn,REJECT
+HOST-SUFFIX,liandaomobi.com,REJECT
+HOST-SUFFIX,maplehaze.cn,REJECT
+HOST-SUFFIX,mob.com,REJECT
+HOST-SUFFIX,moatads.com,REJECT
+HOST-SUFFIX,miaozhen.com,REJECT
+HOST-SUFFIX,mixpanel.com,REJECT
+HOST-SUFFIX,newadserver.com,REJECT
+HOST-SUFFIX,nx-perf.cn,REJECT
+HOST,open.e.kuaishou.com,REJECT
+HOST,p3-feedback.byteimg.com,REJECT-IMG
+HOST-SUFFIX,qubiankeji.com,REJECT
+HOST-SUFFIX,rayjump.com,REJECT
+HOST-SUFFIX,serv-ad.net,REJECT
+HOST-SUFFIX,smadex.com,REJECT
+HOST-SUFFIX,snapads.com,REJECT
+HOST-SUFFIX,supersonicads.com,REJECT
+HOST-SUFFIX,sogaha.cn,REJECT
+HOST-SUFFIX,sentry.io,REJECT
+HOST-SUFFIX,sigmob.cn,REJECT
+HOST-SUFFIX,shujupie.com,REJECT
+HOST-SUFFIX,tingyun.com,REJECT
+HOST-SUFFIX,unity.cn,REJECT
+HOST-SUFFIX,unitychina.cn,REJECT
+HOST-SUFFIX,unity3d.com,REJECT
+HOST-SUFFIX,uyunad.com,REJECT
+HOST-SUFFIX,umeng.com,REJECT
+HOST-SUFFIX,umengcloud.com,REJECT
+HOST-SUFFIX,umtrack.com,REJECT
+HOST-SUFFIX,vungle.com,REJECT
+HOST,zxid-m.mobileservice.cn,REJECT
+
+# >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
+# > tx
+HOST-SUFFIX,bugly.qq.com,REJECT
+HOST-SUFFIX,btrace.qq.com,REJECT
+HOST-SUFFIX,e.qq.com,REJECT
+HOST-SUFFIX,gdtimg.com,REJECT
+HOST-SUFFIX,gdt.qq.com,REJECT
+HOST-SUFFIX,huatuo.qq.com,REJECT
+HOST-SUFFIX,mtrace.qq.com,REJECT
+HOST,qzs.qq.com,REJECT
+HOST-SUFFIX,trace.qq.com,REJECT
+HOST,tpns.qq.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
+# > 影视
+IP-CIDR,47.99.219.178/32,REJECT
+
+# > youKu
+HOST-SUFFIX,iyes.youku.com,REJECT
+HOST-SUFFIX,c.yes.youku.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<<
+# > zhiJie
+HOST-SUFFIX,ad.toutiao.com,REJECT
+HOST-SUFFIX,log.snssdk.com,REJECT
+HOST-SUFFIX,pstatp.com,REJECT
+HOST-SUFFIX,pglstatp-toutiao.com,REJECT
+HOST-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+HOST-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+HOST-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+HOST-SUFFIX,pangolin.snssdk.com,REJECT
+HOST-SUFFIX,dsp.toutiao.com,REJECT
+HOST,is.snssdk.com,REJECT
+HOST-SUFFIX,ic.snssdk.com,REJECT
+HOST,tnc3-aliec2.snssdk.com,REJECT
+HOST,tnc3-alisc1.snssdk.com,REJECT
+HOST-SUFFIX,partner.toutiao.com,REJECT
+HOST-SUFFIX,sm.toutiao.com,REJECT
+HOST-SUFFIX,nativeapp.toutiao.com,REJECT
+HOST-SUFFIX,ctobsnssdk.com,REJECT
+HOST-SUFFIX,zijieapi.com,REJECT
+#HOST,tnc3-alisc1.zijieapi.com,REJECT
+#HOST,tnc3-aliec2.zijieapi.com,REJECT
+#HOST,mon.zijieapi.com,REJECT
