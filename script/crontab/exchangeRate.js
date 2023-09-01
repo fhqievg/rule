@@ -1,3 +1,5 @@
+const isQuanX = typeof $task != 'undefined';
+
 const API_SPLIT = '-';
 const FIXED = 2;  //保留小数位数
 const ENABLE_RATES_SHOW = true; //是否显示转换后的原始金额(未处理小数)
@@ -61,11 +63,17 @@ let resultResponse = {
     "erObj": [] //订阅汇率对象，金额需转换处理，格式：[{"curreny":"USD","country":"🇺🇸","name":"美元","amount":"222.77（222.76599）","type":"->"}],
 }
 
-if (typeof $argument === 'undefined' || $argument === null || $argument === '') {
-    $notification.post("传参错误", "", "请传入argument参数");
-    $done();
+let argument = '';
+if (isQuanX) {
+    argument = 'B';
+} else {
+    if (typeof $argument === 'undefined' || $argument === null || $argument === '') {
+        notify("汇率监控", "传参错误", "请传入argument参数");
+        $done();
+    }
+    argument = $argument;
 }
-const ARGUMENT = $argument;
+const ARGUMENT = argument;
 let apiInformation = getApiInformation();
 if (apiInformation === false) {
     $done();
@@ -81,18 +89,45 @@ if (API_CONFIG[apiInformation.group].isCode) {
 let options = {
     url: apiUrl
 }
-$httpClient.get(options, function (error, response, data) {
-    if (error) {
-        $notification.post("请求失败", "", error);
-        $done();
-    }
 
+if (isQuanX) {
+    options.method = 'GET';
+    $task.fetch(options).then(response => {
+        let requestResult = getRequestResult(response.body);
+        if (requestResult === false) {
+            $done();
+        }
+
+        notify(requestResult.title, requestResult.lastTimeStr, requestResult.msg);
+        $done();
+    }, reason => {
+        notify("汇率监控", "请求失败", reason.error);
+        $done();
+    });
+} else {
+    $httpClient.get(options, function (error, response, data) {
+        if (error) {
+            notify("汇率监控", "请求失败", error);
+            $done();
+        }
+
+        let requestResult = getRequestResult(data);
+        if (requestResult === false) {
+            $done();
+        }
+
+        notify(requestResult.title, requestResult.lastTimeStr, requestResult.msg);
+        $done();
+    })
+}
+
+function getRequestResult(data) {
     let obj = JSON.parse(data);
     let functionName = "getResultBy" + apiInformation.group;
     let result = eval(functionName)(obj, apiInformation, API_CONFIG[apiInformation.group]);
     if (result.success === false) {
-        $notification.post("接口错误", "", result.errMsg);
-        $done();
+        notify("汇率监控", "接口错误", result.errMsg);
+        return false;
     }
 
     let title = timestampToTime(result.lastTime, "y") + "[" + apiInformation.apiInterface + "] [" + result.base + "]";
@@ -113,9 +148,12 @@ $httpClient.get(options, function (error, response, data) {
         }
     }
 
-    $notification.post(title, lastTimeStr, msg);
-    $done();
-})
+    return {
+        'title': title,
+        'lastTimeStr': lastTimeStr,
+        'msg': msg
+    };
+}
 
 function getApiInformation() {
     let status = false;
@@ -151,7 +189,7 @@ function getApiInformation() {
     if (status) {
         return information;
     } else {
-        $notification.post('传参错误', '', errorMsg);
+        notify('汇率监控', '传参错误', errorMsg);
         return false;
     }
 }
@@ -340,6 +378,14 @@ function getEr(rates, base, apiConfig) {
         }
     }
     return erObj;
+}
+
+function notify(title, subtitle, message) {
+    if (isQuanX) {
+        $notify(title, subtitle, message);
+    } else {
+        $notification.post(title, subtitle, message);
+    }
 }
 
 function getResultByA(obj, apiInformation, apiConfig) {
