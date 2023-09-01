@@ -55,8 +55,6 @@ URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(adve
 # > caiNiao
 DOMAIN,adashx.ut.cainiao.com
 DOMAIN,h-adashx.ut.cainiao.com
-DOMAIN,vali.cp31.ott.cibntv.net
-IP-CIDR,117.161.156.227/32,no-resolve
 
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
