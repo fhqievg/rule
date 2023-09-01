@@ -36,8 +36,6 @@ HOST,logs.chelaile.net.cn,REJECT
 # > caiNiao
 HOST,adashx.ut.cainiao.com,REJECT
 HOST,h-adashx.ut.cainiao.com,REJECT
-HOST,vali.cp31.ott.cibntv.net,REJECT
-IP-CIDR,117.161.156.227/32,REJECT
 
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
