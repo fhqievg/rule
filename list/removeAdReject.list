@@ -166,7 +166,6 @@ DOMAIN,ios.video.mpush.qq.com
 DOMAIN,pgdt.gtimg.cn
 DOMAIN,qzs.qq.com
 DOMAIN,tpns.qq.com
-DOMAIN,vv.video.qq.com
 
 # > taoPiaoPiao
 URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query((preload)?advertise|loadingbanner)|life\.aristotle\.get\/2\.0\?)
