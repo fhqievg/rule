@@ -136,7 +136,7 @@ HOST-SUFFIX,vungle.com,REJECT
 HOST,zxid-m.mobileservice.cn,REJECT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
-# > tx
+# > txVideo
 HOST-SUFFIX,bugly.qq.com,REJECT
 HOST-SUFFIX,btrace.qq.com,REJECT
 HOST-SUFFIX,e.qq.com,REJECT
@@ -151,6 +151,7 @@ HOST,qzs.qq.com,REJECT
 HOST,pgdt.gtimg.cn,REJECT
 HOST-SUFFIX,trace.qq.com,REJECT
 HOST,tpns.qq.com,REJECT
+HOST,vv.video.qq.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
