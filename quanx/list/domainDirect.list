@@ -14,7 +14,6 @@ HOST-SUFFIX,qiyoujiage.com,DIRECT
 HOST-SUFFIX,tophub.app,DIRECT
 HOST-SUFFIX,tophub.today,DIRECT
 HOST-SUFFIX,thefilehosting.com,DIRECT
-HOST-SUFFIX,ykimg.com,DIRECT
 
 # > 影视
 HOST,dsxys.pro,DIRECT
@@ -402,6 +401,7 @@ HOST-SUFFIX,xmcdn.com,DIRECT
 HOST-SUFFIX,yangkeduo.com,DIRECT
 HOST-SUFFIX,ydstatic.com,DIRECT
 HOST-SUFFIX,youku.com,DIRECT
+HOST-SUFFIX,ykimg.com,DIRECT
 HOST-SUFFIX,zhangzishi.cc,DIRECT
 HOST-SUFFIX,zhihu.com,DIRECT
 HOST-SUFFIX,zhimg.com,DIRECT
