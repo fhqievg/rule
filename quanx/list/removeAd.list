@@ -113,6 +113,7 @@ HOST-SUFFIX,mixpanel.com,REJECT
 HOST-SUFFIX,newadserver.com,REJECT
 HOST-SUFFIX,nx-perf.cn,REJECT
 HOST,open.e.kuaishou.com,REJECT
+HOST,open.e.kuaishou.cn,REJECT
 HOST,p3-feedback.byteimg.com,REJECT-IMG
 HOST-SUFFIX,qubiankeji.com,REJECT
 HOST-SUFFIX,rayjump.com,REJECT
