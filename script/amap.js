@@ -86,7 +86,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "gd_code_cover",
         "gd_notch_logo",
         "his_input_tip",
-        "home_business_position_config", // 首页右上角动图
+       "home_business_position_config", // 首页右上角动图
         "homepage_resource_config",
         "hotel_activity",
         "hotel_fillin_opt",
@@ -115,6 +115,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "nearby_map_pull_down_guide",
         "nore_rec",
         "operation_layer", // 首页右上角图层
+        "online_bus_green", //公交绿色圆球
         "photo_with_location",
         "poi_rec",
         "preword",
