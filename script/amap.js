@@ -115,7 +115,6 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         "nearby_map_pull_down_guide",
         "nore_rec",
         "operation_layer", // 首页右上角图层
-        "online_bus_green", //公交绿色圆球
         "photo_with_location",
         "poi_rec",
         "preword",
