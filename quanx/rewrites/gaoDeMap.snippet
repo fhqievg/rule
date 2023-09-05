@@ -14,7 +14,7 @@
 # > 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅
 ^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/main-page-(assets|location)|mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword|valueadded\/weather\/v2)\? url reject-dict
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? url reject-dict
-^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/main-page|shield\/frogserver\/aocs\/updatable\/1)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
+^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/(card-service-plan-home|main-page)|shield\/frogserver\/aocs\/updatable\/1)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
 
 # > 我的页面,推广卡片
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
