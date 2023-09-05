@@ -87,6 +87,7 @@ if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
         "_user_profile_",
         "air_card",
         "amapCoin",
+        "amap_basemap_config",
         "aos_feedback",
         "apple_location_log_collect",
         "collect",
