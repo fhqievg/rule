@@ -169,39 +169,41 @@ if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
       let base = obj.data.amap_basemap_config;
       base.status = 1;
       base.version = "";
-      let objVal = JSON.parse(base.value);
-      if (objVal) {
-        const item = [
-          "cache_switch",
-          "feature_guide_switch",
-          "msgbox_show_popwindow",
-          // "new_mine_switch",
-          "recommend_poi_switch",
-          "screenshotShareOpenNew",
-          "screenshot_pic_share",
-          "v13Switch", // 13版本
-          "voice_square" // 语音包广场
-        ];
-        for (let i of item) {
-          if (objVal?.[i]) {
-            objVal[i] = 0;
+      if (base?.value !== "") {
+        let objVal = JSON.parse(base.value);
+        if (objVal) {
+          const item = [
+            "cache_switch",
+            "feature_guide_switch",
+            "msgbox_show_popwindow",
+            // "new_mine_switch",
+            "recommend_poi_switch",
+            "screenshotShareOpenNew",
+            "screenshot_pic_share",
+            "v13Switch", // 13版本
+            "voice_square" // 语音包广场
+          ];
+          for (let i of item) {
+            if (objVal?.[i]) {
+              objVal[i] = 0;
+            }
+          }
+          const del = [
+            "business_position", // 推广信息
+            "fireworks", // 烟火
+            "noLoginTitle", // 未登录状态提示文本
+            "presetWord", // 搜索框填充词
+            "recommend_poi_main",
+            "splash" // 开屏广告
+          ];
+          for (let i of del) {
+            if (objVal?.[i]) {
+              delete objVal[i];
+            }
           }
         }
-        const del = [
-          "business_position", // 推广信息
-          "fireworks", // 烟火
-          "noLoginTitle", // 未登录状态提示文本
-          "presetWord", // 搜索框填充词
-          "recommend_poi_main",
-          "splash" // 开屏广告
-        ];
-        for (let i of del) {
-          if (objVal?.[i]) {
-            delete objVal[i];
-          }
-        }
+        base.value = JSON.stringify(objVal);
       }
-      base.value = JSON.stringify(objVal);
     }
 } else if (url.includes("/shield/search/common/coupon/info")) {
     if (obj?.data) {
