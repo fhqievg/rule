@@ -3,9 +3,6 @@
 #!author=RuCu6
 
 [Rule]
-# > 其它
-URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?,REJECT-DICT
-
 # > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页 - optimize1
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv))\?,REJECT-DICT
 URL-REGEX,^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?,REJECT-DICT
