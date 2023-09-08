@@ -161,8 +161,6 @@ if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
         "small_biz_news",
         "splashscreen",
         "splashview_config",
-        "sur_bar",
-        "taxi_activity",
         "sur_bar", // 十一特惠
         "taxi_activity", // 打车活动
         "tel_retention_popup",
