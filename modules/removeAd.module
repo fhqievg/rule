@@ -31,7 +31,7 @@ URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.((longquan
 URL-REGEX,^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad,REJECT-DICT
 
 # > caiYun
-URL-REGEX,^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\?,REJECT-DICT
+URL-REGEX,^https?:\/\/(wrapper\.cyapi\.cn|api\.caiyunapp\.com)\/v1\/activity\?,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > KFC
@@ -106,4 +106,4 @@ aliDrive优化 = type=http-response,script-path=https://raw.githubusercontent.co
 cheLaiLe优化 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/cheLaiLe.js,pattern=^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/goocity\/(flowPos\/home|config\/notices)\?,requires-body=true,max-size=0,timeout=10,script-update-interval=86400,enable=true
 
 [MITM]
-hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,124.71.153.172,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn:8083,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn:*,a.weilai555.com:1000,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,www.pansearch.me,api.aliyundrive.com,www.xiaoxiongyouhao.com,wrapper.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com
+hostname = %APPEND% *.chelaileapp.cn,*.chelaile.net.cn,124.71.153.172,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn:8083,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn:*,a.weilai555.com:1000,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,www.pansearch.me,api.aliyundrive.com,www.xiaoxiongyouhao.com,wrapper.cyapi.cn,api.caiyunapp.com,*.zzjz.top,iqyi.ylylfun.com
