@@ -37,6 +37,9 @@ HOST,logs.chelaile.net.cn,REJECT
 HOST,adashx.ut.cainiao.com,REJECT
 HOST,h-adashx.ut.cainiao.com,REJECT
 
+# > caiYun
+HOST,ad.cyapi.cn,REJECT
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
 HOST,adashx.ut.amap.com,REJECT
@@ -84,6 +87,7 @@ HOST-SUFFIX,bjcathay.com,REJECT
 HOST-SUFFIX,czwe.cn,REJECT
 HOST-SUFFIX,cnzz.com,REJECT
 HOST,cnzz.mmstat.com,REJECT
+HOST-SUFFIX,cluod.cn,REJECT
 HOST-SUFFIX,dutils.com,REJECT
 HOST-SUFFIX,dcloud.io,REJECT
 HOST-SUFFIX,dcloud.net.cn,REJECT
