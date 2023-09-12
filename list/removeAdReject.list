@@ -56,6 +56,9 @@ URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(adve
 DOMAIN,adashx.ut.cainiao.com
 DOMAIN,h-adashx.ut.cainiao.com
 
+# > caiYun
+DOMAIN,ad.cyapi.cn
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
 DOMAIN,adashx.ut.amap.com
@@ -113,6 +116,7 @@ DOMAIN-SUFFIX,bjcathay.com
 DOMAIN-SUFFIX,czwe.cn
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN,cnzz.mmstat.com
+DOMAIN,cluod.cn
 DOMAIN-SUFFIX,dutils.com
 DOMAIN-SUFFIX,dcloud.io
 DOMAIN-SUFFIX,dcloud.net.cn
