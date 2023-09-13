@@ -2,19 +2,19 @@
 #!desc = 去广告(iOS>=15)、字幕(默认单语简体中文)
 #!author = Maasea RuCu6
 
-# 请求体
+# > 请求体
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? url script-request-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/youtubeRequest.js
 
-# 响应体
+# > 响应体
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/youtubeResponse.js
 
-# 设置字幕
+# > 设置字幕
 ^https:\/\/setting\.youtube\.com\/\?action=shortcutsSet url script-request-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
 
-# 翻译字幕
-^https:\/\/www\.youtube\.com\/api\/timedtext.+ url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
+# > 翻译字幕
+^https:\/\/www\.youtube\.com\/api\/timedtext\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
 
-# 播放页广告
+# > 播放页广告
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+&oad url reject-dict
 
 hostname = rr*.googlevideo.com,youtubei.googleapis.com,setting.youtube.com,www.youtube.com
