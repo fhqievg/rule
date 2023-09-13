@@ -1,12 +1,13 @@
-let url = $request.url
+const isQuanX = typeof $task !== "undefined";
+let url = $request.url;
 
-let storeKey = 'youTubeShortcutsSubtitleSetting'
+let storeKey = 'youTubeShortcutsSubtitleSetting';
 let defaultSetting = {
     type: "enable",
     tl: "zh-CN",
     line: "sl"  //sl:单语翻译字幕 f：双语（翻译字幕在上） s：双语（翻译字幕在下）
 }
-let storeSetting = $persistentStore.read(storeKey)
+let storeSetting = storeRead(storeKey);
 let setting = (!storeSetting || storeSetting === '') ? defaultSetting : JSON.parse(storeSetting)
 if (url.match(/action=shortcutsSet/)) {
     let params = JSON.parse($request.body)
@@ -22,11 +23,11 @@ if (url.match(/action=shortcutsSet/)) {
             setting = defaultSetting
             break;
     }
-    $persistentStore.write(JSON.stringify(setting), storeKey)
+    storeWrite(JSON.stringify(setting), storeKey);
     $done({response: {body: JSON.stringify(setting), headers: {"Content-Type": "application/json"}}})
 }
 
-if(setting.type === 'disable'){
+if (setting.type === 'disable') {
     $done({})
 }
 
@@ -41,7 +42,55 @@ let options = {
     headers: headers
 }
 
-$httpClient.get(options, function (error, response, data) {
+if (isQuanX) {
+    options.method = 'GET';
+    console.log('youTube字幕请求发起');
+    $task.fetch(options).then(response => {
+        console.log('youTube字幕开始处理结果');
+        body = getResponseResult(response.body, body, setting);
+        console.log('youTube字幕处理结果完成');
+        $done({ body });
+    }, reason => {
+        notify("youTube字幕", "请求失败", reason.error);
+        $done();
+    });
+} else {
+    $httpClient.get(options, function (error, response, data) {
+        if (error) {
+            notify("youTube字幕", "请求失败", error);
+            $done();
+        }
+
+        body = getResponseResult(data, body, setting);
+        $done({ body });
+    })
+}
+
+function storeRead(key) {
+    if (isQuanX) {
+        return $prefs.valueForKey(key)
+    } else {
+        return $persistentStore.read(key)
+    }
+}
+
+function storeWrite(value, key) {
+    if (isQuanX) {
+        return $prefs.setValueForKey(value, key)
+    } else {
+        return $persistentStore.write(value, key)
+    }
+}
+
+function notify(title, subtitle, message) {
+    if (isQuanX) {
+        $notify(title, subtitle, message);
+    } else {
+        $notification.post(title, subtitle, message);
+    }
+}
+
+function getResponseResult(data, body, setting) {
     switch (setting.line) {
         case "f":
         case "s":
@@ -59,8 +108,8 @@ $httpClient.get(options, function (error, response, data) {
                     if (setting.line === "s") body = body.replace(patt, `${timeline[i]}$1\n${data.match(patt)[1]}</p>`)
                 }
             }
-            $done({body})
+            return body;
         default:
-            $done({body: data})
+            return data;
     }
-})
+}
