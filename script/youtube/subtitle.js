@@ -44,11 +44,8 @@ let options = {
 
 if (isQuanX) {
     options.method = 'GET';
-    console.log('youTube字幕请求发起');
     $task.fetch(options).then(response => {
-        console.log('youTube字幕开始处理结果');
         body = getResponseResult(response.body, body, setting);
-        console.log('youTube字幕处理结果完成');
         $done({ body });
     }, reason => {
         notify("youTube字幕", "请求失败", reason.error);
