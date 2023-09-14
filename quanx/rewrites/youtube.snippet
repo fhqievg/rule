@@ -9,7 +9,7 @@
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/youtubeResponse.js
 
 # > 设置字幕
-^https:\/\/setting\.youtube\.com\/\?action=shortcutsSet url script-request-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
+^https:\/\/setting\.youtube\.com\/\?action=shortcutsSet url script-echo-response https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
 
 # > 翻译字幕
 ^https:\/\/www\.youtube\.com\/api\/timedtext\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/youtube/subtitle.js
