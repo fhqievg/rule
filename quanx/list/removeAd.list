@@ -142,11 +142,13 @@ HOST,zxid-m.mobileservice.cn,REJECT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > txVideo
+HOST,access1.tpns.tencent.com,REJECT
 HOST-SUFFIX,bugly.qq.com,REJECT
 HOST-SUFFIX,btrace.qq.com,REJECT
 HOST-SUFFIX,e.qq.com,REJECT
 HOST-SUFFIX,gdtimg.com,REJECT
 HOST-SUFFIX,gdt.qq.com,REJECT
+HOST,guid.tpns.tencent.com,REJECT
 HOST-SUFFIX,huatuo.qq.com,REJECT
 HOST,info4.video.qq.com,REJECT
 HOST,info6.video.qq.com,REJECT
@@ -154,6 +156,7 @@ HOST,ios.video.mpush.qq.com,REJECT
 HOST-SUFFIX,mtrace.qq.com,REJECT
 HOST,qzs.qq.com,REJECT
 HOST,pgdt.gtimg.cn,REJECT
+HOST,stat.tpns.tencent.com,REJECT
 HOST-SUFFIX,trace.qq.com,REJECT
 HOST,tpns.qq.com,REJECT
 HOST,vv.video.qq.com,REJECT
