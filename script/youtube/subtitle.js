@@ -25,7 +25,7 @@ if (url.match(/action=shortcutsSet/)) {
     }
     storeWrite(JSON.stringify(setting), storeKey);
     if (isQuanX) {
-        $done({status: "HTTP/1.1 200 OK", headers: {"Content-Type": "application/json"}, body: JSON.stringify(setting)});
+        $done({ status: "HTTP/1.1 200 OK", body: JSON.stringify(setting), headers: { "Content-Type": "application/json" } })
     } else {
         $done({response: {body: JSON.stringify(setting), headers: {"Content-Type": "application/json"}}});
     }
