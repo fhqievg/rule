@@ -24,16 +24,20 @@ if (url.match(/action=shortcutsSet/)) {
             break;
     }
     storeWrite(JSON.stringify(setting), storeKey);
-    $done({response: {body: JSON.stringify(setting), headers: {"Content-Type": "application/json"}}})
+    if (isQuanX) {
+        $done({status: "HTTP/1.1 200 OK", headers: {"Content-Type": "application/json"}, body: JSON.stringify(setting)});
+    } else {
+        $done({response: {body: JSON.stringify(setting), headers: {"Content-Type": "application/json"}}});
+    }
 }
 
 if (setting.type === 'disable') {
-    $done({})
+    $done({});
 }
 
-let headers = $request.headers
-let body = $response.body
-if (!body) $done({})
+let headers = $request.headers;
+let body = $response.body;
+if (!body) $done({});
 let patt = new RegExp(`lang=${setting.tl}`)
 if (url.replace(/&lang=zh(-Hans)*&/, "&lang=zh-CN&").replace(/&lang=zh-Hant&/, "&lang=zh-TW&").match(patt) || url.match(/&tlang=/)) $done({})
 let t_url = `${url}&tlang=${setting.tl === "zh-CN" ? "zh-Hans" : (setting.tl === "zh-TW" ? "zh-Hant" : setting.tl)}`
