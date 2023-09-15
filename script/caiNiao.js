@@ -1,4 +1,4 @@
-//个人页面绑定banner、果酱过期、首页绑定提示
+//个人页面绑定banner、果酱过期、首页绑定提示、tab
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -127,7 +127,74 @@ if (url.includes("nbfriend.message.conversation.list")) {
                 delete obj.data[i];
             }
         }
+
+        if (obj.data.hasOwnProperty("843")) {
+            obj.data[843] = materialContentHandle(obj.data[843], 843);
+        }
+
+        if (obj.data.hasOwnProperty("862")) {
+            obj.data[862] = materialContentHandle(obj.data[862], 862);
+        }
+
+        if (obj.data.hasOwnProperty("863")) {
+            obj.data[863] = materialContentHandle(obj.data[863], 863);
+        }
     }
+}
+
+function materialContentHandle(data, index) {
+    let defaultIndex = index === 863 ? 2 : 3;
+    for (let i in data) {
+        if (data[i].hasOwnProperty("materialContentMapperMD5")) {
+            delete data[i].materialContentMapperMD5;
+        }
+
+        if (data[i].hasOwnProperty("materialContentMapper")) {
+            for (let j = 1; j <= 4; j++) {
+                switch (j) {
+                    case 1:
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_action') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_action")) {
+                            data[i].materialContentMapper["tab_" + j + '_action'] = data[i].materialContentMapper["tab_" + defaultIndex + "_action"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_action_type') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_action_type")) {
+                            data[i].materialContentMapper["tab_" + j + '_action_type'] = data[i].materialContentMapper["tab_" + defaultIndex + "_action_type"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_checked_icon') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_checked_icon")) {
+                            data[i].materialContentMapper["tab_" + j + '_checked_icon'] = data[i].materialContentMapper["tab_" + defaultIndex + "_checked_icon"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_normal_icon') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_normal_icon")) {
+                            data[i].materialContentMapper["tab_" + j + '_normal_icon'] = data[i].materialContentMapper["tab_" + defaultIndex + "_normal_icon"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_tab_key') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_tab_key")) {
+                            data[i].materialContentMapper["tab_" + j + '_tab_key'] = data[i].materialContentMapper["tab_" + defaultIndex + "_tab_key"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_title') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_title")) {
+                            data[i].materialContentMapper["tab_" + j + '_title'] = data[i].materialContentMapper["tab_" + defaultIndex + "_title"];
+                        }
+
+                        if (data[i].materialContentMapper.hasOwnProperty("tab_" + j + '_type') && data[i].materialContentMapper.hasOwnProperty("tab_" + defaultIndex + "_type")) {
+                            data[i].materialContentMapper["tab_" + j + '_type'] = data[i].materialContentMapper["tab_" + defaultIndex + "_type"];
+                        }
+                        break;
+                    default:
+                        data[i].materialContentMapper["tab_" + j + '_action'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_action_type'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_checked_icon'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_normal_icon'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_tab_key'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_title'] = '';
+                        data[i].materialContentMapper["tab_" + j + '_type'] = 'embed';
+                        break;
+                }
+            }
+        }
+    }
+    return data;
 }
 
 $done({ body: JSON.stringify(obj) });
