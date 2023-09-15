@@ -163,16 +163,13 @@ DOMAIN,zxid-m.mobileservice.cn
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tx
-DOMAIN,access1.tpns.tencent.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,gdt.qq.com
-DOMAIN,guid.tpns.tencent.com
 DOMAIN,info4.video.qq.com
 DOMAIN,info6.video.qq.com
 DOMAIN,ios.video.mpush.qq.com
 DOMAIN,pgdt.gtimg.cn
 DOMAIN,qzs.qq.com
-DOMAIN,stat.tpns.tencent.com
 DOMAIN,tpns.qq.com
 DOMAIN,vv.video.qq.com
 
