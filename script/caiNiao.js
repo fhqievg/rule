@@ -1,4 +1,4 @@
-//个人页面绑定banner
+//个人页面绑定banner、果酱过期、首页绑定提示
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -68,6 +68,9 @@ if (url.includes("nbfriend.message.conversation.list")) {
                 } else if (i.type.includes("promotion")) {
                     // 促销活动
                     return false;
+                } else if (i.type.includes("todo_list")) {
+                    // 果酱过期
+                    return false;
                 } else {
                     return true;
                 }
@@ -106,10 +109,13 @@ if (url.includes("nbfriend.message.conversation.list")) {
             "727",
             "793", // 支付宝 小程序 搜索框
             "954", // 支付宝 小程序 置顶图标
+            "1017", //关联淘宝
+            "1255", //关联快手
             "1308", // 支付宝 小程序 横图
             "1316", // 头部 banner
             "1332", // 我的页面 横图
             "1340", // 查快递 小妙招
+            "1371", //绑定快手
             "1391", // 支付宝 小程序 寄包裹
             "1410", // 导入拼多多、抖音快递
             "1428", // 幸运号
