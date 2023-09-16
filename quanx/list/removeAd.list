@@ -22,6 +22,7 @@ HOST-SUFFIX,yuedu.iqiyi.com,REJECT
 # > aLi
 HOST,adashx.m.taobao.com,REJECT
 HOST,h-adashx4bc.ut.taobao.com,REJECT
+HOST,httpdns.alicdn.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDu
@@ -142,6 +143,7 @@ HOST,zxid-m.mobileservice.cn,REJECT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > txVideo
+HOST,adsmind.ugdtimg.com,REJECT
 HOST-SUFFIX,bugly.qq.com,REJECT
 HOST-SUFFIX,btrace.qq.com,REJECT
 HOST-SUFFIX,e.qq.com,REJECT
@@ -163,8 +165,18 @@ HOST,vv.video.qq.com,REJECT
 IP-CIDR,47.99.219.178/32,REJECT
 
 # > youKu
-HOST-SUFFIX,iyes.youku.com,REJECT
+HOST,amdc.m.youku.com,REJECT
+HOST,apiv4-iyes.youku.com,REJECT
 HOST-SUFFIX,c.yes.youku.com,REJECT
+HOST-SUFFIX,iyes.youku.com,REJECT
+HOST,huichuan-mc.sm.cn,REJECT
+HOST,huichuan.sm.cn,REJECT
+HOST,mc.atm.youku.com,REJECT
+HOST,m-vali.cp31.ott.cibntv.net,REJECT
+HOST,vali-g1.cp31.ott.cibntv.net,REJECT
+HOST,vali-ugc.cp31.ott.cibntv.net,REJECT
+HOST,yk-ssp.ad.youku.com,REJECT
+HOST,ykad-data.youku.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<<
 # > zhiJie
