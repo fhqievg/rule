@@ -128,16 +128,11 @@ if (url.includes("nbfriend.message.conversation.list")) {
             }
         }
 
-        if (obj.data.hasOwnProperty("843")) {
-            obj.data[843] = materialContentHandle(obj.data[843], 843);
-        }
-
-        if (obj.data.hasOwnProperty("862")) {
-            obj.data[862] = materialContentHandle(obj.data[862], 862);
-        }
-
-        if (obj.data.hasOwnProperty("863")) {
-            obj.data[863] = materialContentHandle(obj.data[863], 863);
+        let tabItem = [843, 862, 863];
+        for (let i in tabItem) {
+            if (obj.data.hasOwnProperty(tabItem[i])) {
+                obj.data[tabItem[i]] = materialContentHandle(obj.data[tabItem[i]], tabItem[i]);
+            }
         }
     }
 }
