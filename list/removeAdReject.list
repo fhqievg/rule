@@ -34,6 +34,7 @@ URL-REGEX,^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/
 # > aLi
 DOMAIN,h-adashx4bc.ut.taobao.com
 DOMAIN,adashx.m.taobao.com
+DOMAIN,httpdns.alicdn.com
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDuPan
@@ -163,6 +164,7 @@ DOMAIN,zxid-m.mobileservice.cn
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tx
+DOMAIN,adsmind.ugdtimg.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN,info4.video.qq.com
@@ -200,8 +202,19 @@ URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert
 URL-REGEX,^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliving168\.com)(:\d+)?\/api\/v1\/advert
 
 # > youKu
-DOMAIN-SUFFIX,iyes.youku.com
+DOMAIN,adashx.ut.youku.com
+DOMAIN,amdc.m.youku.com
+DOMAIN,apiv4-iyes.youku.com
 DOMAIN-SUFFIX,c.yes.youku.com
+DOMAIN,huichuan-mc.sm.cn
+DOMAIN,huichuan.sm.cn
+DOMAIN-SUFFIX,iyes.youku.com
+#DOMAIN,m-vali.cp31.ott.cibntv.net
+DOMAIN,mc.atm.youku.com
+DOMAIN,vali-g1.cp31.ott.cibntv.net
+DOMAIN,vali-ugc.cp31.ott.cibntv.net
+DOMAIN,yk-ssp.ad.youku.com
+DOMAIN,ykad-data.youku.com
 
 # > yangShiYingYin
 URL-REGEX,^https?:\/\/api\.app\.cctv\.com\/api\/getVersion
