@@ -165,6 +165,7 @@ HOST,vv.video.qq.com,REJECT
 IP-CIDR,47.99.219.178/32,REJECT
 
 # > youKu
+HOST,adashx.ut.youku.com,REJECT
 HOST,amdc.m.youku.com,REJECT
 HOST,apiv4-iyes.youku.com,REJECT
 HOST-SUFFIX,c.yes.youku.com,REJECT
@@ -172,7 +173,7 @@ HOST-SUFFIX,iyes.youku.com,REJECT
 HOST,huichuan-mc.sm.cn,REJECT
 HOST,huichuan.sm.cn,REJECT
 HOST,mc.atm.youku.com,REJECT
-HOST,m-vali.cp31.ott.cibntv.net,REJECT
+#HOST,m-vali.cp31.ott.cibntv.net,REJECT
 HOST,vali-g1.cp31.ott.cibntv.net,REJECT
 HOST,vali-ugc.cp31.ott.cibntv.net,REJECT
 HOST,yk-ssp.ad.youku.com,REJECT
