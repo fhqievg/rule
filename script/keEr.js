@@ -2,7 +2,7 @@ if (!$response.body) $done({});
 let url = $request.url;
 let obj = JSON.parse($response.body);
 
-if (url.includes('Aios/config') || url.includes('Aios/clothes') || url.includes('Aios/Climber')) {
+if (url.includes('Aios/config') || url.includes('Aios/clothes') || url.includes('Aios/Climber') || url.includes('Aios/zixingche')) {
     if (typeof obj.gonggao != 'undefined') {
         obj.gonggao.open = false;
     }
