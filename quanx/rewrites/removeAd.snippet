@@ -50,7 +50,7 @@
 
 # > caiNiao
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch Cainiao url-and-header reject-dict
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.(index|batch\.show\.v2)|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close)|cncommunity\.my\.station\.query|nbpresentation\.homepage\.merge\.get)\.cn url reject-dict
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.(index|batch\.show\.v2)|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close)|cncommunity\.my\.station\.query|nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get)\.cn url reject-dict
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.((longquan\.place\.getpageresourcecontent|cncreditmarket\.hit\.getactivityhit)\.cn|cnactivitycenter) url reject-dict
 #优化
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.(cainiao\.(nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get|guoguo\.nbnetflow\.ads\.m?show)|nbfriend\.message\.conversation\.list)\.cn url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/caiNiao.js
