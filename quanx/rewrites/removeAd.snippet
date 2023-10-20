@@ -44,7 +44,7 @@
 # > cheLaiLe
 #^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog url reject
 ^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/led-weather\/v\d+\/condition_brief\? url reject-200
-^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?)|bus\/stop!encryptedRecommLine\.action) url reject
+^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/stop!encryptedRecommLine\.action) url reject
 #优化
 ^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/goocity\/(flowPos\/home|config\/notices)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/cheLaiLe.js
 
