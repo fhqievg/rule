@@ -43,10 +43,10 @@
 # >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
 # > cheLaiLe
 #^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog url reject
-^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/led-weather\/v\d+\/condition_brief\? url reject-200
-^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/stop!encryptedRecommLine\.action) url reject
+^https?:\/\/.+\.chelaile.*\.cn\/led-weather\/v\d+\/condition_brief\? url reject-200
+^https?:\/\/.+\.chelaile.*\.cn\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/stop!encryptedRecommLine\.action) url reject
 #优化
-^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/goocity\/(flowPos\/home|config\/notices)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/cheLaiLe.js
+^https?:\/\/.+\.chelaile.*\.cn\/goocity\/(flowPos\/home|config\/notices)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/cheLaiLe.js
 
 # > caiNiao
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch Cainiao url-and-header reject-dict
@@ -142,4 +142,4 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 # > yangShiYingYin
 ^https?:\/\/api\.app\.cctv\.com\/api\/getVersion url reject
 
-hostname = *.chelaileapp.cn,*.chelaile.net.cn,124.71.153.172,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn:8083,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn:*,a.weilai555.com:1000,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,www.pansearch.me,api.aliyundrive.com,www.xiaoxiongyouhao.com,wrapper.cyapi.cn,api.caiyunapp.com,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv
+hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn:8083,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn:*,a.weilai555.com:1000,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,www.pansearch.me,api.aliyundrive.com,www.xiaoxiongyouhao.com,wrapper.cyapi.cn,api.caiyunapp.com,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv
