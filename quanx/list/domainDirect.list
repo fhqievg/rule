@@ -52,8 +52,8 @@ HOST,hhmage.com,DIRECT
 HOST,hhzyapi.com,DIRECT
 HOST,img.maimn.com,DIRECT
 HOST,image.maimn.com,DIRECT
-HOST-SUFFIX,kuaikanzy.net,DIRECT
 HOST-SUFFIX,kuaiyun2-cdn.com,DIRECT
+HOST-SUFFIX,kuaikanzy.net,DIRECT
 HOST-SUFFIX,kuaikan-api.com,DIRECT
 HOST-SUFFIX,kuaikan-play2.com,DIRECT
 HOST-SUFFIX,liangzipic.com,DIRECT
@@ -76,11 +76,11 @@ HOST-KEYWORD,vip.ffzy-play,DIRECT
 HOST-KEYWORD,vip.ffzy-online,DIRECT
 HOST-KEYWORD,vip.ffzyread,DIRECT
 HOST-KEYWORD,vip.kuaikan-cdn,DIRECT
+HOST-KEYWORD,vip.kuaikan-play,DIRECT
 HOST-KEYWORD,hd.lz-cdn,DIRECT
 HOST-KEYWORD,vip.lz-cdn,DIRECT
 HOST-KEYWORD,vod2.bdzybf,DIRECT
 HOST-KEYWORD,vod3.bdzybf,DIRECT
-HOST-KEYWORD,vip.kuaikan-play,DIRECT
 USER-AGENT,AptvPlayer*,DIRECT
 
 # > 其它
