@@ -39,8 +39,10 @@ DOMAIN-SUFFIX,bfzy.tv
 DOMAIN,dwz.mk
 DOMAIN-SUFFIX,dadagui.me
 DOMAIN-SUFFIX,dujiazy.com
+DOMAIN-SUFFIX,dzydvod.com
 DOMAIN-SUFFIX,if101.tv
 DOMAIN-SUFFIX,imgffzy.com
+DOMAIN-SUFFIX,picffzy.com
 DOMAIN-SUFFIX,ffzypic.com
 DOMAIN-SUFFIX,ffzyimg.com
 DOMAIN-SUFFIX,ffzyread.com
@@ -51,14 +53,17 @@ DOMAIN,hhmage.com
 DOMAIN,hhzyapi.com
 DOMAIN,img.maimn.com
 DOMAIN,image.maimn.com
+DOMAIN-SUFFIX,kuaiyun2-cdn.com
 DOMAIN-SUFFIX,kuaikanzy.net
 DOMAIN-SUFFIX,kuaikan-api.com
+DOMAIN-SUFFIX,kuaikan-play2.com
 DOMAIN-SUFFIX,liangzipic.com
 DOMAIN-SUFFIX,lzzypic.com
 DOMAIN-SUFFIX,lzzyimg.com
 DOMAIN-SUFFIX,lziapi.com
 DOMAIN-SUFFIX,cdnlz14.com
 DOMAIN-SUFFIX,moguys.xyz
+DOMAIN-SUFFIX,snzycdn.com
 DOMAIN-SUFFIX,vim-cn.com
 DOMAIN-SUFFIX,wujinpp.com
 DOMAIN-SUFFIX,yilonghd.com
@@ -72,6 +77,7 @@ DOMAIN-KEYWORD,vip.ffzy-play
 DOMAIN-KEYWORD,vip.ffzy-online
 DOMAIN-KEYWORD,vip.ffzyread
 DOMAIN-KEYWORD,vip.kuaikan-cdn
+DOMAIN-KEYWORD,vip.kuaikan-play
 DOMAIN-KEYWORD,hd.lz-cdn
 DOMAIN-KEYWORD,vip.lz-cdn
 DOMAIN-KEYWORD,vod2.bdzybf
