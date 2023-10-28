@@ -38,8 +38,10 @@ HOST-SUFFIX,bfzy.tv,DIRECT
 HOST,dwz.mk,DIRECT
 HOST-SUFFIX,dadagui.me,DIRECT
 HOST-SUFFIX,dujiazy.com,DIRECT
+HOST-SUFFIX,dzydvod.com,DIRECT
 HOST-SUFFIX,if101.tv,DIRECT
 HOST-SUFFIX,imgffzy.com,DIRECT
+HOST-SUFFIX,picffzy.com,DIRECT
 HOST-SUFFIX,ffzypic.com,DIRECT
 HOST-SUFFIX,ffzyimg.com,DIRECT
 HOST-SUFFIX,ffzyread.com,DIRECT
@@ -51,13 +53,16 @@ HOST,hhzyapi.com,DIRECT
 HOST,img.maimn.com,DIRECT
 HOST,image.maimn.com,DIRECT
 HOST-SUFFIX,kuaikanzy.net,DIRECT
+HOST-SUFFIX,kuaiyun2-cdn.com,DIRECT
 HOST-SUFFIX,kuaikan-api.com,DIRECT
+HOST-SUFFIX,kuaikan-play2.com,DIRECT
 HOST-SUFFIX,liangzipic.com,DIRECT
 HOST-SUFFIX,lzzypic.com,DIRECT
 HOST-SUFFIX,lzzyimg.com,DIRECT
 HOST-SUFFIX,lziapi.com,DIRECT
 HOST-SUFFIX,cdnlz14.com,DIRECT
 HOST-SUFFIX,moguys.xyz,DIRECT
+HOST-SUFFIX,snzycdn.com,DIRECT
 HOST-SUFFIX,vim-cn.com,DIRECT
 HOST-SUFFIX,wujinpp.com,DIRECT
 HOST-SUFFIX,yilonghd.com,DIRECT
@@ -75,6 +80,7 @@ HOST-KEYWORD,hd.lz-cdn,DIRECT
 HOST-KEYWORD,vip.lz-cdn,DIRECT
 HOST-KEYWORD,vod2.bdzybf,DIRECT
 HOST-KEYWORD,vod3.bdzybf,DIRECT
+HOST-KEYWORD,vip.kuaikan-play,DIRECT
 USER-AGENT,AptvPlayer*,DIRECT
 
 # > 其它
