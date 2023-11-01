@@ -1,4 +1,4 @@
-//用户评价
+//用户评价、达人首页
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -536,6 +536,10 @@ if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
             item.creative[0].start_time = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
             item.creative[0].end_time = 2209046399; // Unix 时间戳 2040-01-01 23:59:59
         }
+    }
+} else if (url.includes("/faas/amap-navigation/usr-profile-fc/homeV2")) {
+    if(obj?.data?.bulletData?.items){
+        obj.data.bulletData.items = [];
     }
 }
 
