@@ -538,8 +538,8 @@ if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
         }
     }
 } else if (url.includes("/faas/amap-navigation/usr-profile-fc/homeV2")) {
-    if(obj?.data?.bulletData?.items){
-        obj.data.bulletData.items = [];
+    if(obj?.data){
+        obj.data.bulletData = null;
     }
 }
 
