@@ -95,9 +95,6 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 #优化
 ^https?:\/\/app\.thepaper\.cn\/clt\/(jsp\/v\d\/(loading|allNodes|channelContList|home_page_rcmd|newDetail|getTopBarData|categoryContList|new_detail_pph|sparkerNodeContList)|videoContList\/(channelList|nodeList)|course\/mine\/popularize) url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/pengPaiNews.js
 
-# > panSearch
-^https:\/\/www\.pansearch\.me\/api\/adsite url reject-dict
-
 # >>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<<
 # > qianChengWuYou
 ^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\? url reject-dict
