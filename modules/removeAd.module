@@ -69,9 +69,6 @@ DOMAIN,applog.thepaper.cn,REJECT-200
 DOMAIN,applogs.thepaper.cn,REJECT-200
 URL-REGEX,^https:\/\/app\.thepaper\.cn\/clt\/jsp\/v6\/lastReadRecommend,REJECT-DICT
 
-# > panSearch
-URL-REGEX,^https:\/\/www\.pansearch\.me\/api\/adsite,REJECT-DICT
-
 # >>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<<
 # > qianChengWuYou
 URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?user\/stateboot\.php\?,REJECT-DICT
