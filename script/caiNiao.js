@@ -51,7 +51,8 @@ if (url.includes("nbfriend.message.conversation.list")) {
                             "jkymd", // 集卡赢免单
                             "ljjq", // 领寄件券
                             "ttlhb", // 天天领红包
-                            "xybg" // 幸运包裹
+                            "xybg", // 幸运包裹
+                            "cnhs" //回收
                         ];
                         i.bizData.items = i.bizData.items.filter(
                             (ii) => !item.includes(ii.key)
