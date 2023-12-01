@@ -112,6 +112,7 @@ function pointListHandle(pointList) {
                 i.id === 615 || //烧烤导航
                 //i.id === 617 || //定制巴士
                 //i.id === 619 || //机场快线
+                i.id === 623 || //邀好友
                 i.id === 620 || //绿色出行
                 i.id === 674  //签到
             )
