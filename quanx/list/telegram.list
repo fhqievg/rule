@@ -1,6 +1,7 @@
 HOST-SUFFIX,comments.app,Telegram
 HOST-SUFFIX,contest.com,Telegram
 HOST-SUFFIX,graph.org,Telegram
+HOST-SUFFIX,legra.ph,Telegram
 HOST-SUFFIX,mbrx.app,Telegram
 HOST-SUFFIX,quiz.directory,Telegram
 HOST-SUFFIX,stel.com,Telegram
@@ -21,6 +22,7 @@ HOST-SUFFIX,usercontent.dev,Telegram
 HOST-KEYWORD,nicegram,Telegram
 IP-CIDR,109.239.140.0/24,Telegram
 IP-CIDR,149.154.160.0/20,Telegram
+IP-CIDR,5.28.192.0/18,Telegram
 IP-CIDR,5.28.195.163/32,Telegram
 IP-CIDR,5.28.195.205/32,Telegram
 IP-CIDR,5.28.195.37/32,Telegram
