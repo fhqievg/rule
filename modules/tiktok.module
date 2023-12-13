@@ -12,6 +12,7 @@ RULE-SET,https://raw.githubusercontent.com/fhqievg/rules/main/list/tiktok.list,T
 
 [URL Rewrite]
 (?<=_region=)CN(?=&) KR 307
+(?<=_region1=)CN(?=&) KR 307
 (?<=mcc_mnc=)460[0-9]{2}(?=&) 45005 307
 (?<=tz_name=)Asia/Shanghai(?=&) Asia/Seoul 307
 (?<=tz_name=)Asia%2FShanghai(?=&) Asia%2FSeoul 307
