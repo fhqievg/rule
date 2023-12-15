@@ -60,7 +60,7 @@
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/caiNiao.js
 
 # > caiYun
-^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\?pos=2 url reject-dict
+^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? url reject-dict
 ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? url echo-response application/json echo-response https://raw.githubusercontent.com/fhqievg/rules/main/mocks/caiYun.json
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
