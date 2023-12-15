@@ -32,7 +32,7 @@ URL-REGEX,^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.g
 
 # > caiYun
 URL-REGEX,^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\?,REJECT-DICT
-URL-REGEX,^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\?pos=2,REJECT-DICT
+URL-REGEX,^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\?,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
 # > KFC
