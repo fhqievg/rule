@@ -245,3 +245,6 @@ DOMAIN-SUFFIX,zijieapi.com
 
 # > zuiYou
 URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
+
+# > zhongGuoLianTong
+DOMAIN,m1.ad.10010.com
