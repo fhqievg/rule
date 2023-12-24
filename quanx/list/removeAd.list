@@ -202,3 +202,6 @@ HOST-SUFFIX,zijieapi.com,REJECT
 #HOST,tnc3-alisc1.zijieapi.com,REJECT
 #HOST,tnc3-aliec2.zijieapi.com,REJECT
 #HOST,mon.zijieapi.com,REJECT
+
+# > zhongGuoLianTong
+HOST,m1.ad.10010.com,REJECT
