@@ -31,7 +31,7 @@ URL-REGEX,^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.((longquan
 URL-REGEX,^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad,REJECT-DICT
 
 # > caiYun
-URL-REGEX,^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\?,REJECT-DICT
+URL-REGEX,^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity(\?)?,REJECT-DICT
 URL-REGEX,^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\?,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
