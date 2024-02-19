@@ -130,7 +130,7 @@ if (url.includes("guoguo.nbnetflow.ads.show")) {
       } else if (item?.type?.includes("promotion")) {
         // 促销活动
         continue;
-      } else if (i.type.includes("todo_list")) {
+      } else if (item?.type?.includes("todo_list")) {
         // 果酱过期
         continue;
       }
