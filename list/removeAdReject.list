@@ -51,7 +51,7 @@ DOMAIN,mobads.baidu.com
 # > cheLaiLe
 DOMAIN,atrace.chelaile.net.cn
 DOMAIN,logs.chelaile.net.cn
-URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/stop!encryptedRecommLine\.action)
+URL-REGEX,^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/(stop!encryptedRecommLine|ai\/config)\.action)
 
 # > caiNiao
 DOMAIN,adashx.ut.cainiao.com
@@ -82,7 +82,7 @@ DOMAIN,a314.gameloft.com
 
 # >>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<<
 # > maiDuiDui
-URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/
+URL-REGEX,^https?:\/\/mob\.mddcloud\.com\.cn\/(adApi|api\/(ad|advert))\/
 
 # >>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<<
 # > ntPlayer
