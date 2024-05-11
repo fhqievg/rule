@@ -2,6 +2,7 @@ HOST-SUFFIX,vercel.app,故障转移
 HOST,ednovas.world,故障转移
 HOST,ednovas.org,故障转移
 HOST,ednovas.dev,故障转移
+HOST,ednovas.tech,故障转移
 HOST-SUFFIX,ednovas.cloud,故障转移
 HOST-SUFFIX,exchangerate-api.com,故障转移
 HOST,open.er-api.com,故障转移
@@ -9,4 +10,5 @@ HOST-SUFFIX,currencylayer.com,故障转移
 HOST-SUFFIX,hlj.fun,故障转移
 HOST-SUFFIX,hlj14.net,故障转移
 HOST-SUFFIX,hlj27.co,故障转移
+HOST-SUFFIX,qbccycqov.news,故障转移
 HOST-SUFFIX,quantumult.app,故障转移
