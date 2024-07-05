@@ -3,7 +3,8 @@
 #部分来源仓库：vipic/grocery(解除外链)、Rucu6(去商品推广)
 
 # > 去除gzh底部广告及商品推广
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle|masonryfeed)\? url reject-dict
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/snssvpdownload\/SH\/reserved\/ads_svp_video url reject-dict
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgad|cps_product_info|relatedarticle|masonryfeed|jsmonitor)\? url reject-dict
 
 # > 解除外链限制
 ^https:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/wx/externalLinks.js
