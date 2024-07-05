@@ -160,6 +160,10 @@ HOST-SUFFIX,trace.qq.com,REJECT
 HOST,tpns.qq.com,REJECT
 HOST,vv.video.qq.com,REJECT
 
+# >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
+# > wechat
+HOST,badjs.weixinbridge.com,REJECT
+
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
 IP-CIDR,47.99.219.178/32,REJECT
