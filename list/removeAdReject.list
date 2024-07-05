@@ -187,6 +187,9 @@ URL-REGEX,^https?:\/\/appconf\.mail\.163\.com\/mmad\/
 URL-REGEX,^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg
 URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
 
+# > wechat
+DOMAIN,badjs.weixinbridge.com
+
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
 URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
