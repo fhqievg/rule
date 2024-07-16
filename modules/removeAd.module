@@ -32,7 +32,7 @@ URL-REGEX,^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.g
 
 # > caiYun
 URL-REGEX,^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity(\?)?,REJECT-DICT
-URL-REGEX,^https?:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/(home\/conditions\/local|home_activity\/conditions)|operation\/homefeatures\?),REJECT-DICT
+URL-REGEX,^https?:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/(home\/conditions\/local|home_activity\/conditions)|notification\/message_center|operation\/homefeatures),REJECT-DICT
 URL-REGEX,^https?:\/\/biz\.cyapi\.cn\/p\/v1\/entries\?,REJECT-DICT
 
 # >>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<<
