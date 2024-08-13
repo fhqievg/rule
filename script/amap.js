@@ -48,6 +48,11 @@ if (url.includes("/boss/car/order/content_info")) {
       }
     }
   }
+} else if (url.includes("/c3frontend/af-launch/page/main")) {
+  // 步行导航结束推广卡片
+  if (obj?.data?.modules?.C1EndNaviEngine?.data) {
+    obj.data.modules.C1EndNaviEngine.data = {};
+  }
 } else if (url.includes("/faas/amap-navigation/card-service-plan-home")) {
   // 路线规划页
   if (obj?.data?.children?.length > 0) {
@@ -155,10 +160,12 @@ if (url.includes("/boss/car/order/content_info")) {
     // "ARWalkNavi", // AR导航
     // "Clipboard", // 剪贴板
     // "DIYMap", // DIY地图
+    "EndNaviC3AdCard", // 导航结束推广
     // "GuiJi", // 轨迹
     "Naviendpage_Searchwords",
     "SplashScreenControl",
     "TipsTaxiButton",
+    "TrainOrderBanner", // 公交顶部滚动横图
     // "TrainOrderBanner", // 火车票订单
     // "_testmark_info",
     // "_user_profile_",
@@ -211,7 +218,7 @@ if (url.includes("/boss/car/order/content_info")) {
     "operation_layer", // 首页右上角图层
     // "photo_with_location",
     // "poi_rec",
-    // "preword",
+    "preword",
     // "profileHeaderPic",
     // "profiletTopBtn",
     // "recommend_api",
