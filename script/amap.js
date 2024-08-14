@@ -4,6 +4,15 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
+  if (obj?.data?.common_data?.bus_plan_bottom_event?.data?.length > 0) {
+    // 公交出行 底部卡路里数值
+    obj.data.common_data.bus_plan_bottom_event.data = [];
+  }
+  if (obj?.data?.common_data?.bus_plan_segment_event?.data?.length > 0) {
+    // 公交出行 中转站 卡路里数值
+    obj.data.common_data.bus_plan_segment_event.data = [];
+  }
+  
   // 导航选路线页面左上角动图
   if (obj?.data?.front_end?.assistant?.length > 0) {
     obj.data.front_end.assistant = [];
@@ -181,7 +190,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "GuiJi", // 轨迹
     "Naviendpage_Searchwords",
     "SplashScreenControl",
-    "TipsTaxiButton",
+    "TipsTaxiButton", // 选路线页面 打车图标
     // "TrainOrderBanner", // 火车票订单
     // "_testmark_info",
     // "_user_profile_",
@@ -221,8 +230,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "list_action_drawer",
     // "listguide",
     // "map_environment_air",
-    // "map_weather_switch", // 天气
-    // "maplayers", // 赏花地图
+    "map_weather_switch", // 天气
+    "maplayers", // 赏花地图
     // "message_tab",
     "navi_end", // 导航结束 领油滴
     // "nearby",
@@ -233,7 +242,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "nore_rec",
     "operation_layer", // 首页右上角图层
     // "photo_with_location",
-    // "poi_rec",
+    "poi_rec",
     "preword",
     // "profileHeaderPic",
     // "profiletTopBtn",
