@@ -121,7 +121,8 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
-^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/) url reject
+^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/ url reject
+#^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/) url reject
 #优化
 #^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/xiaChuFang.js
 
