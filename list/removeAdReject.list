@@ -192,7 +192,7 @@ DOMAIN,badjs.weixinbridge.com
 
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
-URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/)
+URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/
 
 # > xiaoXiongYouHao
 URL-REGEX,^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
