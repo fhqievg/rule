@@ -7,8 +7,14 @@ if (url.includes('/account/detail') || url.includes('/user/get_profile')) {
         obj.account.user.ip_location = '';
     }
 
-    if (url.includes('/user/get_profile') && obj?.user?.ip_location) {
-        obj.user.ip_location = '';
+    if (url.includes('/user/get_profile')) {
+        if(obj?.user?.ip_location){
+            obj.user.ip_location = '';
+        }
+        
+        if (obj?.hasOwnProperty('contribution_calendar')) {
+            delete obj.contribution_calendar;
+        }
     }
 
     obj.prime_portal = [];
