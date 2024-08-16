@@ -468,9 +468,9 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "waterFallFeed", // 附近景点瀑布流
     "waterFallFeedTitle", // 更多好去处
     "attractGalleryInfo", //地点笔记入口
-    "hotInfoList", //左下角浮层
-    "poiDetailWaterFeed", //发现好去处瀑布流
-    "poiDetailWaterFeedTitle" //发现好去处
+    //"hotInfoList", //左下角浮层
+    //"poiDetailWaterFeed", //发现好去处瀑布流
+    //"poiDetailWaterFeedTitle" //发现好去处
   ];
   if (obj?.data?.modules) {
     for (let i of items) {
