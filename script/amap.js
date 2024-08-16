@@ -166,6 +166,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     delete obj.data.carTips.data.popupInfo;
   }
 } else if (url.includes("/shield/dsp/profile/index/nodefaasv3")) {
+  console.log(JSON.stringify(obj));
   // 我的页面
   if (obj?.data?.cardList?.length > 0) {
     obj.data.cardList = obj.data.cardList.filter((i) => i?.dataKey === "MyOrderCard");
