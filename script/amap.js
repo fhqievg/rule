@@ -166,12 +166,12 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     delete obj.data.carTips.data.popupInfo;
   }
 } else if (url.includes("/shield/dsp/profile/index/nodefaasv3")) {
-  console.log(JSON.stringify(obj));
   // 我的页面
   if (obj?.data?.cardList?.length > 0) {
     obj.data.cardList = obj.data.cardList.filter((i) => i?.dataKey === "MyOrderCard");
   }
   if (obj?.data?.tipData) {
+    console.log(JSON.stringify(obj.data.tipData));
     delete obj.data.tipData;
   }
   // 足迹
@@ -180,6 +180,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   // }
   // 成就勋章 lv1见习达人
   if (obj?.data?.memberInfo) {
+    
+console.log("111111")    console.log(JSON.stringify(obj.data.memberInfo));
     delete obj.data.memberInfo;
   }
 } else if (url.includes("/shield/frogserver/aocs/updatable/")) {
