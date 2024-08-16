@@ -1,4 +1,4 @@
-//用户评价、达人首页、我的页面
+//用户评价、达人首页、我的页面、搜索详情
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -466,7 +466,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "video",
     "waistRecEntrance", // 更多人气好去处
     "waterFallFeed", // 附近景点瀑布流
-    "waterFallFeedTitle" // 更多好去处
+    "waterFallFeedTitle", // 更多好去处
+    "attractGalleryInfo", //地点笔记入口
+    "hotInfoList", //左下角浮层
+    "poiDetailWaterFeed", //发现好去处瀑布流
+    "poiDetailWaterFeedTitle" //发现好去处
   ];
   if (obj?.data?.modules) {
     for (let i of items) {
