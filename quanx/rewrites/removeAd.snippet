@@ -122,9 +122,8 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
 ^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/ url reject
-#^https?:\/\/(www|api)\.xiachufang\.com\/.+\/(recipe\/bottom_list\.json|ad\/) url reject
 #优化
-#^https?:\/\/(www|api)\.xiachufang\.com\/.+(account|ranking_list)?\/(detail_.+|detail|get_profile|paged_waterfall_recommendations|.*ranking_list.*|init_page)\.json url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/xiaChuFang.js
+^https:\/\/api\.xiachufang\.com\/v2\/(account\/detail|homepage.*\/(init_page|paged_waterfall_recommendations|ranking_list\/paged_homepage_ranking_list_section_v\d*)|recipe\/(bottom_list|detail_v\d*)|search\/(popular_queries|universal_search_v\d*)|user\/get_profile)\.json url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/xiaChuFang.js
 
 # > xiaoXiongYouHao
 ^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders) url reject
