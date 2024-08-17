@@ -1,4 +1,4 @@
-//用户评价、达人首页、我的页面、搜索详情、搜索周边
+//用户评价、达人首页、我的页面、搜索结果、搜索周边
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -468,8 +468,26 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "attractGalleryInfo", //地点笔记入口
     "hotInfoList", //左下角浮层
     "poiDetailWaterFeed", //发现好去处瀑布流
-    "poiDetailWaterFeedTitle" //发现好去处
+    "poiDetailWaterFeedTitle", //发现好去处
+    "rentSaleHouse", //租售房屋
+    "carServiceCard", //车主中心
+    "nearbyGoodCar", //热门新车
+    "gas_station_recommend", //加油站推荐
+    //"societyPublicExperience", //网友互助
+    //"evaluateVO" //出行评分
   ];
+  
+  //只保留评价列表
+  if(obj.data?.modules?.reviews?.data?.total === 0){
+      items.push('reviews');
+  }
+  if(obj.data?.modules?.reviews?.data?.nav_bar_write_comment){
+      //delete obj.data.modules.reviews.data.nav_bar_write_comment; //右上角写评价入口
+  }
+  if(obj.data?.modules?.reviews?.data?.write_comment){
+      delete obj.data.modules.reviews.data.write_comment;  //评价按钮
+  }
+  
   if (obj?.data?.modules) {
     for (let i of items) {
       delete obj.data.modules[i];
