@@ -476,8 +476,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "platformCustomerCommonModule", //通用定制推广
     "platformCustomerComplianceInfo", //定制推广下方的说明文字
     "rentSaleHouse", //租售房屋
-    "recommend_designer_card" //设计师推荐
-    "rec_legal_document", //推荐下方的说明文字
+    "recommend_designer_card", //设计师推荐
+    "rec_legal_document" //推荐下方的说明文字
     //"societyPublicExperience", //网友互助/地图共建
   ];
   
