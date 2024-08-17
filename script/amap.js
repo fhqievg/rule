@@ -302,7 +302,6 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
 } else if (url.includes("/shield/search/poi/detail")) {
   // 搜索结果 模块详情
   const items = [
-    "CouponBanner", // 高德红包
     // "anchor",
     "adv_compliance_info", // 服务提供方
     "adv_gift",
@@ -312,6 +311,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "brand_introduction",
     "brand_shop_bar",
     // "brand_story",
+    "CouponBanner", // 高德红包
     "checkIn",
     "check_in", // 足迹打卡
     "cityCardFeed", // 景点卡片
@@ -466,15 +466,17 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "waterFallFeed", // 附近景点瀑布流
     "waterFallFeedTitle", // 更多好去处
     "attractGalleryInfo", //地点笔记入口
+    "carServiceCard", //车主中心
+    //"evaluateVO", //出行评分
+    "gas_station_recommend", //加油站推荐
     "hotInfoList", //左下角浮层
+    "nearbyGoodCar", //热门新车
     "poiDetailWaterFeed", //发现好去处瀑布流
     "poiDetailWaterFeedTitle", //发现好去处
     "rentSaleHouse", //租售房屋
-    "carServiceCard", //车主中心
-    "nearbyGoodCar", //热门新车
-    "gas_station_recommend", //加油站推荐
-    //"societyPublicExperience", //网友互助
-    //"evaluateVO" //出行评分
+    "recommend_designer_card" //设计师推荐
+    //"rec_legal_document", //推荐下方的说明文字
+    //"societyPublicExperience", //网友互助/地图共建
   ];
   
   //处理评价
