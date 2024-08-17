@@ -1,4 +1,4 @@
-//用户评价、达人首页、我的页面、搜索详情
+//用户评价、达人首页、我的页面、搜索详情、搜索周边
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -293,14 +293,12 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   if (obj?.data) {
     obj.data = {};
   }
-} else if (url.includes("/shield/search/nearbyrec_smart")) {
-  // 附近页面
+} else if (url.includes("/shield/search/nearbyrec_smart") || url.includes("/smartui/near_recommend")) {
+  // 附近页面、搜索周边
   const items = ["head", "search_hot_words", "feed_rec"];
   if (obj?.data?.modules?.length > 0) {
-    if (obj?.data?.modules?.length > 0) {
       obj.data.modules = obj.data.modules.filter((i) => items?.includes(i));
     }
-  }
 } else if (url.includes("/shield/search/poi/detail")) {
   // 搜索结果 模块详情
   const items = [
