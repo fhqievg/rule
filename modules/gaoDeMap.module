@@ -4,7 +4,7 @@
 
 [Rule]
 # > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页 - optimize1
-URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv))\?,REJECT-DICT
+URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv)|aos_public_travel\/recommend_plan)\?,REJECT-DICT
 URL-REGEX,^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?,REJECT-DICT
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?,REJECT-DICT
 
@@ -19,7 +19,7 @@ URL-REGEX,^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?,REJECT-DICT
 # > 开屏广告 - optimize5
 
 # > 打车页,红点角标,弹窗,天气图标,推广卡片 - optimize6
-URL-REGEX,^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization)\?,REJECT-DICT
+URL-REGEX,^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization|transportation\/diversion\/resource\/driving)\?,REJECT-DICT
 
 [Script]
 optimize1 = type=http-response,script-path=https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js,pattern=^https:\/\/m5\.amap\.com\/ws\/(shield\/(search\/(common\/coupon\/info|poi\/detail)|search_poi\/(homepage|sug|mps|search\/sp|tips_operation_location)｜search_business\/process\/marketingOperationStructured)|perception\/drive\/(routeInfo|routePlan)|c3frontend\/af-(hotel|launch)\/page\/main|aos\/perception\/publicTravel\/beforeNavi|bus\/plan\/integrate),max-size=0,requires-body=true,timeout=10,script-update-interval=86400,enable=true
