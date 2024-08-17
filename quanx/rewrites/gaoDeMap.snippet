@@ -6,8 +6,8 @@
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch AMap url-and-header reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend url reject-dict
 
-# > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
-^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv)) url reject-dict
+# > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页,路径规划页推荐
+^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv)|aos_public_travel\/recommend_plan) url reject-dict
 ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/ url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/(shield\/(search\/(common\/coupon\/info|poi\/detail)|search_poi\/(homepage|sug|mps|search\/sp|tips_operation_location)|search_business\/process\/marketingOperationStructured)|perception\/drive\/(routeInfo|routePlan)|c3frontend\/af-(hotel|launch)\/page\/main|aos\/perception\/publicTravel\/beforeNavi|bus\/plan\/integrate) url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
 
@@ -25,8 +25,8 @@
 # > 开屏广告
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
 
-# > 打车页,红点角标,弹窗,天气图标,推广卡片
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) url reject-dict
+# > 打车页,红点角标,弹窗,天气图标,推广卡片,路径规划页推荐
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization|transportation\/diversion\/resource\/driving) url reject-dict
 ^https:\/\/m5-zb\.amap\.com\/ws\/(promotion-web\/resource(\/home)?|sharedtrip\/taxi\/order_detail_car_tips|boss\/(car\/order\/content_info|order_web\/friendly_information)) url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
 
 hostname = m5.amap.com,m5-zb.amap.com,oss.amap.com,sns.amap.com
