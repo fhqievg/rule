@@ -482,7 +482,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
       items.push('reviews');
   }
   if(obj.data?.modules?.reviews?.data?.nav_bar_write_comment){
-      //delete obj.data.modules.reviews.data.nav_bar_write_comment; //右上角写评价入口
+      delete obj.data.modules.reviews.data.nav_bar_write_comment; //右上角写评价入口
   }
   if(obj.data?.modules?.reviews?.data?.write_comment){
       delete obj.data.modules.reviews.data.write_comment;  //评价按钮
