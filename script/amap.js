@@ -470,6 +470,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "CouponWidget", //右下角小图标
     //"evaluateVO", //出行评分
     "gas_station_recommend", //加油站推荐
+    //"governmentInformation",
     "hotInfoList", //左下角浮层
     "nearbyGoodCar", //热门新车
     "poiDetailWaterFeed", //发现好去处瀑布流
@@ -497,6 +498,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   }
   if(obj.data?.modules?.reviews?.data?.write_comment){
       //delete obj.data.modules.reviews.data.write_comment;  //评价按钮
+  }
+  
+  //处理出行评分
+  if (!obj.data?.modules?.evaluateVO?.data?.hasOwnProperty("score") || obj.data?.modules?.evaluateVO?.data?.score === "0.0")) {
+    items.push('evaluateVO');
   }
   
   if (obj?.data?.modules) {
