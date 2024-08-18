@@ -501,7 +501,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   }
   
   //处理出行评分
-  if (!obj.data?.modules?.evaluateVO?.data?.hasOwnProperty("score") || obj.data?.modules?.evaluateVO?.data?.score === "0.0")) {
+  if (!obj.data?.modules?.evaluateVO?.data?.hasOwnProperty("score") || obj.data?.modules?.evaluateVO?.data?.score === "0.0") {
     items.push('evaluateVO');
   }
   
