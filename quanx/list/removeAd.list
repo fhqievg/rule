@@ -43,10 +43,7 @@ HOST,ad.cyapi.cn,REJECT
 
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
-HOST,adashx.ut.amap.com,REJECT
-HOST,awaken.amap.com,REJECT
 HOST,amap-aos-info-nogw.amap.com,REJECT
-HOST,optimus-ads.amap.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<<
 # > 捷径
