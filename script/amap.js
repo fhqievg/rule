@@ -467,6 +467,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "waterFallFeedTitle", // 更多好去处
     "attractGalleryInfo", //地点笔记入口
     "carServiceCard", //车主中心
+    "CouponWidget", //右下角小图标
     //"evaluateVO", //出行评分
     "gas_station_recommend", //加油站推荐
     "hotInfoList", //左下角浮层
