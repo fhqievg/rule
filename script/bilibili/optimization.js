@@ -1,7 +1,7 @@
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
-let isEnableVip = false; //是否启用vip
+let isEnableVip = true; //是否启用vip
 
 if (url.includes("/x/resource/show/skin")) {
   // 皮肤推送
@@ -18,7 +18,7 @@ if (url.includes("/x/resource/show/skin")) {
   }
   // 首页导航栏
   if (obj?.data?.tab?.length > 0) {
-    const sortLists = ["推荐", "热门", "影视", "动画"];
+    const sortLists = ["推荐", "热门", "影视", "追番"];
     obj.data.tab = obj.data.tab
       .filter((i) => sortLists?.includes(i?.name))
       .sort((a, b) => sortLists.indexOf(a?.name) - sortLists.indexOf(b?.name));
