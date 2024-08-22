@@ -1,4 +1,4 @@
-//用户评价、达人首页、我的页面、搜索结果、搜索周边
+//用户评价、达人首页、图层、我的页面、搜索结果、搜索周边
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -234,7 +234,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "listguide",
     // "map_environment_air",
     "map_weather_switch", // 天气
-    //"maplayers", // 赏花地图
+    //"maplayers", // 图层
     // "message_tab",
     "navi_end", // 导航结束 领油滴
     // "nearby",
@@ -479,8 +479,9 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "platformCustomerComplianceInfo", //定制推广下方的说明文字
     "rentSaleHouse", //租售房屋
     "recommend_designer_card", //设计师推荐
-    "rec_legal_document" //推荐下方的说明文字
+    "rec_legal_document", //推荐下方的说明文字
     //"societyPublicExperience", //网友互助/地图共建
+    "shop_settlement" // 店铺入驻入口
   ];
   
   //处理其它推广
