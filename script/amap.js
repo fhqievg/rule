@@ -234,7 +234,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "listguide",
     // "map_environment_air",
     "map_weather_switch", // 天气
-    "maplayers", // 赏花地图
+    //"maplayers", // 赏花地图
     // "message_tab",
     "navi_end", // 导航结束 领油滴
     // "nearby",
@@ -465,7 +465,6 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "waistRecEntrance", // 更多人气好去处
     "waterFallFeed", // 附近景点瀑布流
     "waterFallFeedTitle", // 更多好去处
-    "attractGalleryInfo", //地点笔记入口
     "carServiceCard", //车主中心
     "CouponWidget", //右下角小图标
     //"evaluateVO", //出行评分
@@ -496,13 +495,23 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   if(obj.data?.modules?.reviews?.data?.nav_bar_write_comment){
       //delete obj.data.modules.reviews.data.nav_bar_write_comment; //右上角写评价入口
   }
-  if(obj.data?.modules?.reviews?.data?.write_comment){
-      //delete obj.data.modules.reviews.data.write_comment;  //评价按钮
+  if(obj.data?.modules?.reviews?.data?.write_comment?.task_entrance){
+    delete obj.data.modules.reviews.data.write_comment.task_entrance; //评价模块右上角活动入口
   }
   
   //处理出行评分
   if (!obj.data?.modules?.evaluateVO?.data?.hasOwnProperty("score") || obj.data?.modules?.evaluateVO?.data?.score === "0.0") {
     items.push('evaluateVO');
+  }
+  
+  //处理顶部图片
+  if (obj.data?.modules?.attractGalleryInfo?.data?.list?.length > 0) {
+    obj.data.modules.attractGalleryInfo.data.list = obj.data.modules.attractGalleryInfo.data.list.filter(
+      (i) => 
+          !(
+             i?.source === "NOTE"
+           )
+    );
   }
   
   if (obj?.data?.modules) {
