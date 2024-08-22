@@ -514,6 +514,9 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   }
   
   //处理顶部图片
+  if (obj.data?.modules?.attractGalleryInfo?.data?.log_data?.common_log?.NOTE) {
+    obj.data.modules.attractGalleryInfo.data.log_data.common_log.NOTE = 0;
+  }
   if (obj.data?.modules?.attractGalleryInfo?.data?.list?.length > 0) {
     obj.data.modules.attractGalleryInfo.data.list = obj.data.modules.attractGalleryInfo.data.list.filter(
       (i) => 
