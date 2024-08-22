@@ -471,6 +471,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "gas_station_recommend", //加油站推荐
     //"governmentInformation",
     "hotInfoList", //左下角浮层
+    "halfGalleryInfo", //名称下方画廊
     "nearbyGoodCar", //热门新车
     "poiDetailWaterFeed", //发现好去处瀑布流
     "poiDetailWaterFeedTitle", //发现好去处
@@ -483,20 +484,27 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   ];
   
   //处理其它推广
-  if(obj.data?.modules?.retainInfo?.card_id === "UsedCarRetainQuickAddress"){
-    //二手车
-    items.push('retainInfo');
+  if (obj.data?.modules?.retainInfo?.card_id === "UsedCarRetainQuickAddress") {
+      //二手车
+      items.push('retainInfo');
   }
   
   //处理评价
-  if(obj.data?.modules?.reviews?.data?.total === 0){
+  if (obj.data?.modules?.reviews?.data?.total === 0) {
       items.push('reviews');
   }
-  if(obj.data?.modules?.reviews?.data?.nav_bar_write_comment){
+  if (obj.data?.modules?.reviews?.data?.nav_bar_write_comment) {
       //delete obj.data.modules.reviews.data.nav_bar_write_comment; //右上角写评价入口
   }
-  if(obj.data?.modules?.reviews?.data?.write_comment?.task_entrance){
-    delete obj.data.modules.reviews.data.write_comment.task_entrance; //评价模块右上角活动入口
+  if (obj.data?.modules?.reviews?.data?.write_comment) {
+     if (obj.data?.modules?.reviews?.data?.write_comment?.btnRightTag) {
+        obj.data.modules.reviews.data.write_comment.btnRightTag = "";
+      }
+      obj.data.modules.reviews.data.write_comment.activity_name_tag = "";
+
+     if (obj.data?.modules?.reviews?.data?.write_comment?.task_entrance) {
+        delete obj.data.modules.reviews.data.write_comment.task_entrance; //评价模块右上角活动入口
+      }
   }
   
   //处理出行评分
@@ -512,6 +520,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
              i?.source === "NOTE"
            )
     );
+  }
+  
+  //处理底部去打车
+  if (obj.data?.modules?.traffic?.data?.content?.taxiInfo) {
+    delete obj.data.modules.traffic.data.content.taxiInfo;
   }
   
   if (obj?.data?.modules) {
