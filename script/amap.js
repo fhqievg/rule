@@ -194,50 +194,24 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "favorites_info", // 收藏夹顶部横图推广
     "feedback_banner", // 店主专属通道
     "footprint", // 足迹
-    // "gd_code_cover",
-    // "gd_notch_logo",
     "his_input_tip",
     "home_business_position_config", // 首页右上角动图
-    // "homepage_resource_config",
-    // "hotcity", // 热门城市
     "hotel_activity",
     "hotel_fillin_opt",
     "hotel_loop",
     //"hotel_portal", // 附近-酒店-页面布局
     "hotel_tipsicon",
     "hotsaleConfig", // 酒店限时抢购
-    // "icon_show",
-    // "info_env_setting",
-    // "ip_square",
-    // "ip_square_share",
-    // "isNewSearchMapCard", // 可能是足迹
-    // "isPoiBubbleDisplay",
-    // "lab_beta",
-    // "lab_screenrecording",
     "landing_page_info", // 发现吃喝玩乐好去处
-    // "list_action_drawer",
-    // "listguide",
-    // "map_environment_air",
     "map_weather_switch", // 天气
     //"maplayers", // 图层
-    // "message_tab",
     "navi_end", // 导航结束 领油滴
-    // "nearby",
     "nearby_business_popup",
     "nearby_map_entry_guide",
     "nearby_map_pull_down_guide",
-    // "newcommentreply",
-    // "nore_rec",
     "operation_layer", // 首页右上角图层
-    // "photo_with_location",
     "poi_rec",
     "preword",
-    // "profileHeaderPic",
-    // "profiletTopBtn",
-    // "recommend_api",
-    // "recommend_key",
-    // "redesign_user",
-    // "renovate_control", // 今夜特价
     "route_banner", // 搜索路线 免费抽机票
     "routeresult_banner",
     "search_homepage",
@@ -262,16 +236,10 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "splashview_config",
     "sur_bar", // 十一特惠
     "taxi_activity", // 打车活动
-    // "tel_retention_popup",
     "testflight_adiu",
     "tf_remind", // tf测试版
-    // "third_party_places",
     "tips_bar_black_list",
-    // "tips_hook",
-    // "trackupload",
-    // "user_insight", // 您对本次导航满意吗
     "vip"
-    // "weather_restrict_config",
   ];
   if (obj?.data) {
     for (let i of items) {
