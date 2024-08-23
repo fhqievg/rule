@@ -13,3 +13,5 @@ HOST-SUFFIX,olelive.com,Video
 HOST-SUFFIX,olevod.com,Video
 HOST-SUFFIX,stream-link.org,Video
 HOST-SUFFIX,stream-link.online,Video
+HOST-SUFFIX,themoviedb.org,Video
+HOST,image.tmdb.org,Video
