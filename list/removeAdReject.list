@@ -100,7 +100,7 @@ URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?(util\/get_version|market
 
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
-ip-cidr,43.231.145.10/32
+IP-CIDR,43.231.145.10/32,no-resolve
 DOMAIN-SUFFIX,51.la
 DOMAIN-SUFFIX,1nmob.com
 DOMAIN-SUFFIX,aoyiluoad.com
