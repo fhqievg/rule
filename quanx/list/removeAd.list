@@ -23,6 +23,7 @@ HOST-SUFFIX,yuedu.iqiyi.com,REJECT
 HOST,adashx.m.taobao.com,REJECT
 HOST,h-adashx4bc.ut.taobao.com,REJECT
 HOST,httpdns.alicdn.com,REJECT
+HOST-SUFFIX,ut.taobao.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDu
@@ -66,6 +67,7 @@ HOST,adpai.thepaper.cn,REJECT
 
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
+IP-CIDR,43.231.145.10/32,REJECT
 HOST-SUFFIX,1nmob.com,REJECT
 HOST-SUFFIX,51.la,REJECT
 HOST-SUFFIX,alenable.com,REJECT-DICT
@@ -82,6 +84,8 @@ HOST,app-measurement.com,REJECT
 HOST,ad.doubleclick.net,REJECT
 HOST,adservice.google.com,REJECT
 HOST-SUFFIX,bjcathay.com,REJECT
+HOST-SUFFIX,beizi.biz,REJECT
+HOST-SUFFIX,bspapp.com,REJECT
 HOST-SUFFIX,czwe.cn,REJECT
 HOST-SUFFIX,cnzz.com,REJECT
 HOST,cnzz.mmstat.com,REJECT
@@ -92,6 +96,7 @@ HOST-SUFFIX,dcloud.net.cn,REJECT
 HOST-SUFFIX,dcloud.cn,REJECT
 HOST-SUFFIX,drapro1.com,REJECT
 HOST-SUFFIX,drapro2.com,REJECT
+HOST,error.com,REJECT
 HOST-KEYWORD,irc.drapro,REJECT
 HOST,firebaselogging-pa.googleapis.com,REJECT
 HOST-SUFFIX,g.doubleclick.net,REJECT
@@ -127,6 +132,8 @@ HOST-SUFFIX,sogaha.cn,REJECT
 HOST-SUFFIX,sentry.io,REJECT
 HOST-SUFFIX,sigmob.cn,REJECT
 HOST-SUFFIX,shujupie.com,REJECT
+HOST-SUFFIX,shuzilm.cn,REJECT
+HOST-SUFFIX,split.io,REJECT
 HOST-SUFFIX,tingyun.com,REJECT
 HOST-SUFFIX,unity.cn,REJECT
 HOST-SUFFIX,unitychina.cn,REJECT
@@ -136,7 +143,9 @@ HOST-SUFFIX,umeng.com,REJECT
 HOST-SUFFIX,umengcloud.com,REJECT
 HOST-SUFFIX,umtrack.com,REJECT
 HOST-SUFFIX,vungle.com,REJECT
+HOST-SUFFIX,volces.com,REJECT
 HOST,zxid-m.mobileservice.cn,REJECT
+HOST,zz.ci,REJECT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > txVideo
@@ -160,6 +169,11 @@ HOST,vv.video.qq.com,REJECT
 # >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
 # > wechat
 HOST,badjs.weixinbridge.com,REJECT
+
+# >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
+# > xiaChuFang
+HOST,track.xiachufang.com,REJECT
+HOST,trackbeat.xiachufang.com,REJECT
 
 # >>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<<
 # > 影视
