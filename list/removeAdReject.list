@@ -35,6 +35,7 @@ URL-REGEX,^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/
 DOMAIN,h-adashx4bc.ut.taobao.com
 DOMAIN,adashx.m.taobao.com
 DOMAIN,httpdns.alicdn.com
+DOMAIN-SUFFIX,ut.taobao.com
 
 # >>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<<
 # > baiDuPan
@@ -99,6 +100,7 @@ URL-REGEX,^https?:\/\/appapi\.51job\.com\/api\/(\d+\/)?(util\/get_version|market
 
 # >>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<<
 # > 三方
+ip-cidr,43.231.145.10/32
 DOMAIN-SUFFIX,51.la
 DOMAIN-SUFFIX,1nmob.com
 DOMAIN-SUFFIX,aoyiluoad.com
@@ -114,6 +116,8 @@ DOMAIN,app-measurement.com
 DOMAIN,ad.doubleclick.net
 DOMAIN,adservice.google.com
 DOMAIN-SUFFIX,bjcathay.com
+DOMAIN-SUFFIX,beizi.biz
+DOMAIN-SUFFIX,bspapp.com
 DOMAIN-SUFFIX,czwe.cn
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN,cnzz.mmstat.com
@@ -124,6 +128,7 @@ DOMAIN-SUFFIX,dcloud.net.cn
 DOMAIN-SUFFIX,dcloud.cn
 DOMAIN-SUFFIX,drapro1.com
 DOMAIN-SUFFIX,drapro2.com
+DOMAIN,error.com
 DOMAIN-KEYWORD,irc.drapro
 DOMAIN,firebaselogging-pa.googleapis.com
 DOMAIN-SUFFIX,g.doubleclick.net
@@ -154,13 +159,17 @@ DOMAIN-SUFFIX,snapads.com
 DOMAIN-SUFFIX,supersonicads.com
 DOMAIN-SUFFIX,sogaha.cn
 DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,shuzilm.cn
+DOMAIN-SUFFIX,split.io
 DOMAIN-SUFFIX,tingyun.com
 DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
 DOMAIN-SUFFIX,uyunad.com
 DOMAIN-SUFFIX,vungle.com
+DOMAIN-SUFFIX,volces.com
 DOMAIN,zxid-m.mobileservice.cn
+DOMAIN,zz.ci
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > tx
@@ -193,6 +202,8 @@ DOMAIN,badjs.weixinbridge.com
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
 URL-REGEX,^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/
+DOMAIN,track.xiachufang.com
+DOMAIN,trackbeat.xiachufang.com
 
 # > xiaoXiongYouHao
 URL-REGEX,^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upgrade|vip\/index\.php\?a=sync_iap_orders)
