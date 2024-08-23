@@ -417,7 +417,8 @@ HOST-SUFFIX,osapublishing.org,DIRECT
 HOST-SUFFIX,oup.com,DIRECT
 HOST-SUFFIX,ourbits.club,DIRECT
 HOST-SUFFIX,ourdvs.com,DIRECT
-HOST-SUFFIX,outlook.com,DIRECT
+#HOST-SUFFIX,outlook.com,DIRECT
+#HOST-SUFFIX,microsoft.com,DIRECT
 HOST-SUFFIX,ovid.com,DIRECT
 HOST-SUFFIX,oxfordartonline.com,DIRECT
 HOST-SUFFIX,oxfordbibliographies.com,DIRECT
