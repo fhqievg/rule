@@ -187,26 +187,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
 } else if (url.includes("/shield/frogserver/aocs/updatable/")) {
   // 整体图层
   const items = [
-    // "ARWalkNavi", // AR导航
-    // "Clipboard", // 剪贴板
-    // "DIYMap", // DIY地图
-    // "GuiJi", // 轨迹
     "Naviendpage_Searchwords",
     "SplashScreenControl",
     "TipsTaxiButton", // 选路线页面 打车图标
-    // "TrainOrderBanner", // 火车票订单
-    // "_testmark_info",
-    // "_user_profile_",
-    // "air_card",
-    // "amap_basemap_config", // 基本库
     "amapCoin",
-    // "aos_feedback",
-    // "app_improve", // app改进
-    // "apple_location_log_collect",
-    // "collect",
-    // "comment_info",
-    // "deviceml_force_recommend",
-    // "deviceml_update_apk_conf",
+    "favorites_info", // 收藏夹顶部横图推广
     "feedback_banner", // 店主专属通道
     "footprint", // 足迹
     // "gd_code_cover",
@@ -262,6 +247,12 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "search_poi_recommend",
     "search_service_adcode",
     "search_word",
+    "sportsGroupConfig",
+    "sportsHealthConfig",
+    "sportsHomeConfig",
+    "sportsRouteConfig",
+    "sportsTaskConfig",
+    "sports_walk",
     "small_biz_b2b_kb", // 入驻高德
     "small_biz_case", // 推广
     "small_biz_fun",
@@ -406,6 +397,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "packageShelf", // 附近酒景推荐
     "parentBizRec",
     "parentPoiRecEntrance", // 所在商圈
+    "poiDetailWaterFeed", //发现好去处瀑布流
+    "poiDetailWaterFeedTitle", //发现好去处
     "poster_banner",
     // "poi_intercept",
     "portal_entrance", // 高德旅游版块 引流到旅游频道
@@ -464,7 +457,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     // "video",
     "waistRecEntrance", // 更多人气好去处
     "waterFallFeed", // 附近景点瀑布流
-    "waterFallFeedTitle", // 更多好去处
+    "waterFallFeedTitle", // 更多人气好去处
     "carServiceCard", //车主中心
     "CouponWidget", //右下角小图标
     //"evaluateVO", //出行评分
@@ -473,8 +466,6 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "hotInfoList", //左下角浮层
     "halfGalleryInfo", //名称下方画廊
     "nearbyGoodCar", //热门新车
-    "poiDetailWaterFeed", //发现好去处瀑布流
-    "poiDetailWaterFeedTitle", //发现好去处
     "platformCustomerCommonModule", //通用定制推广
     "platformCustomerComplianceInfo", //定制推广下方的说明文字
     "rentSaleHouse", //租售房屋
