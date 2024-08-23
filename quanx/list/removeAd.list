@@ -97,6 +97,7 @@ HOST-SUFFIX,dcloud.cn,REJECT
 HOST-SUFFIX,drapro1.com,REJECT
 HOST-SUFFIX,drapro2.com,REJECT
 HOST,error.com,REJECT
+HOST-SUFFIX,etoolads.cn,REJECT
 HOST-KEYWORD,irc.drapro,REJECT
 HOST,firebaselogging-pa.googleapis.com,REJECT
 HOST-SUFFIX,g.doubleclick.net,REJECT
