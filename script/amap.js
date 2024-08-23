@@ -440,7 +440,9 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "recommend_designer_card", //设计师推荐
     "rec_legal_document", //推荐下方的说明文字
     //"societyPublicExperience", //网友互助/地图共建
-    "shop_settlement" // 店铺入驻入口
+    "shop_settlement", // 店铺入驻入口
+    "shoppingMallEvent", //购物商场活动
+    "yellowPageAdRecommendModule" // 好物推荐
   ];
   
   //处理其它推广
