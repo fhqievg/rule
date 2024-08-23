@@ -201,6 +201,7 @@ URL-REGEX,^https?:\/\/www\.xiaoxiongyouhao\.com\/api\/((app_ad|ntf)\.php|app_upg
 # > 影视
 IP-CIDR,47.99.219.178/32,no-resolve
 URL-REGEX,^https?:\/\/(.+\.(ailbaba\.me|zzjz.top)|iqyi\.ylylfun\.com|27\.151\.29\.56(:\d+)?)\/.+\/(top_notice|version|advert\?position=(?!(2)(?=&)))
+URL-REGEX,^http:\/\/162\.209\.174\.253(:\d+)?\/.+\/(top_notice|advert\?position=(?!(2)(?=&)))
 URL-REGEX,^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert)
 URL-REGEX,^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliving168\.com)(:\d+)?\/api\/v1\/advert
 
