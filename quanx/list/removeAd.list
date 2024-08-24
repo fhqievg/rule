@@ -1,24 +1,4 @@
 # >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
-# > aiQiYi
-HOST-SUFFIX,ad.m.iqiyi.com,REJECT
-HOST-SUFFIX,afp.iqiyi.com,REJECT
-HOST-SUFFIX,c.uaa.iqiyi.com,REJECT
-HOST-SUFFIX,cloudpush.iqiyi.com,REJECT
-HOST-SUFFIX,cm.passport.iqiyi.com,REJECT
-HOST-SUFFIX,cupid.iqiyi.com,REJECT
-HOST-SUFFIX,emoticon.sns.iqiyi.com,REJECT
-HOST-SUFFIX,gamecenter.iqiyi.com,REJECT
-HOST-SUFFIX,ifacelog.iqiyi.com,REJECT
-HOST-SUFFIX,mbdlog.iqiyi.com,REJECT
-HOST-SUFFIX,meta.video.qiyi.com,REJECT
-HOST-SUFFIX,msg.71.am,REJECT
-HOST-SUFFIX,msg1.video.qiyi.com,REJECT
-HOST-SUFFIX,msg2.video.qiyi.com,REJECT
-HOST-SUFFIX,paopao.iqiyi.com,REJECT
-HOST-SUFFIX,paopaod.qiyipic.com,REJECT
-HOST-SUFFIX,policy.video.iqiyi.com,REJECT
-HOST-SUFFIX,yuedu.iqiyi.com,REJECT
-
 # > aLi
 HOST,adashx.m.taobao.com,REJECT
 HOST,h-adashx4bc.ut.taobao.com,REJECT
