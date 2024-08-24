@@ -4,12 +4,12 @@
 
 [Rule]
 # > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页 - optimize1
-URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/(search\/new_hotword|search_poi\/tips_adv)|aos_public_travel\/recommend_plan)\?,REJECT-DICT
+URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/search_poi\/tips_adv\?|aos_public_travel\/recommend_plan)\?,REJECT-DICT
 URL-REGEX,^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?,REJECT-DICT
 URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?,REJECT-DICT
 
 # > 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅 - optimize2
-URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/(ridewalk-end-fc|main-page-(assets|location))|mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword|valueadded\/weather\/v2)\?,REJECT-DICT
+URL-REGEX,^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/(ridewalk-end-fc|main-page-(assets|location))|mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/(new_hotword|back_sug_recommend)|valueadded\/weather\/v2)\?,REJECT-DICT
 URL-REGEX,^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?,REJECT-DICT
 
 # > 我的页面,推广卡片 - optimize3
