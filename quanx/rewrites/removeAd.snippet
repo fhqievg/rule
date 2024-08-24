@@ -57,12 +57,6 @@
 # > maiDangLao
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash url reject-200
 
-# > maiDuiDui
-^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHomepage)\.action url reject-img
-^https?:\/\/mob\.mddcloud\.com\.cn\/(adApi|api\/(ad|advert))\/ url reject
-#去除版本检测
-^https:\/\/mob\.mddcloud\.com\.cn\/api\/config\/getInfo\.action url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/maiDuiDui.js
-
 # > manHuaDaQuan
 ^https?:\/\/conf\.chuangke\.tv\/ url reject-dict
 ^https?:\/\/d\.chuangke\.tv\/comics\/base\/ url reject-dict
@@ -125,4 +119,4 @@
 # > yangShiYingYin
 ^https?:\/\/api\.app\.cctv\.com\/api\/getVersion url reject
 
-hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,vip7.fzwdyy.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com
+hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,vip7.fzwdyy.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com
