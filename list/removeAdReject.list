@@ -1,33 +1,4 @@
 # >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
-# > aiQiYi
-URL-REGEX,^https?:\/\/intl\.iqiyi\.com\/(ad_external\/video\/advertise)
-URL-REGEX,^http:\/\/static-s\.iqiyi\.com\/common\/.+\/Small_video\/a2\/af\/.+\.png
-URL-REGEX,^http:\/\/msga\.cupid\.iqiyi\.com\/scp2\.gif
-URL-REGEX,^https?:\/\/ssports\.iqiyi\.com\/(app\/|json\/shop\/shopInfo)
-URL-REGEX,^https?:\/\/static\.iqiyi\.com\/js\/common\/.+\.js
-URL-REGEX,^https?:\/\/.+\.iqiyi\.com\/videos\/other\/20$
-URL-REGEX,^https?:\/\/t7z\.cupid\.iqiyi\.com\/show
-URL-REGEX,^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_
-URL-REGEX,^https?:\/\/.+\.iqiyipic\.com\/image\/(.+\/ad\/.+\.jpg|20*_100000)
-DOMAIN-SUFFIX,ad.m.iqiyi.com
-DOMAIN-SUFFIX,afp.iqiyi.com
-DOMAIN-SUFFIX,c.uaa.iqiyi.com
-DOMAIN-SUFFIX,cloudpush.iqiyi.com
-DOMAIN-SUFFIX,cm.passport.iqiyi.com
-DOMAIN-SUFFIX,cupid.iqiyi.com
-DOMAIN-SUFFIX,emoticon.sns.iqiyi.com
-DOMAIN-SUFFIX,gamecenter.iqiyi.com
-DOMAIN-SUFFIX,ifacelog.iqiyi.com
-DOMAIN-SUFFIX,mbdlog.iqiyi.com
-DOMAIN-SUFFIX,meta.video.qiyi.com
-DOMAIN-SUFFIX,msg.71.am
-DOMAIN-SUFFIX,msg1.video.qiyi.com
-DOMAIN-SUFFIX,msg2.video.qiyi.com
-DOMAIN-SUFFIX,paopao.iqiyi.com
-DOMAIN-SUFFIX,paopaod.qiyipic.com
-DOMAIN-SUFFIX,policy.video.iqiyi.com
-DOMAIN-SUFFIX,yuedu.iqiyi.com
-
 # > aptv
 URL-REGEX,^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/
 
@@ -185,18 +156,7 @@ DOMAIN,qzs.qq.com
 DOMAIN,tpns.qq.com
 DOMAIN,vv.video.qq.com
 
-# > taoPiaoPiao
-URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.(mtopversionapi\.getversion|mtopadvertiseapi\.query((preload)?advertise|loadingbanner)|life\.aristotle\.get\/2\.0\?)
-
 # >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
-# > wangYiYunMusic(来源仓库：DivineEngine)
-URL-REGEX,^https?:\/\/p\.du\.163\.com\/ad\/
-URL-REGEX,^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json
-URL-REGEX,^https?:\/\/interface(\d+)?\.music\.163\.com\/eapi\/ad\/
-URL-REGEX,^https?:\/\/appconf\.mail\.163\.com\/mmad\/
-URL-REGEX,^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg
-URL-REGEX,^https?:\/\/14\.205\.94\.205\/eapi\/ad\/
-
 # > wechat
 DOMAIN,badjs.weixinbridge.com
 
@@ -258,9 +218,6 @@ DOMAIN-SUFFIX,zijieapi.com
 #DOMAIN,tnc3-alisc1.zijieapi.com
 #DOMAIN,tnc3-aliec2.zijieapi.com
 #DOMAIN,mon.zijieapi.com
-
-# > zuiYou
-URL-REGEX,^https?:\/\/api\.izuiyou\.com\/ad\/
 
 # > zhongGuoLianTong
 DOMAIN,m1.ad.10010.com
