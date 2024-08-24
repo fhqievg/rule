@@ -29,7 +29,6 @@
 
 # >>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<<
 # > cheLaiLe
-#^https?:\/\/logs\.chelaile\.net\.cn\/realtimelog url reject
 ^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/led-weather\/v\d+\/condition_brief\? url reject-200
 ^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/(\/)?((.*\/)?(advert|adpub)|content|infoflow|notice|wow|CheLaiLe-ios|DataAnalysisInfo|goocity\/(getTagTitle|city!configureTag\.action\?|flowPos/listByPos)|bus\/(stop!encryptedRecommLine|ai\/config)\.action) url reject
 #优化
@@ -61,6 +60,8 @@
 # > maiDuiDui
 ^https?:\/\/api\.mddcloud\.com\.cn\/api\/(ad\/getClassAd|advert\/getHomepage)\.action url reject-img
 ^https?:\/\/mob\.mddcloud\.com\.cn\/(adApi|api\/(ad|advert))\/ url reject
+#去除版本检测
+^https:\/\/mob\.mddcloud\.com\.cn\/api\/config\/getInfo\.action url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/maiDuiDui.js
 
 # > manHuaDaQuan
 ^https?:\/\/conf\.chuangke\.tv\/ url reject-dict
@@ -112,9 +113,9 @@
 ^http:\/\/162\.209\.174\.253(:\d+)?\/.+\/(top_notice|advert\?position=(?!(2)(?=&))) url reject
 ^http:\/\/162\.209\.174\.253(:\d+)?\/.+\/app_config\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/xiaoShiZi.js
 ^https?:\/\/vip7\.fzwdyy\.cn(:\d+)?\/api\/(getAdvertInfo|getGOOGAdvert) url reject
-^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliving168\.com)(:\d+)?\/api\/v1\/advert url reject
 
 #555去AD
+^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliving168\.com)(:\d+)?\/api\/v1\/advert url reject
 ^https?:\/\/(run\.api\.qyfxgd\.cn|a\.weilai555\.com|(a|app-v1)\.ecoliving168\.com)(:\d+)?\/api\/v1\/movie\/index_recommend url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/video/555.js
 
 #keEr去AD
