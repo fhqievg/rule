@@ -6,6 +6,7 @@
 # > 12306
 ^https?:\/\/ad\.12306\.cn\/res\/adfiles(\/)?\/delivery\/ url reject-img
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/12306.js
+#^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ url script-response-header https://raw.githubusercontent.com/fhqievg/rules/main/script/header.js
 
 # >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
 # > aiQiYi
@@ -26,7 +27,7 @@
 ^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/ url reject
 
 # > amdc处理
-^http:\/\/.+\.taobao\.com\/amdc\/mobileDispatch url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amdc.js
+^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/fhqievg/rules/main/script/header.js
 
 # > aliDrive
 #优化
@@ -49,7 +50,6 @@
 ^https?:\/\/(124\.71\.153\.172|.+\.chelaile.*\.cn)\/goocity\/(flowPos\/home|config\/notices)\? url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/cheLaiLe.js
 
 # > caiNiao
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch Cainiao url-and-header reject-dict
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.(index|expose\.mreply|batch\.show\.v2)|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close)|cncommunity\.my\.station\.query|nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get)\.cn url reject-dict
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.((longquan\.place\.getpageresourcecontent|cncreditmarket\.hit\.getactivityhit)\.cn|cnactivitycenter) url reject-dict
 #优化
