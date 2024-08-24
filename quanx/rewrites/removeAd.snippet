@@ -9,25 +9,11 @@
 #^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ url script-response-header https://raw.githubusercontent.com/fhqievg/rules/main/script/header.js
 
 # >>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<<
-# > aiQiYi
-^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/(v2\/show|show\.do) url reject-200
-^https?:\/\/iface\.iqiyi\.com\/api\/getNewAdInfo url reject-200
-^https?:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/fusion_switch url reject-img
-^https?:\/\/intl\.iqiyi\.com\/(ad_external\/video\/advertise) url reject
-^http:\/\/static-s\.iqiyi\.com\/common\/.+\/Small_video\/a2\/af\/.+\.png url reject
-^http:\/\/msga\.cupid\.iqiyi\.com\/scp2\.gif url reject
-^https?:\/\/ssports\.iqiyi\.com\/(app\/|json\/shop\/shopInfo) url reject
-^https?:\/\/static\.iqiyi\.com\/js\/common\/.+\.js url reject
-^https?:\/\/.+\.iqiyi\.com\/videos\/other\/20$ url reject
-^https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
-^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_ url reject
-^https?:\/\/.+\.iqiyipic\.com\/image\/(.+\/ad\/.+\.jpg|20*_100000) url reject
+# > amdc处理
+^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/fhqievg/rules/main/script/header.js
 
 # > aptv
 ^http:\/\/159\.75\.85\.63:\d+\/(.*\/)?ad\/ url reject
-
-# > amdc处理
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/fhqievg/rules/main/script/header.js
 
 # > aliDrive
 #优化
@@ -110,15 +96,6 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 # > vidhub
 ^https:\/\/api\.7littlemen\.com\/Vidhub\/native_config\.json url reject-dict
 
-# >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
-# > wangYiYunMusic(来源仓库：DivineEngine)
-^https?:\/\/p\.du\.163\.com\/ad\/ url reject
-^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json url reject
-^https?:\/\/interface(\d+)?\.music\.163\.com\/eapi\/ad\/ url reject
-^https?:\/\/appconf\.mail\.163\.com\/mmad\/ url reject
-^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg url reject
-^https?:\/\/14\.205\.94\.205\/eapi\/ad\/ url reject
-
 # >>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<<
 # > xiaChuFang
 ^https?:\/\/(www|api)\.xiachufang\.com\/.+\/ad\/ url reject
@@ -147,4 +124,4 @@ URL-REGEX,^http:\/\/.+\.hzsanjiaomao\.com\/.+\.json url reject-dict
 # > yangShiYingYin
 ^https?:\/\/api\.app\.cctv\.com\/api\/getVersion url reject
 
-hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,appconf.mail.163.com,interface*.music.163.com,support.you.163.com,p.du.163.com,iadmusicmat.music.126.net,14.205.94.205,vip7.fzwdyy.cn,intl.iqiyi.com,ssports.iqiyi.com,static.iqiyi.com,t7z.cupid.iqiyi.com,*.iqiyipic.com,act.vip.iqiyi.com,iface.iqiyi.com,iface2.iqiyi.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,acs.m.taobao.com,api.izuiyou.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,www.pansearch.me,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com
+hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,mob.mddcloud.com.cn,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,app.thepaper.cn,api.app.cctv.com,acs.m.taobao.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,vip7.fzwdyy.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com
