@@ -677,6 +677,81 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     if (obj?.data?.bulletData) {
         delete obj.data.bulletData;
     }
-}
 
+    //去除进行中的勋章展示
+  if (obj?.data?.homePageData?.medalData?.guideList?.length > 0) {
+      obj.data.homePageData.medalData.guideList = [];
+  }
+  //去除顶部日日签tab
+  if (obj?.data?.homePageData?.pageHeaderConfig?.headerConfigList?.length > 0) {
+      obj.data.homePageData.pageHeaderConfig.headerConfigList = obj.data.homePageData.pageHeaderConfig.headerConfigList.filter(
+          (i) => !(
+              i?.type === "bullet" //日日签
+          )
+      );
+  }
+  //去除已获得成就的勋章显示
+  /*if(obj?.data?.homePageData?.userData?.identity?.annualBill?.length > 0){
+      obj.data.homePageData.userData.identity.annualBill = [];
+  }*/
+  //去除模块
+  if (obj?.data?.homePageData?.cardList?.length > 0) {
+      let delCard = [
+          //"UserCenterGrowthInteractiveCard" , //成长值基础信息
+          //"UserCenterGetActivityCarGuideCard", //活动
+          //"UserCenterRightCard",  //达人权益
+          //"UserCenterSkuCard", //达人专属抢
+          //"UserCenterLotteryCard", //达人抽奖
+          "UserCenterLevelActivityCard", //线下活动
+          //"UserCenterInteractCard", //互动专区（合成烟花、达人形象那一块）
+          //"UserCenterGrowthTaskCard", //我的成长
+          "UserCenterMemberVideoCard" //底部视频
+      ];
+  
+      let cardListNew = [];
+      for (let i of obj.data.homePageData.cardList) {
+          if(!i.hasOwnProperty("dataKey")){
+              cardListNew.push(i);
+              continue;
+          }
+  
+          if(delCard.includes(i.dataKey)){
+              continue; //需要删除的跳过处理
+          }
+  
+          switch (i.dataKey) {
+              case "UserCenterGrowthInteractiveCard":
+                  //处理基础信息
+                  i = growthInteractiveCardHandle(i);
+                  break;
+              default:
+                  break;
+          }
+          cardListNew.push(i);
+      }
+      obj.data.homePageData.cardList = cardListNew;
+  }
+}
 $done({ body: JSON.stringify(obj) });
+
+function growthInteractiveCardHandle(data) {
+    if (data.cardData?.assetCardList?.length === 0) {
+        return data;
+    }
+
+    for (let i of data.cardData.assetCardList) {
+        switch (i.taskStrategy) {
+            case "USER_TASK_STRATEGY_FEEDBACK":
+            case "USER_TASK_STRATEGY_POI":
+            case "USER_TASK_STRATEGY_CUSTOM":
+                //case "USER_TASK_STRATEGY_ACTIVITY":
+                if (i.taskContentList?.length > 0) {
+                    i.taskContentList = [];
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    return data;
+}
