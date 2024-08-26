@@ -812,10 +812,8 @@ function footprintHandle(topMixedCard, fixedData) {
 
         switch(data[j].name){
             case '足迹':
-                let newRows = [];
-                let rowsRetainList = ["mine_footprint_city", "mine_footprint_town", "mine_footprint_point", "mine_footprint_navi"]; //足迹里面需要保留的tab
-                for (let k in data[j].rows) {
-                    for (let g of data[j].rows[k]) {
+                for (let k of topMixedCard.cardData.data[j].rows) {
+                    for (let g of k) {
                         if (!g.hasOwnProperty('redDotKey') || !g.hasOwnProperty('value') || !g.value.hasOwnProperty('text')) {
                             continue;
                         }
@@ -842,19 +840,13 @@ function footprintHandle(topMixedCard, fixedData) {
                             default:
                                 break;
                         }
-
-                        if(Number(k) > 0 && rowsRetainList.includes(g.redDotKey)){
-                            data[j].rows[0].push(g);
-                        }
                     }
                 }
-                newRows.push(data[j].rows[0]);
-                data[j].rows = newRows;
                 newData.push(data[j]);
                 break;
             default:
                 //不push表示需要删除
-                //newData.push(data[j]);
+                newData.push(data[j]);
                 break;
         }
     }
