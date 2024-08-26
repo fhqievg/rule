@@ -760,6 +760,10 @@ function growthInteractiveCardHandle(data) {
 
 //解决新样式足迹数据不显示的问题
 function footprintHandle(topMixedCard, fixedData) {
+    if(!topMixedCard.hasOwnProperty('cardData') || !topMixedCard.cardData.hasOwnProperty('data') || topMixedCard.cardData.data.length === 0){
+        return topMixedCard;
+    }
+
     let footprintCity = ''; //点亮城市
     let footprintTown = ''; //探索角落
     let currentCity = '';
@@ -798,18 +802,21 @@ function footprintHandle(topMixedCard, fixedData) {
         }
     }
 
+    let data = topMixedCard.cardData.data;
+    let newData = [];
+    for (let j in data) {
+        if(!data[j].hasOwnProperty('name') || data[j].rows?.length === 0){
+            newData.push(data[j]);
+            continue;
+        }
 
-    if (topMixedCard.cardData?.data?.length > 0) {
-        for (let j in topMixedCard.cardData.data) {
-            if (topMixedCard.cardData.data[j].hasOwnProperty('name') && topMixedCard.cardData.data[j].name === "贡献") {
-                //delete topMixedCard.cardData.data[j];
-                continue;
-            }
-
-            if (topMixedCard.cardData.data[j].rows?.length > 0) {
-                for (let k of topMixedCard.cardData.data[j].rows) {
-                    for (let g of k) {
-                        if (!g.hasOwnProperty('value') || !g.hasOwnProperty('redDotKey')) {
+        switch(data[j].name){
+            case '足迹':
+                let newRows = [];
+                let rowsRetainList = ["mine_footprint_city", "mine_footprint_town", "mine_footprint_point", "mine_footprint_navi"]; //足迹里面需要保留的tab
+                for (let k in data[j].rows) {
+                    for (let g of data[j].rows[k]) {
+                        if (!g.hasOwnProperty('redDotKey') || !g.hasOwnProperty('value') || !g.value.hasOwnProperty('text')) {
                             continue;
                         }
                         switch (g.redDotKey) {
@@ -835,10 +842,23 @@ function footprintHandle(topMixedCard, fixedData) {
                             default:
                                 break;
                         }
+
+                        if(Number(k) > 0 && rowsRetainList.includes(g.redDotKey)){
+                            data[j].rows[0].push(g);
+                        }
                     }
                 }
-            }
+                newRows.push(data[j].rows[0]);
+                data[j].rows = newRows;
+                newData.push(data[j]);
+                break;
+            default:
+                //不push表示需要删除
+                //newData.push(data[j]);
+                break;
         }
     }
+    topMixedCard.cardData.data = newData;
+
     return topMixedCard;
 }
