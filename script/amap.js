@@ -445,7 +445,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     }
 
     //处理评价
-    if (obj.data?.modules?.reviews?.data?.total === 0) {
+    if (!obj.data?.modules?.reviews?.data?.hasOwnProperty("total") || obj.data?.modules?.reviews?.data?.total === 0) {
         items.push('reviews');
     }
     if (obj.data?.modules?.reviews?.data?.nav_bar_write_comment) {
