@@ -814,7 +814,7 @@ function footprintHandle(topMixedCard, fixedData) {
             case '足迹':
                 for (let k of data[j].rows) {
                     for (let g of k) {
-                        if (!g.hasOwnProperty('redDotKey') || !g.hasOwnProperty('value') || !g.value.hasOwnProperty('text')) {
+                        if (!g.hasOwnProperty('redDotKey') || !g.hasOwnProperty('value') || !g.value.hasOwnProperty('text') || g.value.text !== "--") {
                             continue;
                         }
                         switch (g.redDotKey) {
