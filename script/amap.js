@@ -177,6 +177,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     if (obj?.data?.tipData) {
         delete obj.data.tipData;
     }
+
+    //解决新样式足迹数据不显示的问题
+    if (obj?.data?.footPrintV2?.fixed_data?.length > 0 && obj?.data?.topMixedCard?.hasOwnProperty("cardKey") && obj?.data?.topMixedCard.cardKey === "mineTopMixedCard") {
+        obj.data.topMixedCard = footprintHandle(obj.data.topMixedCard, obj.data.footPrintV2.fixed_data);
+    }
 } else if (url.includes("/shield/frogserver/aocs/updatable/")) {
     // 整体图层
     const items = [
@@ -730,6 +735,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
 }
 $done({ body: JSON.stringify(obj) });
 
+//达人主页模块处理
 function growthInteractiveCardHandle(data) {
     if (data.cardData?.assetCardList?.length === 0) {
         return data;
@@ -750,4 +756,75 @@ function growthInteractiveCardHandle(data) {
         }
     }
     return data;
+}
+
+//解决新样式足迹数据不显示的问题
+function footprintHandle(topMixedCard, fixedData) {
+    let footprintCity = ''; //点亮城市
+    let footprintTown = ''; //探索角落
+    let currentCity = '';
+    let footprintPoint = ''; //打卡点
+    let footprintNavi = ''; //出行里程
+    for (let i of fixedData) {
+        switch (i.key) {
+            case "footprint_city":
+                footprintCity = i.city_num;
+                break;
+            case "footprint_town":
+                footprintTown = i.town_percent;
+                currentCity = i.current_city;
+                break;
+            case "footprint_point":
+                footprintPoint = i.point_num;
+                break;
+            case "footprint_navi":
+                footprintNavi = Number(i.navi_dist.toFixed(0));
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    if (topMixedCard.cardData?.data?.length > 0) {
+        for (let j in topMixedCard.cardData.data) {
+            if (topMixedCard.cardData.data[j].name === "贡献") {
+                delete topMixedCard.cardData.data[j];
+                continue;
+            }
+
+            if (topMixedCard.cardData.data[j].rows?.length > 0) {
+                for (let k of topMixedCard.cardData.data[j].rows) {
+                    for (let g of k) {
+                        if (!g.hasOwnProperty('value')) {
+                            continue;
+                        }
+                        switch (g.redDotKey) {
+                            case "mine_footprint_city":
+                                g.value.text = footprintCity;
+                                break;
+                            case "mine_footprint_town":
+                                g.value.text = footprintTown + '%';
+                                if (g.hasOwnProperty('label')) {
+                                    g.label.text = '走过' + currentCity;
+                                }
+                                /*if (g.hasOwnProperty('SPMEventName')) {
+                                    g.SPMEventName = '走过' + currentCity;
+                                }*/
+                                break;
+                            case "mine_footprint_point":
+                                g.value.text = footprintPoint;
+                                break;
+                            case "mine_footprint_navi":
+                                g.value.text = footprintNavi;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return topMixedCard;
 }
