@@ -802,7 +802,7 @@ function footprintHandle(topMixedCard, fixedData) {
     if (topMixedCard.cardData?.data?.length > 0) {
         for (let j in topMixedCard.cardData.data) {
             if (topMixedCard.cardData.data[j].hasOwnProperty('name') && topMixedCard.cardData.data[j].name === "贡献") {
-                delete topMixedCard.cardData.data[j];
+                //delete topMixedCard.cardData.data[j];
                 continue;
             }
 
