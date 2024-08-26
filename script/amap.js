@@ -836,6 +836,9 @@ function footprintHandle(topMixedCard, fixedData) {
                                 break;
                             case "mine_footprint_navi":
                                 g.value.text = footprintNavi;
+                                if (g.hasOwnProperty('scheme')) {
+                                    g.scheme = "amapuri://footprint/FootPrintMainPage?cardName=driver";
+                                 }
                                 break;
                             default:
                                 break;
