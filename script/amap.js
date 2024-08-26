@@ -766,19 +766,32 @@ function footprintHandle(topMixedCard, fixedData) {
     let footprintPoint = ''; //打卡点
     let footprintNavi = ''; //出行里程
     for (let i of fixedData) {
+        if (!i.hasOwnProperty('key')) {
+            continue;
+        }
         switch (i.key) {
             case "footprint_city":
-                footprintCity = i.city_num;
+                if (i.hasOwnProperty('city_num')) {
+                    footprintCity = i.city_num;
+                }
                 break;
             case "footprint_town":
-                footprintTown = i.town_percent;
-                currentCity = i.current_city;
+                if (i.hasOwnProperty('town_percent')) {
+                    footprintTown = i.town_percent;
+                }
+                if (i.hasOwnProperty('current_city')) {
+                    currentCity = i.current_city;
+                }
                 break;
             case "footprint_point":
-                footprintPoint = i.point_num;
+                if (i.hasOwnProperty('point_num')) {
+                    footprintPoint = i.point_num;
+                }
                 break;
             case "footprint_navi":
-                footprintNavi = Number(i.navi_dist.toFixed(0));
+                if (i.hasOwnProperty('navi_dist')) {
+                    footprintNavi = Number(i.navi_dist.toFixed(0));
+                }
                 break;
             default:
                 break;
@@ -788,7 +801,7 @@ function footprintHandle(topMixedCard, fixedData) {
 
     if (topMixedCard.cardData?.data?.length > 0) {
         for (let j in topMixedCard.cardData.data) {
-            if (topMixedCard.cardData.data[j].name === "贡献") {
+            if (topMixedCard.cardData.data[j].hasOwnProperty('name') && topMixedCard.cardData.data[j].name === "贡献") {
                 delete topMixedCard.cardData.data[j];
                 continue;
             }
@@ -796,7 +809,7 @@ function footprintHandle(topMixedCard, fixedData) {
             if (topMixedCard.cardData.data[j].rows?.length > 0) {
                 for (let k of topMixedCard.cardData.data[j].rows) {
                     for (let g of k) {
-                        if (!g.hasOwnProperty('value')) {
+                        if (!g.hasOwnProperty('value') || !g.hasOwnProperty('redDotKey')) {
                             continue;
                         }
                         switch (g.redDotKey) {
@@ -805,11 +818,12 @@ function footprintHandle(topMixedCard, fixedData) {
                                 break;
                             case "mine_footprint_town":
                                 g.value.text = footprintTown + '%';
+                                let text = '走过' + currentCity;
                                 if (g.hasOwnProperty('label')) {
-                                    g.label.text = '走过' + currentCity;
+                                    g.label.text = text;
                                 }
                                 /*if (g.hasOwnProperty('SPMEventName')) {
-                                    g.SPMEventName = '走过' + currentCity;
+                                    g.SPMEventName = text;
                                 }*/
                                 break;
                             case "mine_footprint_point":
