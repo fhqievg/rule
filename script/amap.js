@@ -466,6 +466,9 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     if (!obj.data?.modules?.evaluateVO?.data?.hasOwnProperty("score") || obj.data?.modules?.evaluateVO?.data?.score === "0.0") {
         items.push('evaluateVO');
     }
+    if (obj.data?.modules?.evaluate?.data?.header?.hasOwnProperty("score") && obj.data?.modules?.evaluate?.data?.header?.score === "0.0") {
+        items.push('evaluate');
+    }
 
     //处理顶部图片
     if (obj.data?.modules?.attractGalleryInfo?.data?.log_data?.common_log?.NOTE) {
