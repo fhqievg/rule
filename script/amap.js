@@ -498,6 +498,11 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
             delete obj.data.modules[i];
         }
     }
+} else if (url.includes("/shield/search_bff/hotword")) {
+  // 搜索框 热榜logo
+  if (obj?.data?.headerHotWord?.length > 0) {
+    obj.data.headerHotWord = [];
+  }
 } else if (url.includes("/shield/search_business/process/marketingOperationStructured")) {
     // 详情页 顶部优惠横幅
     if (obj?.data?.tipsOperationLocation) {
