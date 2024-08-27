@@ -5,7 +5,7 @@
 # > 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页,路径规划页推荐
 ^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/card-service-(car-end|route-plan)|shield\/search_poi\/tips_adv\?|aos_public_travel\/recommend_plan) url reject-dict
 ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? url reject-dict
-^https:\/\/m5\.amap\.com\/ws\/(shield\/(search\/(common\/coupon\/info|poi\/detail)|search_poi\/(homepage|sug|mps|search\/sp|tips_operation_location)|search_business\/process\/marketingOperationStructured\?)|perception\/drive\/(routeInfo|routePlan)|c3frontend\/af-(hotel|launch)\/page\/main\?|aos\/perception\/publicTravel\/beforeNavi\?|bus\/plan\/integrate\?) url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
+^https:\/\/m5\.amap\.com\/ws\/(shield\/(search\/(common\/coupon\/info|poi\/detail)|search_poi\/(homepage|sug|mps|search\/sp|tips_operation_location)|search_business\/process\/marketingOperationStructured\?|search_bff\/hotword\?)|perception\/drive\/(routeInfo|routePlan)|c3frontend\/af-(hotel|launch)\/page\/main\?|aos\/perception\/publicTravel\/beforeNavi\?|bus\/plan\/integrate\?) url script-response-body https://raw.githubusercontent.com/fhqievg/rules/main/script/amap.js
 
 # > 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅,达人首页,猜你想搜
 ^https:\/\/m5\.amap\.com\/ws\/(faas\/amap-navigation\/(ridewalk-end-fc|main-page-(assets|location))|mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/(search\/(new_hotword|back_sug_recommend)|scene\/recommend\?)|valueadded\/weather\/v2\?) url reject-dict
