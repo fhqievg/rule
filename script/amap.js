@@ -364,8 +364,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         "packageShelf", // 附近酒景推荐
         "parentBizRec",
         "parentPoiRecEntrance", // 所在商圈
-        "platformCustomerCommonModule", //众安保险赔付
-        "platformCustomerComplianceInfo", //保险公司信息
+        "platformCustomerCommonModule", //通用定制推广
+        "platformCustomerComplianceInfo", //定制推广下方的说明文字
         "poiDetailWaterFeed", //发现好去处瀑布流
         "poiDetailWaterFeedTitle", //发现好去处
         "poster_banner",
@@ -436,8 +436,6 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         "hotInfoList", //左下角浮层
         "halfGalleryInfo", //名称下方画廊
         "nearbyGoodCar", //热门新车
-        "platformCustomerCommonModule", //通用定制推广
-        "platformCustomerComplianceInfo", //定制推广下方的说明文字
         "rentSaleHouse", //租售房屋
         "recommend_designer_card", //设计师推荐
         "rec_legal_document", //推荐下方的说明文字
