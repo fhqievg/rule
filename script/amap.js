@@ -329,6 +329,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         // "human_traffic", // 人流量情况 有统计图
         "image_banner",
         "kaMarketingCampaign", // 附近品牌动态
+        "kaProductMixServiceShelf", //骑手送药上门
         "ka_not_enter", // 移动办卡 套餐服务
         "legSameIndustryRecEntrance", // 全城最热景点推荐
         "legal_document", // 房源法律信息
@@ -363,6 +364,8 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         "packageShelf", // 附近酒景推荐
         "parentBizRec",
         "parentPoiRecEntrance", // 所在商圈
+        "platformCustomerCommonModule", //众安保险赔付
+        "platformCustomerComplianceInfo", //保险公司信息
         "poiDetailWaterFeed", //发现好去处瀑布流
         "poiDetailWaterFeedTitle", //发现好去处
         "poster_banner",
@@ -415,6 +418,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         "surround_renthouse",
         "surround_rentoffice",
         "surround_selloffice",
+        "thirdparty_info", //第三方信息
         // "traffic", // 交通出行 地铁站 公交站 停车场
         "travelGuideRec", // 人气景点 路线 购票
         "uploadBar",
