@@ -342,6 +342,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         "movie_info", // 优惠购票 景点宣传片
         "multi_page_anchor", // 二级导航菜单 门票 评论 推荐
         // "navbarMore", // 右上角三点
+        "nearbyGoodCar", //热门新车
         "nearbyRecommendModule", // 周边推荐
         "nearby_house",
         "nearby_new_house_estate",
@@ -409,6 +410,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         // "shop_news",
         "smallListBizRec", // 周边热门酒店
         "smallOrListBizRec",
+        "surroundHouseTab", //周边房源
         "surroundOldSellHouse", // 同城二手房
         "surroundRentHouse", // 附近租房
         "surround_facility",
@@ -435,7 +437,6 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
         //"governmentInformation",
         "hotInfoList", //左下角浮层
         "halfGalleryInfo", //名称下方画廊
-        "nearbyGoodCar", //热门新车
         "rentSaleHouse", //租售房屋
         "recommend_designer_card", //设计师推荐
         "rec_legal_document", //推荐下方的说明文字
