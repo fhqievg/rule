@@ -16,19 +16,7 @@ if (url.includes("/api.caiyunapp.com/v1/activity")) {
       }
     } else {
       // 其他请求
-      obj = {
-        status: "ok",
-        interval: 2592000,
-        id: "1",
-        activities: [
-          {
-            items: [{ text: "", image_light: "", link: "", activity_name: "", id: "1", image_dark: "" }],
-            type: "activity_icon",
-            name: "",
-            carousel: "5000"
-          }
-        ]
-      };
+      obj = { status: "ok", activities: [{ items: [] }] };
     }
 } else if (url.includes("/wrapper.cyapi.cn/v1/activity")) {
     // 彩云推广
@@ -42,19 +30,7 @@ if (url.includes("/api.caiyunapp.com/v1/activity")) {
       }
     } else {
       // 其他请求
-      obj = {
-        status: "ok",
-        interval: 2592000,
-        id: "1",
-        activities: [
-          {
-            items: [{ text: "", image_light: "", link: "", activity_name: "", id: "1", image_dark: "" }],
-            type: "activity_icon",
-            name: "",
-            carousel: "5000"
-          }
-        ]
-      };
+      obj = { status: "ok", activities: [{ items: [] }] };
     }
 }
 
