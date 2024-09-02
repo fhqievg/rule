@@ -32,6 +32,11 @@ if (url.includes('/init_page')) {
         }
         obj.content.chustory_tab.banners = bannersData
     }
+    
+    //早晨马拉松
+    if (obj?.content?.hasOwnProperty('breakfast_marathon_entrance')) {
+        obj.content.breakfast_marathon_entrance = {};
+    }
 }
 
 //推荐流
