@@ -22,6 +22,9 @@ HOST,h-adashx.ut.cainiao.com,REJECT
 # > caiYun
 HOST,ad.cyapi.cn,REJECT
 
+//colorful widget
+HOST-SUFFIX,unbing.cn,REJECT
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
 HOST,amap-aos-info-nogw.amap.com,REJECT
@@ -56,6 +59,7 @@ HOST-SUFFIX,adkwai.com,REJECT
 HOST-SUFFIX,adjust.com,REJECT
 HOST-SUFFIX,adservertq.com,REJECT
 HOST-SUFFIX,adtianmai.com,REJECT
+HOST-SUFFIX,appsflyersdk.com,REJECT
 HOST-SUFFIX,appsflyer.com,REJECT
 HOST-SUFFIX,appier.net,REJECT
 HOST-SUFFIX,applvn.com,REJECT
@@ -89,9 +93,13 @@ HOST-SUFFIX,getui.com,REJECT
 HOST-SUFFIX,gepush.com,REJECT
 HOST-SUFFIX,huangjinyan.vip.com,REJECT
 HOST-SUFFIX,hguduo.com,REJECT
+HOST,adttrackingprd.hwwt8.com,REJECT
+HOST,trackingprd.hwwt8.com,REJECT
+HOST,fp.hwwt8.com,REJECT
 HOST-SUFFIX,igexin.com,REJECT
 HOST,ironsource.mobi,REJECT
 HOST-SUFFIX,jpush.cn,REJECT
+HOST-SUFFIX,kuiniuca.com,REJECT
 HOST-SUFFIX,liandaomobi.com,REJECT
 HOST-SUFFIX,maplehaze.cn,REJECT
 HOST-SUFFIX,mob.com,REJECT
@@ -102,6 +110,8 @@ HOST-SUFFIX,newadserver.com,REJECT
 HOST-SUFFIX,nx-perf.cn,REJECT
 HOST,open.e.kuaishou.com,REJECT
 HOST,open.e.kuaishou.cn,REJECT
+HOST-SUFFIX,openinstall.io,REJECT
+HOST-SUFFIX,p2cdn.com,REJECT
 HOST,p3-feedback.byteimg.com,REJECT-IMG
 HOST-SUFFIX,qubiankeji.com,REJECT
 HOST-SUFFIX,rayjump.com,REJECT
@@ -123,8 +133,12 @@ HOST-SUFFIX,uyunad.com,REJECT
 HOST-SUFFIX,umeng.com,REJECT
 HOST-SUFFIX,umengcloud.com,REJECT
 HOST-SUFFIX,umtrack.com,REJECT
+HOST-SUFFIX,umsns.com,REJECT
+HOST-SUFFIX,ubixioe.com,REJECT
 HOST-SUFFIX,vungle.com,REJECT
 HOST-SUFFIX,volces.com,REJECT
+HOST-SUFFIX,xycdn.com,REJECT
+HOST-SUFFIX,yumchina.com,REJECT
 HOST,zxid-m.mobileservice.cn,REJECT
 HOST,zz.ci,REJECT
 
