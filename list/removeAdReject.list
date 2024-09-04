@@ -32,6 +32,9 @@ DOMAIN,h-adashx.ut.cainiao.com
 # > caiYun
 DOMAIN,ad.cyapi.cn
 
+//colorful widget
+DOMAIN-SUFFIX,unbing.cn
+
 # >>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<<
 # > gaoDeMap
 DOMAIN,adashx.ut.amap.com
@@ -80,6 +83,7 @@ DOMAIN-SUFFIX,adjust.com
 DOMAIN-SUFFIX,adservertq.com
 DOMAIN-SUFFIX,adtianmai.com
 DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,appier.net
 DOMAIN-SUFFIX,applvn.com
 DOMAIN-SUFFIX,applovin.com
@@ -111,9 +115,13 @@ DOMAIN-SUFFIX,getui.com
 DOMAIN-SUFFIX,gepush.com
 DOMAIN-SUFFIX,huangjinyan.vip.com
 DOMAIN-SUFFIX,hguduo.com
+DOMAIN,adttrackingprd.hwwt8.com
+DOMAIN,trackingprd.hwwt8.com
+DOMAIN,fp.hwwt8.com
 DOMAIN-SUFFIX,igexin.com
 DOMAIN,ironsource.mobi
 DOMAIN-SUFFIX,jpush.cn
+DOMAIN-SUFFIX,kuiniuca.com
 DOMAIN-SUFFIX,liandaomobi.com
 DOMAIN-SUFFIX,maplehaze.cn
 DOMAIN-SUFFIX,mob.com
@@ -123,6 +131,8 @@ DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,newadserver.com
 DOMAIN,open.e.kuaishou.com
 DOMAIN,open.e.kuaishou.cn
+DOMAIN-SUFFIX,openinstall.io
+DOMAIN-SUFFIX,p2cdn.com
 DOMAIN-SUFFIX,qubiankeji.com
 DOMAIN-SUFFIX,rayjump.com
 DOMAIN-SUFFIX,serv-ad.net
@@ -138,8 +148,12 @@ DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unitychina.cn
 DOMAIN-SUFFIX,unity3d.com
 DOMAIN-SUFFIX,uyunad.com
+DOMAIN-SUFFIX,umsns.com
+DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,vungle.com
 DOMAIN-SUFFIX,volces.com
+DOMAIN-SUFFIX,xycdn.com
+DOMAIN-SUFFIX,yumchina.com
 DOMAIN,zxid-m.mobileservice.cn
 DOMAIN,zz.ci
 
