@@ -1,4 +1,6 @@
 HOST-SUFFIX,aptvapp.com,DIRECT
+HOST-SUFFIX,aptv.app,DIRECT
+HOST,tv.iill.top,DIRECT
 HOST,api.revenuecat.com,DIRECT
 HOST-SUFFIX,appraven.net,DIRECT
 HOST-SUFFIX,cooltv.top,DIRECT
@@ -17,6 +19,7 @@ HOST-SUFFIX,huangjinyan.vip,DIRECT
 HOST-SUFFIX,lyejz.cn,DIRECT
 HOST-SUFFIX,pansearch.me,DIRECT
 HOST-SUFFIX,qiyoujiage.com,DIRECT
+HOST-SUFFIX,resource.unbing.cn,DIRECT
 HOST-SUFFIX,tophub.app,DIRECT
 HOST-SUFFIX,tophub.today,DIRECT
 HOST-SUFFIX,thefilehosting.com,DIRECT
@@ -86,6 +89,7 @@ HOST-SUFFIX,ivdy.com,DIRECT
 HOST-SUFFIX,if101.tv,DIRECT
 HOST-SUFFIX,ffzyread.com,DIRECT
 HOST-SUFFIX,ffzyapi.com,DIRECT
+HOST-SUFFIX,ffzy-video.com,DIRECT
 HOST-SUFFIX,ffzy888.com,DIRECT
 HOST-SUFFIX,ffzy-online6.com,DIRECT
 HOST-SUFFIX,imgffzy.com,DIRECT
@@ -102,6 +106,7 @@ HOST-SUFFIX,huyaapi.com,DIRECT
 HOST-SUFFIX,huyall.com,DIRECT
 HOST-SUFFIX,huyajs.com,DIRECT
 HOST-SUFFIX,hyz1.top,DIRECT
+HOST-SUFFIX,ho4k.com,DIRECT
 HOST,img.maimn.com,DIRECT
 HOST,image.maimn.com,DIRECT
 HOST-SUFFIX,instantts.top,DIRECT
@@ -110,6 +115,7 @@ HOST-SUFFIX,ijycnd.com,DIRECT
 HOST-SUFFIX,image8899.net,DIRECT
 HOST-SUFFIX,iapijy.com,DIRECT
 HOST-SUFFIX,imgikzy.com,DIRECT
+HOST-SUFFIX,jisuzyv.com,DIRECT
 HOST-SUFFIX,jisuimage.com,DIRECT
 HOST-SUFFIX,ikunzyapi.com,DIRECT
 HOST-SUFFIX,jimg001.com,DIRECT
