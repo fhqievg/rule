@@ -9,7 +9,7 @@ if (url.includes("guoguo.nbnetflow.ads.show")) {
     // 29339 裹酱积分
     // 33927 绿色能量
     // 36649 回收旧物
-    if (obj.data.result) {
+    if (obj?.data?.result?.length > 0) {
         obj.data.result = obj.data.result.filter(
             (i) =>
                 !(
@@ -21,6 +21,12 @@ if (url.includes("guoguo.nbnetflow.ads.show")) {
                     (i?.materialContentMapper?.group_id?.includes("interests") && ["event_jijianhuiyuan", "event_guojiangjifeng", "event_greenhome"].includes(i?.materialContentMapper?.ut_event_name))
                 )
         );
+        for (let i of obj.data.result) {
+          if (i?.materialContentMapper?.show_tips_content) {
+            // 清空红点标记
+            i.materialContentMapper.show_tips_content = "";
+          }
+        }
     }
 } else if (url.includes("guoguo.nbnetflow.ads.mshow")) {
     // 首页
