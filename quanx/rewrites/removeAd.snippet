@@ -1,6 +1,5 @@
 #!name=常规去广告
 #!desc=基础
-#tencentVideo来源仓库：chengkongyiban，需先重装app，关掉模块，打开app登录账号后关掉app，再启用模块
 
 # >>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<<
 # > 12306
@@ -84,8 +83,11 @@
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > txVideo
-^http:\/\/pgdt\.gtimg\.cn url reject-dict
-^http:\/\/.+\/vmind\.qqvideo\.tc\.qq\.com\/.+mp4 url reject-dict
+^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ url reject
+^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ url reject
+^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ url reject
+^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind url reject-dict
+^https?:\/\/vv\.video\.qq\.com\/getvinfo url request-body &sppreviewtype=\d(.*)&spsrt=\d request-body &sppreviewtype=0$1&spsrt=0
 
 # >>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<<
 # > vidhub
@@ -119,4 +121,4 @@
 # > yangShiYingYin
 ^https?:\/\/api\.app\.cctv\.com\/api\/getVersion url reject
 
-hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,mobile.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,vip7.fzwdyy.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com
+hostname = *.chelaileapp.cn,*.chelaile.net.cn,www.xiachufang.com,api.xiachufang.com,pan.baidu.com,issuecdn.baidupcs.com,update.pan.baidu.com,staticsns.cdn.bcebos.com,ndstatic.cdn.bcebos.com,res.kfc.com.cn,api.mcd.cn,ad.12306.cn,mobile.12306.cn,app.thepaper.cn,api.app.cctv.com,cn-acs.m.cainiao.com,guide-acs.m.taobao.com,run.api.qyfxgd.cn,vip7.fzwdyy.cn,a.weilai555.com,a.ecoliving168.com,app-v1.ecoliving168.com,i.video.qq.com,iacc.qq.com,appapi.51job.com,blog.nilbt.com,api.aliyundrive.com,www.xiaoxiongyouhao.com,api.caiyunapp.com,wrapper.cyapi.cn,biz.cyapi.cn,starplucker.cyapi.cn,*.zzjz.top,iqyi.ylylfun.com,conf.chuangke.tv,d.chuangke.tv,res.chuangke.tv,api.7littlemen.com,vv.video.qq.com
