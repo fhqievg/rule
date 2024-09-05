@@ -165,6 +165,7 @@ HOST,tpns.qq.com,REJECT
 HOST,tmead.y.qq.com,REJECT
 HOST,tmeadbak.y.qq.com,REJECT
 HOST,tmeadcomm.y.qq.com,REJECT
+HOST,vv.video.qq.com,REJECT
 HOST-KEYWORD, trace.qq.com, REJECT
 HOST-KEYWORD, trace.video.qq.com, REJECT
 IP-CIDR, 47.110.187.87/32, REJECT
