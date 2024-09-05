@@ -144,6 +144,7 @@ HOST,zz.ci,REJECT
 
 # >>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<<
 # > txVideo
+HOST,adsmind.gdtimg.com,REJECT
 HOST,adsmind.ugdtimg.com,REJECT
 HOST-SUFFIX,bugly.qq.com,REJECT
 HOST-SUFFIX,btrace.qq.com,REJECT
@@ -151,15 +152,22 @@ HOST-SUFFIX,e.qq.com,REJECT
 HOST-SUFFIX,gdtimg.com,REJECT
 HOST-SUFFIX,gdt.qq.com,REJECT
 HOST-SUFFIX,huatuo.qq.com,REJECT
+HOST-SUFFIX,l.qq.com,REJECT
 HOST,info4.video.qq.com,REJECT
 HOST,info6.video.qq.com,REJECT
 HOST,ios.video.mpush.qq.com,REJECT
 HOST-SUFFIX,mtrace.qq.com,REJECT
+HOST,otheve.beacon.qq.com,REJECT
 HOST,qzs.qq.com,REJECT
 HOST,pgdt.gtimg.cn,REJECT
 HOST-SUFFIX,trace.qq.com,REJECT
 HOST,tpns.qq.com,REJECT
-HOST,vv.video.qq.com,REJECT
+HOST,tmead.y.qq.com,REJECT
+HOST,tmeadbak.y.qq.com,REJECT
+HOST,tmeadcomm.y.qq.com,REJECT
+HOST-KEYWORD, trace.qq.com, REJECT
+HOST-KEYWORD, trace.video.qq.com, REJECT
+IP-CIDR, 47.110.187.87/32, REJECT
 
 # >>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<<
 # > wechat
