@@ -33,7 +33,7 @@ if (url.includes("/business/v1.0/users/feature/list")) {
             "recentUsed", // 最近在看
             "coreFeatures", // 顶部图标
             "activities", // 精选活动
-            "myBackup", // 我的备份
+            //"myBackup", // 我的备份
             // "recentSaved", // 最近转存
             "signIn" // 顶部签到
         ];
