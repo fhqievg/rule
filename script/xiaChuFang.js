@@ -48,7 +48,7 @@ if (url.includes('/homepage/paged_waterfall_recommendations')) {
             let cell = multiplexCells[i][multiplexCells[i].WaterfallMultiplexCell_cell_OneOfCase];
             if (cell?.impression_sensor_events?.length > 0) {
                 for (let j in cell.impression_sensor_events) {
-                    if (cell.impression_sensor_events[j].properties?.target_type !== 'ad') {
+                    if (cell.impression_sensor_events[j].properties?.target_type !== 'ad' && cell.impression_sensor_events[j].properties?.target_type !== 'equipment_binding_tips') {
                         multiplexCellsArr.push(multiplexCells[i]);
                     }
                 }
